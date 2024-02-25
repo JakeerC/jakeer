@@ -7,10 +7,11 @@ import CustomLink from '@/components/links/CustomLink';
 import ShareTweetButton from '@/components/links/ShareTweetButton';
 import TOCLink from '@/components/links/TOCLink';
 import UnstyledLink from '@/components/links/UnstyledLink';
+import NextImage from '@/components/media/NextImage';
 
 export default function Components() {
   return (
-    <div className="flex flex-col mt-8 gap-4 justify-center items-center m-auto align-middle md:w-[40rem]">
+    <div className="flex flex-col mt-8 mb-8 gap-4 justify-center items-center m-auto align-middle md:w-[40rem]">
       <ThemeButton />
 
       <Button> Button label</Button>
@@ -51,6 +52,21 @@ export default function Components() {
         level={2}
         key={'unstyledlink'}
         minLevel={1}
+      />
+
+      <NextImage
+        alt="corner-arrow"
+        height={16}
+        width={16}
+        src={'/images/new-tab.png'}
+      />
+      <NextImage
+        alt="corner-arrow"
+        height={400}
+        width={400}
+        className="bg-green"
+        src={'/images/blossoms.avif'}
+        useSkeleton
       />
     </div>
   );
