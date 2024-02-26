@@ -89,7 +89,9 @@ export default function Components() {
       <TechStack />
       <TechIcons techs={['react', 'nextjs'] as Array<TechListType>} />
       <Tooltip key="keyId" tipChildren={<p> test tooltip</p>}>
-        <SiTailwindcss />
+        <>
+          <SiTailwindcss /> tstst
+        </>
       </Tooltip>
     </div>
   );
