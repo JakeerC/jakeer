@@ -1,20 +1,14 @@
-// !Typescript error
-// * error: Property 'children' does not exist on type 'IntrinsicAttributes & IntrinsicClassAttributes<Tooltip> & Readonly<TooltipProps>'.ts(2769)
-
-/* eslint-disable */
 import clsx from 'clsx';
-import * as React from 'react';
-import { Tooltip as TippyTooltip, TooltipProps } from 'react-tippy';
+import Tippy, { TippyProps } from '@tippyjs/react/headless';
 
-type TooltipTextProps = {
+type TooltipProps = {
   tipChildren?: React.ReactNode;
-  children?: React.ReactNode;
   className?: string;
   spanClassName?: string;
   withUnderline?: boolean;
-} & TooltipProps &
-  Omit<React.ComponentPropsWithoutRef<'div'>, 'children' | 'className'>;
+} & TippyProps;
 
+// ! send `children`  prop as single element or string
 export default function Tooltip({
   tipChildren,
   children,
@@ -22,12 +16,15 @@ export default function Tooltip({
   spanClassName,
   withUnderline = false,
   ...rest
-}: TooltipTextProps) {
+}: TooltipProps) {
   return (
-    <TippyTooltip
+    <Tippy
+      placement="auto"
       trigger="mouseenter"
       interactive
-      html={
+      inertia
+      arrow={true}
+      render={() => (
         <div
           className={clsx(
             className,
@@ -37,7 +34,8 @@ export default function Tooltip({
         >
           {tipChildren}
         </div>
-      }
+      )}
+      zIndex={999}
       {...rest}
     >
       {withUnderline ? (
@@ -48,9 +46,8 @@ export default function Tooltip({
           {children}
         </span>
       ) : (
-        <>{children}</>
+        <span>{children}</span>
       )}
-    </TippyTooltip>
+    </Tippy>
   );
 }
-/* eslint-enable */
