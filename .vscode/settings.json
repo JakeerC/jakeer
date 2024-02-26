@@ -16,5 +16,5 @@
     "variant"
   ],
   "typescript.preferences.importModuleSpecifier": "non-relative",
-  "cSpell.words": ["clsx", "commitlint", "endregion", "tailwindcss"]
+  "cSpell.words": ["clsx", "clsxm", "commitlint", "endregion", "tailwindcss"]
 }

@@ -12,6 +12,7 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@tippyjs/react": "^4.2.6",
     "clsx": "^2.1.0",
     "next": "14.1.0",
     "next-themes": "^0.2.1",
