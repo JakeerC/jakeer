@@ -14,15 +14,15 @@ export default function Quiz(props: QuizType) {
   };
 
   return (
-    <div className='prose relative mt-8 w-full !max-w-none rounded border p-4 pt-8 dark:prose-invert dark:border-gray-600'>
-      <div className='text-center'>
-        <h4 className='text-lg md:text-xl'>{props.question}</h4>
+    <div className="prose relative mt-8 w-full !max-w-none rounded border p-4 pt-8 dark:prose-invert dark:border-gray-600">
+      <div className="text-center">
+        <h4 className="text-lg md:text-xl">{props.question}</h4>
         {props.description && (
-          <p className='text-base md:text-sm'>{props.description}</p>
+          <p className="text-base md:text-sm">{props.description}</p>
         )}
         {/* <button onClick={() => setSelected(undefined)}>reset</button> */}
       </div>
-      <div className='mt-4 grid gap-2 md:grid-cols-2 md:gap-4'>
+      <div className="mt-4 grid gap-2 md:grid-cols-2 md:gap-4">
         {props.answers.map((answer, i) => {
           const answerIndex = i + 1;
 
@@ -50,9 +50,9 @@ export default function Quiz(props: QuizType) {
             >
               <>{answer.option}</>
               {selectedOption && optionStatus === 'correct' ? (
-                <HiOutlineCheckCircle className='absolute right-4 top-1/2 block -translate-y-1/2 text-xl text-white' />
+                <HiOutlineCheckCircle className="absolute right-4 top-1/2 block -translate-y-1/2 text-xl text-white" />
               ) : selectedOption === answerIndex ? (
-                <HiOutlineXCircle className='absolute right-4 top-1/2 block -translate-y-1/2 text-xl text-white' />
+                <HiOutlineXCircle className="absolute right-4 top-1/2 block -translate-y-1/2 text-xl text-white" />
               ) : null}
             </button>
           );

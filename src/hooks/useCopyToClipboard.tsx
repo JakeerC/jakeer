@@ -7,7 +7,7 @@ type CopyFn = (text: string) => Promise<boolean>; // Return success
 export default function useCopyToClipboard(): [CopyFn, CopiedValue] {
   const [copiedText, setCopiedText] = React.useState<CopiedValue>(null);
 
-  const copy: CopyFn = async (text) => {
+  const copy: CopyFn = async text => {
     if (!navigator?.clipboard) {
       // eslint-disable-next-line no-console
       console.warn('Clipboard not supported');
