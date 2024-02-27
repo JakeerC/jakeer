@@ -1,7 +1,8 @@
-import { cloudinaryCloudName } from '@/constants/consts';
 import { buildUrl } from 'cloudinary-build-url';
 import clsx from 'clsx';
 import Image from 'next/image';
+
+import { cloudinaryCloudName } from '@/constants/consts';
 
 type CloudinaryImgType = {
   publicId: string;

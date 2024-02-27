@@ -1,8 +1,8 @@
 import Giscus, { Repo, Theme } from '@giscus/react';
 import { useTheme } from 'next-themes';
 
-import { commentFlag } from '@/constants/env';
 import { giscusCategoryId } from '@/constants/consts';
+import { commentFlag } from '@/constants/env';
 
 export default function Comment() {
   const { theme } = useTheme();

@@ -1,5 +1,5 @@
-import clsx from 'clsx';
 import Tippy, { TippyProps } from '@tippyjs/react/headless';
+import clsx from 'clsx';
 
 type TooltipProps = {
   tipChildren?: React.ReactNode;

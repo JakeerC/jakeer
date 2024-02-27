@@ -4,13 +4,13 @@ import * as React from 'react';
 import { HiOutlineClock, HiOutlineEye } from 'react-icons/hi';
 
 import Accent from '@/components/Accent';
+import Tag from '@/components/content/Tag';
 import UnstyledLink from '@/components/links/UnstyledLink';
+import CloudinaryImg from '@/components/media/CloudinaryImg';
+
+import { cloudinaryCloudName } from '@/constants/consts';
 
 import { BlogFrontmatter, InjectedMeta } from '@/types/frontmatters';
-
-import Tag from '@/components/content/Tag';
-import CloudinaryImg from '@/components/media/CloudinaryImg';
-import { cloudinaryCloudName } from '@/constants/consts';
 
 type BlogCardProps = {
   post: BlogFrontmatter & InjectedMeta;
