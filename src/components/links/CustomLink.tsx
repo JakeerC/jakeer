@@ -1,4 +1,4 @@
-import clsxm from '@/lib/clsxm';
+import cn from '@/lib/cn';
 
 import UnstyledLink, { UnstyledLinkProps } from './UnstyledLink';
 
@@ -10,7 +10,7 @@ export default function CustomLink({
   return (
     <UnstyledLink
       {...rest}
-      className={clsxm(
+      className={cn(
         'animated-underline custom-link inline-flex items-center font-medium',
         'focus:outline-none focus-visible:ring focus-visible:ring-primary-300',
         'border-b border-dotted border-dark hover:border-black/0',
