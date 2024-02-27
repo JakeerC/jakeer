@@ -16,5 +16,15 @@
     "variant"
   ],
   "typescript.preferences.importModuleSpecifier": "non-relative",
-  "cSpell.words": ["clsx", "clsxm", "commitlint", "endregion", "tailwindcss"]
+  "cSpell.words": [
+    "cloudinary",
+    "clsx",
+    "clsxm",
+    "commitlint",
+    "endregion",
+    "frontmatters",
+    "frontmatter",
+    "Giscus",
+    "tailwindcss"
+  ]
 }

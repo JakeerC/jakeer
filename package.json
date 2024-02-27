@@ -12,13 +12,18 @@
     "format": "prettier --write ."
   },
   "dependencies": {
+    "@giscus/react": "^3.0.0",
     "@tippyjs/react": "^4.2.6",
+    "cloudinary-build-url": "^0.2.4",
     "clsx": "^2.1.0",
+    "date-fns": "^3.3.1",
     "next": "14.1.0",
     "next-themes": "^0.2.1",
     "react": "^18",
     "react-dom": "^18",
     "react-icons": "^5.0.1",
+    "react-twitter-widgets": "^1.11.0",
+    "reading-time": "^1.5.0",
     "tailwind-merge": "^2.2.1"
   },
   "devDependencies": {
