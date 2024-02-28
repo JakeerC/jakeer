@@ -1,4 +1,3 @@
-
 import { domain } from '@/constants/consts';
 
 type FooterLinks = {
