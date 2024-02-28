@@ -1,6 +1,5 @@
 // ! dependencies => Tooltip, CustomLink
 import clsx from 'clsx';
-import * as React from 'react';
 import {
   SiNextdotjs,
   SiPrisma,

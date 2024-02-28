@@ -1,6 +1,6 @@
 'use client';
+//! TODO change import of useRouter from legacy
 import { useRouter } from 'next/router';
-import * as React from 'react';
 import { HiRefresh } from 'react-icons/hi';
 
 import ButtonLink from '@/components/links/ButtonLink';
