@@ -21,10 +21,13 @@
     "clsx",
     "clsxm",
     "commitlint",
+    "consts",
     "endregion",
-    "frontmatters",
     "frontmatter",
+    "frontmatters",
     "Giscus",
-    "tailwindcss"
+    "rehype",
+    "tailwindcss",
+    "tanstack"
   ]
 }
