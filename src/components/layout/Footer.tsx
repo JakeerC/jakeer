@@ -1,4 +1,5 @@
 'use client';
+//! TODO split this file to make use of server components
 import * as React from 'react';
 import { FiMail } from 'react-icons/fi';
 

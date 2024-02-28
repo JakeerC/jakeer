@@ -1,3 +1,4 @@
+'use client';
 import clsx from 'clsx';
 import * as React from 'react';
 import { HiOutlineCheckCircle, HiOutlineXCircle } from 'react-icons/hi';

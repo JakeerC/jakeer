@@ -1,4 +1,6 @@
 'use client';
+
+//! TODO split this file to make use of server components
 import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
 import * as React from 'react';
