@@ -23,7 +23,7 @@ export default function Tooltip({
       trigger="mouseenter"
       interactive
       inertia
-      arrow={true}
+      followCursor
       render={() => (
         <div
           className={clsx(
