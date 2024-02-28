@@ -1,0 +1,51 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:blogChannel="https://jakeer.vercel.app/blog">
+      <channel>
+        <title>Jakeer Blog</title>
+        <link>https://jakeer.vercel.app/blog</link>
+        <description>The Jakeer Blog, thoughts, mental models, and tutorials about front-end development.</description>
+        <language>en</language>
+        <ttl>40</ttl>
+        <item>
+      <title><![CDATA[React Core Concept I: Rendering & useState]]></title>
+      <description><![CDATA[Do you wonder why do we use hook instead of normal variable? This will help you redefine some concepts.]]></description>
+      <link>https://jakeer.vercel.app/blog/react-core-concept-rendering-state</link>
+      <guid>https://jakeer.vercel.app/blog/react-core-concept-rendering-state</guid>
+      <pubDate>2021-11-29</pubDate>
+    </item>
+<item>
+      <title><![CDATA[Understanding Next.js Data Fetching (CSR, SSR, SSG, ISR)]]></title>
+      <description><![CDATA[Thorough explanation on Next.js data fetching method such as CSR, SSR, SSG, and ISR.]]></description>
+      <link>https://jakeer.vercel.app/blog/nextjs-fetch-method</link>
+      <guid>https://jakeer.vercel.app/blog/nextjs-fetch-method</guid>
+      <pubDate>2023-07-20</pubDate>
+    </item>
+<item>
+      <title><![CDATA[The biggest Next.js boilerplates of 2023]]></title>
+      <description><![CDATA[The top Next.js boilerplates from several tech stacks to match with your needs]]></description>
+      <link>https://jakeer.vercel.app/blog/nextjs-boilerplate-2023</link>
+      <guid>https://jakeer.vercel.app/blog/nextjs-boilerplate-2023</guid>
+      <pubDate>2023-04-10</pubDate>
+    </item>
+<item>
+      <title><![CDATA[Next.js Authentication using Higher-Order Components]]></title>
+      <description><![CDATA[Solve problems such as colocation, and error-prone code]]></description>
+      <link>https://jakeer.vercel.app/blog/nextjs-auth-hoc</link>
+      <guid>https://jakeer.vercel.app/blog/nextjs-auth-hoc</guid>
+      <pubDate>2023-03-10</pubDate>
+    </item>
+<item>
+      <title><![CDATA[How to Create Fully Reusable React Components]]></title>
+      <description><![CDATA[Creating a component is fairly easy, but doing them correctly is a different story.]]></description>
+      <link>https://jakeer.vercel.app/blog/fully-reusable-components</link>
+      <guid>https://jakeer.vercel.app/blog/fully-reusable-components</guid>
+      <pubDate>2023-12-14</pubDate>
+    </item>
+<item>
+      <title><![CDATA[The 2023 Retrospective]]></title>
+      <description><![CDATA[Graduation, Tech Writing, First Job, Mentorship, and more!]]></description>
+      <link>https://jakeer.vercel.app/blog/2023-retrospective</link>
+      <guid>https://jakeer.vercel.app/blog/2023-retrospective</guid>
+      <pubDate>2024-01-02</pubDate>
+    </item>
+      </channel>
+    </rss>
