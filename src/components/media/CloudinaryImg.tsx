@@ -1,3 +1,5 @@
+'use client';
+//! TODO : refact -> remove styled-jsx which is client comp
 import { buildUrl } from 'cloudinary-build-url';
 import clsx from 'clsx';
 import Image from 'next/image';
