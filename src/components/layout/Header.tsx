@@ -1,11 +1,12 @@
 'use client';
 import clsx from 'clsx';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import * as React from 'react';
 
 import Accent from '@/components/Accent';
 import ThemeButton from '@/components/buttons/ThemeButton';
 import UnstyledLink from '@/components/links/UnstyledLink';
+
 import { navLinks } from '@/constants/consts';
 
 type HeaderProps = {
@@ -14,10 +15,7 @@ type HeaderProps = {
 
 export default function Header({ large = false }: HeaderProps) {
   //#region  //*=========== Route Functionality ===========
-  const router = useRouter();
   const pathname = usePathname();
-  console.log(router);
-  console.log(pathname);
 
   /** Ex: /projects/petrolida-2021 -> ['', 'projects', 'petrolida-2021'] */
   const arrOfRoute = pathname.split('/');
