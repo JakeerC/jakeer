@@ -1,5 +1,4 @@
 import clsx from 'clsx';
-import * as React from 'react';
 
 import Accent from '@/components/Accent';
 import ButtonLink from '@/components/links/ButtonLink';

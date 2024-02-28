@@ -1,5 +1,4 @@
 import clsx from 'clsx';
-import * as React from 'react';
 import { Tweet, TweetProps } from 'react-twitter-widgets';
 
 type TweetCardProps = {

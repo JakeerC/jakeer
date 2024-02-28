@@ -1,5 +1,4 @@
 import clsx from 'clsx';
-import * as React from 'react';
 
 import UnstyledLink from '@/components/links/UnstyledLink';
 

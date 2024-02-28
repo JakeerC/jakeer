@@ -1,5 +1,4 @@
 import clsx from 'clsx';
-import * as React from 'react';
 import { SiX } from 'react-icons/si';
 
 import ButtonLink, { ButtonLinkProps } from '@/components/links/ButtonLink';
