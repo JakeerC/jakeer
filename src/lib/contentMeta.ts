@@ -7,7 +7,7 @@ export function pickContentMeta<T extends ContentType>(
 ): Array<ContentMeta> {
   return (
     data
-      ?.filter((item) => item.slug.startsWith(type.slice(0, 1)))
-      .map((item) => ({ ...item, slug: item.slug.slice(2) })) ?? []
+      ?.filter(item => item.slug.startsWith(type.slice(0, 1)))
+      .map(item => ({ ...item, slug: item.slug.slice(2) })) ?? []
   );
 }
