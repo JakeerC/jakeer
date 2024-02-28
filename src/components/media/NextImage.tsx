@@ -22,7 +22,6 @@ export default function NextImage({
   alt,
   className,
   imgClassName,
-  blurClassName,
   ...rest
 }: NextImageProps) {
   const widthIsSet = className?.includes('w-') ?? false;
