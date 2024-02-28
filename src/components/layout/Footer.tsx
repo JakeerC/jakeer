@@ -7,9 +7,10 @@ import useCopyToClipboard from '@/hooks/useCopyToClipboard';
 import Accent from '@/components/Accent';
 import UnstyledLink from '@/components/links/UnstyledLink';
 import Tooltip from '@/components/Tooltip';
+
+import { emailId } from '@/constants/consts';
 import { footerLinks } from '@/constants/footerLinks';
 import { socialLinks } from '@/constants/socialLinks';
-import { emailId } from '@/constants/consts';
 
 // import { feedbackFlag } from '@/constants/env';
 

@@ -1,6 +1,7 @@
-import Accent from '@/components/Accent';
 import { IconType } from 'react-icons';
 import { SiGithub, SiLinkedin, SiTwitter } from 'react-icons/si';
+
+import Accent from '@/components/Accent';
 
 type SocialLink = {
   href: string;

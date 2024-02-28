@@ -1,5 +1,5 @@
+
 import { domain } from '@/constants/consts';
-import { IconType } from 'react-icons/lib';
 
 type FooterLinks = {
   href: string;
