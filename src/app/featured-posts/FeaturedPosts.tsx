@@ -6,9 +6,9 @@ import { trackEvent } from '@/lib/analytics';
 import useInjectContentMeta from '@/hooks/useInjectContentMeta';
 
 import Accent from '@/components/Accent';
-import BlogCard from '@/components/content/cards/BlogCard';
-import ProjectCard from '@/components/content/cards/ProjectCard';
-import ShortsCard from '@/components/content/cards/ShortsCard';
+import BlogCard from '@/components/cards/BlogCard';
+import ProjectCard from '@/components/cards/ProjectCard';
+import ShortsCard from '@/components/cards/ShortsCard';
 import ButtonLink from '@/components/links/ButtonLink';
 import Tooltip from '@/components/Tooltip';
 
