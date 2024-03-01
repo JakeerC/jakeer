@@ -67,11 +67,8 @@ const stacks = [
         <CustomLink href="https://www.typescriptlang.org/">
           TypeScript
         </CustomLink>
-        , can't live without it! Check out my{' '}
-        <CustomLink href="https://github.com/theodorusclarence/ts-nextjs-tailwind-starter">
-          starter template
-        </CustomLink>{' '}
-        using Next.js, Tailwind CSS, and TypeScript.
+        is a strongly typed{' '}
+        <span className="text-yellow-500 font-bold">JS</span> .
       </>
     ),
   },
