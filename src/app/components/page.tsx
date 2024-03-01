@@ -11,6 +11,7 @@ import CustomLink from '@/components/links/CustomLink';
 import ShareTweetButton from '@/components/links/ShareTweetButton';
 import TOCLink from '@/components/links/TOCLink';
 import UnstyledLink from '@/components/links/UnstyledLink';
+import CloudinaryImg from '@/components/media/CloudinaryImg';
 import NextImage from '@/components/media/NextImage';
 import TechIcons, { TechListType } from '@/components/TechIcons';
 import TechStack from '@/components/TechStack';
@@ -84,7 +85,6 @@ export default function Components() {
         height={400}
         width={400}
         src="/images/blossoms.avif"
-        useSkeleton
       />
       <TechStack />
       <TechIcons techs={['react', 'nextjs'] as Array<TechListType>} />
@@ -93,6 +93,14 @@ export default function Components() {
           <SiTailwindcss /> tstst
         </>
       </Tooltip>
+
+      <CloudinaryImg
+        alt="test"
+        height={400}
+        width={400}
+        publicId="banner/geometry"
+        aspect={{ width: 16, height: 9 }}
+      />
     </div>
   );
 }
