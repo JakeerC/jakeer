@@ -3,6 +3,7 @@ import { useTheme } from 'next-themes';
 
 import { giscusCategoryId } from '@/constants/consts';
 import { commentFlag } from '@/constants/env';
+import { giscusCategory } from '@/constants/urls';
 
 export default function Comment() {
   const { theme } = useTheme();
@@ -12,10 +13,10 @@ export default function Comment() {
       key={theme}
       repo={(process.env.NEXT_PUBLIC_GISCUS_REPO as Repo) || ''}
       repoId={process.env.NEXT_PUBLIC_GISCUS_REPO_ID || ''}
-      category="Comments"
+      category={giscusCategory}
       categoryId={giscusCategoryId}
       mapping="pathname"
-      reactionsEnabled="0"
+      reactionsEnabled="1"
       emitMetadata="0"
       theme={theme as Theme}
     />
