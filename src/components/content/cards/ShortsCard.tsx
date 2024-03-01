@@ -52,19 +52,23 @@ export default function ShortsCard({
             ))}
           </div>
           <div className="mt-4 flex items-center justify-start gap-3 text-sm font-medium text-gray-600 dark:text-gray-300">
-            <div className="flex items-center gap-1">
-              <HiOutlineEye className="inline-block text-base" />
-              <Accent>{short?.views?.toLocaleString() ?? '–––'} views</Accent>
-            </div>
-            <div className="flex items-center gap-1">
-              <GiTechnoHeart className="inline-block text-base" />
-              <Accent>{short?.likes ?? '–––'} likes</Accent>
-            </div>
+            {short?.views?.toLocaleString() && (
+              <div className="flex items-center gap-1">
+                <HiOutlineEye className="inline-block text-base" />
+                <Accent>{short?.views?.toLocaleString() ?? '–––'} views</Accent>
+              </div>
+            )}
+            {short?.likes && (
+              <div className="flex items-center gap-1">
+                <GiTechnoHeart className="inline-block text-base" />
+                <Accent>{short?.likes ?? '–––'} likes</Accent>
+              </div>
+            )}
           </div>
 
-          {/* <p className='mt-4 text-sm text-gray-600 dark:text-gray-300'>
+          <p className="mt-4 text-sm text-gray-600 dark:text-gray-300">
             {short.description}
-          </p> */}
+          </p>
         </div>
       </UnstyledLink>
     </li>
