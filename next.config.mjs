@@ -5,7 +5,14 @@ const nextConfig = {
     dirs: ['src'],
   },
   images: {
-    domains: ['res.cloudinary.com'],
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        port: '',
+      },
+    ],
+    formats: ['image/avif', 'image/webp'],
   },
 };
 
