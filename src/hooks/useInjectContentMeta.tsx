@@ -1,5 +1,5 @@
 'use client';
-// ! TODO => possible raft to RSC
+// ! TODO => possible refactor to RSC
 import { useQuery } from '@tanstack/react-query';
 import * as React from 'react';
 
@@ -29,7 +29,6 @@ export default function useInjectContentMeta<T extends ContentType>(
     () => pickContentMeta(contentMeta, type),
     [contentMeta, type]
   );
-
   type PopulatedContent = Array<PickFrontmatter<T> & InjectedMeta>;
 
   const [populatedContent, setPopulatedContent] =
