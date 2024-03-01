@@ -1,5 +1,3 @@
-'use client';
-//! TODO : refact -> remove styled-jsx which is client comp
 import { buildUrl } from 'cloudinary-build-url';
 import clsx from 'clsx';
 import Image from 'next/image';
@@ -13,6 +11,7 @@ type CloudinaryImgType = {
   alt: string;
   title?: string;
   className?: string;
+  imgClassName?: string;
   noStyle?: boolean;
   aspect?: {
     width: number;
@@ -27,6 +26,7 @@ export default function CloudinaryImg({
   width,
   alt,
   title,
+  imgClassName,
   className,
   noStyle = false,
   mdx = false,
@@ -34,20 +34,21 @@ export default function CloudinaryImg({
   aspect,
   ...rest
 }: CloudinaryImgType) {
-  const urlBlurred = buildUrl(publicId, {
-    cloud: {
-      cloudName: cloudinaryCloudName,
-    },
-    transformations: {
-      effect: {
-        name: 'blur:1000',
-      },
-      quality: 1,
-      rawTransformation: aspect
-        ? `c_fill,ar_${aspect.width}:${aspect.height},w_${width}`
-        : undefined,
-    },
-  });
+  // const urlBlurred = buildUrl(publicId, {
+  //   cloud: {
+  //     cloudName: cloudinaryCloudName,
+  //   },
+  //   transformations: {
+  //     effect: {
+  //       name: 'blur:1000',
+  //     },
+  //     quality: 1,
+  //     rawTransformation: aspect
+  //       ? `c_fill,ar_${aspect.width}:${aspect.height},w_${width}`
+  //       : undefined,
+  //   },
+  // });
+
   const url = buildUrl(publicId, {
     cloud: {
       cloudName: cloudinaryCloudName,
@@ -59,7 +60,7 @@ export default function CloudinaryImg({
     },
   });
 
-  const aspectRatio = aspect ? aspect.height / aspect.width : undefined;
+  const aspectRatio = aspect ? aspect.width / aspect.height : undefined;
 
   const RESIZE_MAX_WIDTH = 1000;
   const resizedToMaxWidth = mdx && +width >= RESIZE_MAX_WIDTH;
@@ -76,44 +77,20 @@ export default function CloudinaryImg({
       }}
       {...rest}
     >
-      <div
-        style={{
-          position: 'relative',
-          height: 0,
-          paddingTop: aspectRatio
-            ? `${aspectRatio * 100}%`
-            : `${(+height / +width) * 100}%`,
-        }}
-        className="img-blur"
-      >
-        <style jsx>{`
-          .img-blur::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            filter: blur(20px);
-            z-index: 0;
-            background-image: url(${urlBlurred});
-            background-position: center center;
-            background-size: 100%;
-          }
-        `}</style>
-        <div className="absolute left-0 top-0">
-          <Image
-            width={
-              resizedToMaxWidth ? +Math.min(+width, RESIZE_MAX_WIDTH) : +width
-            }
-            height={
-              resizedToMaxWidth
-                ? +(RESIZE_MAX_WIDTH * +height) / +width
-                : +height
-            }
-            src={url}
-            alt={alt}
-            title={title || alt}
-          />
-        </div>
-      </div>
+      <Image
+        width={resizedToMaxWidth ? +Math.min(+width, RESIZE_MAX_WIDTH) : +width}
+        height={
+          resizedToMaxWidth ? +(RESIZE_MAX_WIDTH * +height) / +width : +height
+        }
+        className={clsx(
+          'bg-slate-800 before:blur-md',
+          aspectRatio ? `aspect-[${aspectRatio.toString()}] ` : '',
+          imgClassName
+        )} //! TODO : refact if breaks, may break as we are using dynamic
+        src={url}
+        alt={alt}
+        title={title || alt}
+      />
     </figure>
   );
 }

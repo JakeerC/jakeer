@@ -8,13 +8,12 @@ import Tag from '@/components/content/Tag';
 import UnstyledLink from '@/components/links/UnstyledLink';
 import CloudinaryImg from '@/components/media/CloudinaryImg';
 
-import { cloudinaryCloudName } from '@/constants/consts';
-
 import { BlogFrontmatter, InjectedMeta } from '@/types/frontmatters';
 
 type BlogCardProps = {
   post: BlogFrontmatter & InjectedMeta;
   checkTagged?: (tag: string) => boolean;
+  hideBanner?: boolean;
   imgAlt?: string;
 } & React.ComponentPropsWithoutRef<'li'>;
 
@@ -24,6 +23,7 @@ export default function BlogCard({
   checkTagged,
   onClick,
   imgAlt,
+  hideBanner = false,
 }: BlogCardProps) {
   return (
     <li
@@ -41,33 +41,35 @@ export default function BlogCard({
         className="block h-full rounded-md focus:outline-none focus-visible:ring focus-visible:ring-primary-300"
         href={`/blog/${post.slug}`}
       >
-        <div className="relative">
-          <CloudinaryImg
-            noStyle
-            className="pointer-events-none overflow-hidden rounded-t-md"
-            publicId={`${cloudinaryCloudName}/banner/${post.banner}`}
-            alt={imgAlt || 'Photo taken from unsplash'}
-            width={1200}
-            height={(1200 * 2) / 5}
-            aspect={{ height: 2, width: 5 }}
-          />
-          <div
-            className={clsx(
-              'absolute bottom-0 w-full px-4 py-2',
-              'mt-2 flex flex-wrap justify-end gap-x-2 gap-y-1 text-sm text-black dark:text-gray-100'
-            )}
-          >
-            {post.tags.split(',').map(tag => (
-              <Tag
-                tabIndex={-1}
-                className="bg-opacity-80 dark:!bg-opacity-60"
-                key={tag}
-              >
-                {checkTagged?.(tag) ? <Accent>{tag}</Accent> : tag}
-              </Tag>
-            ))}
+        {!hideBanner && (
+          <div className="relative">
+            <CloudinaryImg
+              noStyle
+              className="pointer-events-none overflow-hidden rounded-t-md"
+              publicId={`banner/${post.banner}`}
+              alt={imgAlt || 'Photo taken from unsplash'}
+              width={1200}
+              height={(1200 * 2) / 5}
+              aspect={{ height: 2, width: 5 }}
+            />
+            <div
+              className={clsx(
+                'absolute bottom-0 w-full px-4 py-2',
+                'mt-2 flex flex-wrap justify-end gap-x-2 gap-y-1 text-sm text-black dark:text-gray-100'
+              )}
+            >
+              {post.tags.split(',').map(tag => (
+                <Tag
+                  tabIndex={-1}
+                  className="bg-opacity-80 dark:!bg-opacity-60"
+                  key={tag}
+                >
+                  {checkTagged?.(tag) ? <Accent>{tag}</Accent> : tag}
+                </Tag>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
         <div className="p-4">
           <h4 className="text-gray-800 dark:text-gray-100">{post.title}</h4>
           <div className="mt-2 flex items-center justify-start gap-2 text-sm font-medium text-gray-600 dark:text-gray-300">
@@ -75,10 +77,12 @@ export default function BlogCard({
               <HiOutlineClock className="inline-block text-base" />
               <Accent>{post.readingTime.text}</Accent>
             </div>
-            <div className="flex items-center gap-1">
-              <HiOutlineEye className="inline-block text-base" />
-              <Accent>{post?.views?.toLocaleString() ?? '–––'} views</Accent>
-            </div>
+            {post?.views?.toLocaleString() && (
+              <div className="flex items-center gap-1">
+                <HiOutlineEye className="inline-block text-base" />
+                <Accent>{post?.views?.toLocaleString()} views</Accent>
+              </div>
+            )}
           </div>
           <p className="mb-2 mt-4 text-sm text-gray-600 dark:text-gray-300">
             <span className="font-bold text-gray-800 dark:text-gray-100">
