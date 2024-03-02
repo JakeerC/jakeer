@@ -19,7 +19,7 @@ export type ContentType =
   | 'library'
   | 'projects'
   | 'snippets'
-  | 'shorts';
+  | 'snippets';
 
 export type PickFrontmatter<T extends ContentType> = T extends 'blog'
   ? BlogFrontmatter

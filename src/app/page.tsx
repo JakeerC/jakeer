@@ -14,7 +14,7 @@ import { getFeaturedData } from '@/app/featured-posts/getFeaturedData';
 import { domain } from '@/constants/consts';
 
 export default async function IndexPage() {
-  const { featuredPosts, featuredProjects, featuredShorts, introPosts } =
+  const { featuredPosts, featuredProjects, featuredSnippets, introPosts } =
     await getFeaturedData();
 
   return (
@@ -138,7 +138,7 @@ export default async function IndexPage() {
         <FeaturedPosts
           featuredPosts={featuredPosts}
           featuredProjects={featuredProjects}
-          featuredShorts={featuredShorts}
+          featuredSnippets={featuredSnippets}
           introPosts={introPosts}
         />
       </main>

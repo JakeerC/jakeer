@@ -6,7 +6,7 @@ export async function getFeaturedData() {
 
   const blogs = await getAllFilesFrontmatter('blog');
   const projects = await getAllFilesFrontmatter('projects');
-  const shorts = await getAllFilesFrontmatter('library');
+  const snippets = await getAllFilesFrontmatter('library');
 
   const featuredPosts = getFeatured(blogs, [
     '2023-retrospective',
@@ -17,7 +17,7 @@ export async function getFeaturedData() {
     'nextjs-fetch-method',
   ]);
   const featuredProjects = getFeatured(projects, ['notiolink']);
-  const featuredShorts = getFeatured(shorts, [
+  const featuredSnippets = getFeatured(snippets, [
     'react/absolute-import',
     'mac/zsh',
     'styling/margin-usage',
@@ -32,7 +32,7 @@ export async function getFeaturedData() {
   return {
     featuredPosts,
     featuredProjects,
-    featuredShorts,
+    featuredSnippets,
     introPosts,
   };
 }
