@@ -1,3 +1,4 @@
+'use client';
 import Tippy, { TippyProps } from '@tippyjs/react/headless';
 import clsx from 'clsx';
 
