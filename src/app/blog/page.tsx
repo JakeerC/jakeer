@@ -9,7 +9,6 @@ export type BlogType = {
 };
 export default async function BlogWrapper() {
   const { posts, tags }: BlogType = await getAllBlogData();
-  /** Lazy init from session storage to preserve preference on revisit */
 
   return (
     <main>
