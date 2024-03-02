@@ -24,7 +24,7 @@ export type ContentType =
 export type PickFrontmatter<T extends ContentType> = T extends 'blog'
   ? BlogFrontmatter
   : T extends 'library'
-    ? LibraryFrontmatter
+    ? SnippetFrontmatter
     : ProjectFrontmatter;
 
 export type InjectedMeta = { views?: number; likes?: number };
@@ -34,7 +34,7 @@ export type BlogType = {
   frontmatter: BlogFrontmatter;
 };
 
-export type LibraryFrontmatter = {
+export type SnippetFrontmatter = {
   slug: string;
   title: string;
   readingTime: ReadTimeResults;
@@ -42,9 +42,9 @@ export type LibraryFrontmatter = {
   tags: string;
 };
 
-export type LibraryType = {
+export type SnippetType = {
   code: string;
-  frontmatter: LibraryFrontmatter;
+  frontmatter: SnippetFrontmatter;
 };
 
 export type ProjectFrontmatter = {
@@ -66,9 +66,9 @@ export type ProjectType = {
   frontmatter: ProjectFrontmatter;
 };
 
-export type FrontmatterWithTags = BlogFrontmatter | LibraryFrontmatter;
+export type FrontmatterWithTags = BlogFrontmatter | SnippetFrontmatter;
 export type FrontmatterWithDate = BlogFrontmatter | ProjectFrontmatter;
 export type Frontmatter =
   | ProjectFrontmatter
   | BlogFrontmatter
-  | LibraryFrontmatter;
+  | SnippetFrontmatter;

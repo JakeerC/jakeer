@@ -14,7 +14,7 @@ import Tooltip from '@/components/Tooltip';
 
 import {
   BlogFrontmatter,
-  LibraryFrontmatter,
+  SnippetFrontmatter,
   ProjectFrontmatter,
 } from '@/types/frontmatters';
 
@@ -26,7 +26,7 @@ export default function FeaturedPosts({
 }: {
   featuredPosts: BlogFrontmatter[];
   featuredProjects: ProjectFrontmatter[];
-  featuredSnippets: LibraryFrontmatter[];
+  featuredSnippets: SnippetFrontmatter[];
   introPosts: BlogFrontmatter[];
 }) {
   const populatedPosts = useInjectContentMeta('blog', featuredPosts);

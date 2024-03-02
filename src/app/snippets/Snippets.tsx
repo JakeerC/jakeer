@@ -16,7 +16,7 @@ import SortListbox, { SortOption } from '@/components/SortListbox';
 
 import { SnippetsType } from '@/app/snippets/page';
 
-import { LibraryFrontmatter } from '@/types/frontmatters';
+import { SnippetFrontmatter } from '@/types/frontmatters';
 
 const sortOptions: Array<SortOption> = [
   {
@@ -34,7 +34,7 @@ export default function Snippets({ snippets, tags }: SnippetsType) {
 
   //#region  //*=========== Search ===========
   const [search, setSearch] = React.useState<string>('');
-  const [filtered, setFiltered] = React.useState<Array<LibraryFrontmatter>>(
+  const [filtered, setFiltered] = React.useState<Array<SnippetFrontmatter>>(
     () => [...snippets]
   );
 

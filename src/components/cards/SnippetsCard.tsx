@@ -7,10 +7,10 @@ import Accent from '@/components/Accent';
 import Tag from '@/components/content/Tag';
 import UnstyledLink from '@/components/links/UnstyledLink';
 
-import { InjectedMeta, LibraryFrontmatter } from '@/types/frontmatters';
+import { InjectedMeta, SnippetFrontmatter } from '@/types/frontmatters';
 
 type SnippetsCardProps = {
-  snippet: LibraryFrontmatter & InjectedMeta;
+  snippet: SnippetFrontmatter & InjectedMeta;
   checkTagged?: (tag: string) => boolean;
 } & React.ComponentPropsWithoutRef<'li'>;
 

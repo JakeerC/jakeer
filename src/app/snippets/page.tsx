@@ -3,10 +3,10 @@ import * as React from 'react';
 import { getAllSnippetsData } from '@/app/snippets/getAllSnippetsData';
 import Snippets from '@/app/snippets/Snippets';
 
-import { LibraryFrontmatter } from '@/types/frontmatters';
+import { SnippetFrontmatter } from '@/types/frontmatters';
 
 export type SnippetsType = {
-  snippets: LibraryFrontmatter[];
+  snippets: SnippetFrontmatter[];
   tags: string[];
 };
 
