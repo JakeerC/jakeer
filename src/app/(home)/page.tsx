@@ -9,12 +9,12 @@ import ButtonLink from '@/components/links/ButtonLink';
 import CustomLink from '@/components/links/CustomLink';
 import UnstyledLink from '@/components/links/UnstyledLink';
 
-import FeaturedPosts from '@/app/featured-posts/FeaturedPosts';
-import { getFeaturedData } from '@/app/featured-posts/getFeaturedData';
+import FeaturedPosts from '@/app/(home)/featured-posts/FeaturedPosts';
+import { getFeaturedData } from '@/app/(home)/featured-posts/getFeaturedData';
 import { domain } from '@/constants/consts';
 
 export default async function IndexPage() {
-  const { featuredPosts, featuredProjects, featuredShorts, introPosts } =
+  const { featuredPosts, featuredProjects, featuredSnippets, introPosts } =
     await getFeaturedData();
 
   return (
@@ -54,7 +54,7 @@ export default async function IndexPage() {
               )}
               data-fade="3"
             >
-              I work primarily on React Ecosystem, and nodejs.
+              I work primarily on React Ecosystem.
             </p>
 
             <div
@@ -138,7 +138,7 @@ export default async function IndexPage() {
         <FeaturedPosts
           featuredPosts={featuredPosts}
           featuredProjects={featuredProjects}
-          featuredShorts={featuredShorts}
+          featuredSnippets={featuredSnippets}
           introPosts={introPosts}
         />
       </main>

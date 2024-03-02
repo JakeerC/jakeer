@@ -7,18 +7,18 @@ import Accent from '@/components/Accent';
 import Tag from '@/components/content/Tag';
 import UnstyledLink from '@/components/links/UnstyledLink';
 
-import { InjectedMeta, LibraryFrontmatter } from '@/types/frontmatters';
+import { InjectedMeta, SnippetFrontmatter } from '@/types/frontmatters';
 
-type ShortsCardProps = {
-  short: LibraryFrontmatter & InjectedMeta;
+type SnippetsCardProps = {
+  snippet: SnippetFrontmatter & InjectedMeta;
   checkTagged?: (tag: string) => boolean;
 } & React.ComponentPropsWithoutRef<'li'>;
 
-export default function ShortsCard({
+export default function SnippetsCard({
   className,
   checkTagged,
-  short,
-}: ShortsCardProps) {
+  snippet,
+}: SnippetsCardProps) {
   return (
     <li
       className={clsx([
@@ -32,16 +32,16 @@ export default function ShortsCard({
       ])}
     >
       <UnstyledLink
-        href={`/shorts/${short.slug}`}
+        href={`/snippets/${snippet.slug}`}
         className="block h-full rounded-md focus:outline-none focus-visible:ring focus-visible:ring-primary-300"
       >
         <div className="p-4">
           <h4 className="font-semibold tracking-tight text-gray-800 dark:text-gray-100">
-            {short.title}
+            {snippet.title}
           </h4>
 
           <div className="mt-2 flex flex-wrap gap-x-1 gap-y-1 text-sm text-black dark:text-gray-100">
-            {short.tags.split(',').map(tag => (
+            {snippet.tags.split(',').map(tag => (
               <Tag
                 tabIndex={-1}
                 className="bg-opacity-80 dark:!bg-opacity-60"
@@ -52,22 +52,24 @@ export default function ShortsCard({
             ))}
           </div>
           <div className="mt-4 flex items-center justify-start gap-3 text-sm font-medium text-gray-600 dark:text-gray-300">
-            {short?.views?.toLocaleString() && (
+            {snippet?.views?.toLocaleString() && (
               <div className="flex items-center gap-1">
                 <HiOutlineEye className="inline-block text-base" />
-                <Accent>{short?.views?.toLocaleString() ?? '–––'} views</Accent>
+                <Accent>
+                  {snippet?.views?.toLocaleString() ?? '–––'} views
+                </Accent>
               </div>
             )}
-            {short?.likes && (
+            {snippet?.likes && (
               <div className="flex items-center gap-1">
                 <GiTechnoHeart className="inline-block text-base" />
-                <Accent>{short?.likes ?? '–––'} likes</Accent>
+                <Accent>{snippet?.likes ?? '–––'} likes</Accent>
               </div>
             )}
           </div>
 
           <p className="mt-4 text-sm text-gray-600 dark:text-gray-300">
-            {short.description}
+            {snippet.description}
           </p>
         </div>
       </UnstyledLink>

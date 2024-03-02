@@ -51,7 +51,7 @@ export const footerLinks: FooterLinks[] = [
   {
     href: '#', //TODO
     text: 'Statistics',
-    tooltip: 'Blog, Projects, and Library Statistics',
+    tooltip: 'Blog, Projects, and Snippet Statistics',
     show: true,
   },
   {

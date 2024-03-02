@@ -8,31 +8,31 @@ import useInjectContentMeta from '@/hooks/useInjectContentMeta';
 import Accent from '@/components/Accent';
 import BlogCard from '@/components/cards/BlogCard';
 import ProjectCard from '@/components/cards/ProjectCard';
-import ShortsCard from '@/components/cards/ShortsCard';
+import SnippetsCard from '@/components/cards/SnippetsCard';
 import ButtonLink from '@/components/links/ButtonLink';
 import Tooltip from '@/components/Tooltip';
 
 import {
   BlogFrontmatter,
-  LibraryFrontmatter,
+  SnippetFrontmatter,
   ProjectFrontmatter,
 } from '@/types/frontmatters';
 
 export default function FeaturedPosts({
   featuredPosts,
   featuredProjects,
-  featuredShorts,
+  featuredSnippets,
   introPosts,
 }: {
   featuredPosts: BlogFrontmatter[];
   featuredProjects: ProjectFrontmatter[];
-  featuredShorts: LibraryFrontmatter[];
+  featuredSnippets: SnippetFrontmatter[];
   introPosts: BlogFrontmatter[];
 }) {
   const populatedPosts = useInjectContentMeta('blog', featuredPosts);
   const populatedIntro = useInjectContentMeta('blog', introPosts);
   const populatedProjects = useInjectContentMeta('projects', featuredProjects);
-  const populatedShorts = useInjectContentMeta('library', featuredShorts);
+  const populatedSnippets = useInjectContentMeta('library', featuredSnippets);
 
   return (
     <>
@@ -182,29 +182,29 @@ export default function FeaturedPosts({
           >
             <article className="layout" data-fade="0">
               <h2 className="text-2xl md:text-4xl" id="library">
-                <Accent>Shorts</Accent>
+                <Accent>Snippets</Accent>
               </h2>
               <p className="mt-2 text-gray-600 dark:text-gray-300">
-                Short article that's not long enough to be a blog post, usually
-                comes from my personal notes.
+                Snippet article that's not long enough to be a blog post,
+                usually comes from my personal notes.
               </p>
               <ul className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
-                {populatedShorts.map((short, i) => (
-                  <ShortsCard
-                    key={short.slug}
-                    short={short}
+                {populatedSnippets.map((snippet, i) => (
+                  <SnippetsCard
+                    key={snippet.slug}
+                    snippet={snippet}
                     className={clsx(i > 2 && 'hidden sm:block')}
                   />
                 ))}
               </ul>
               <ButtonLink
                 className="mt-4"
-                href="/shorts"
+                href="/snippets"
                 onClick={() =>
-                  trackEvent('Home: See more shorts', { type: 'navigate' })
+                  trackEvent('Home: See more snippets', { type: 'navigate' })
                 }
               >
-                See more shorts
+                See more snippets
               </ButtonLink>
             </article>
           </section>
