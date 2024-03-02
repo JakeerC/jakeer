@@ -86,8 +86,7 @@ export default function AboutPage() {
             <article className="prose mt-4 dark:prose-invert">
               <p>
                 Do contact me if you need my opinion about web development,
-                especially frontend works. I’ll be happy to help! (find my email
-                in the footer)
+                especially frontend works. I’ll be happy to help!
               </p>
             </article>
           </div>
