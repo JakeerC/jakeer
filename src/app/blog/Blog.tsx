@@ -8,6 +8,7 @@ import { getTags, sortDateFn } from '@/lib/mdx.client';
 import useInjectContentMeta from '@/hooks/useInjectContentMeta';
 
 import Accent from '@/components/Accent';
+import Button from '@/components/buttons/Button';
 import BlogCard from '@/components/cards/BlogCard';
 import SubscribeCard from '@/components/cards/SubscribeCard';
 import ContentPlaceholder from '@/components/content/ContentPlaceholder';
@@ -18,7 +19,6 @@ import SortListbox, { SortOption } from '@/components/SortListbox';
 import { BlogType } from '@/app/blog/page';
 
 import { BlogFrontmatter, InjectedMeta } from '@/types/frontmatters';
-import Button from '@/components/buttons/Button';
 
 const sortOptions: Array<SortOption> = [
   {
