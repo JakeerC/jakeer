@@ -38,31 +38,32 @@ export async function getFileBySlug(type: ContentType, slug: string) {
         'utf8'
       );
 
-  const { code, frontmatter } = await bundleMDX({
-    source,
-    mdxOptions(options) {
-      options.remarkPlugins = [...(options?.remarkPlugins ?? []), remarkGfm];
-      options.rehypePlugins = [
-        ...(options?.rehypePlugins ?? []),
-        rehypeSlug,
-        () =>
-          rehypePrettyCode({
-            theme: 'andromeeda',
-            // theme: 'css-variables', // TODO
-          }),
-        [
-          rehypeAutolinkHeadings,
-          {
-            properties: {
-              className: ['hash-anchor'],
+  const { code, frontmatter }: { code: string; frontmatter: any } =
+    await bundleMDX({
+      source,
+      mdxOptions(options) {
+        options.remarkPlugins = [...(options?.remarkPlugins ?? []), remarkGfm];
+        options.rehypePlugins = [
+          ...(options?.rehypePlugins ?? []),
+          rehypeSlug,
+          () =>
+            rehypePrettyCode({
+              theme: 'andromeeda',
+              // theme: 'css-variables', // TODO
+            }),
+          [
+            rehypeAutolinkHeadings,
+            {
+              properties: {
+                className: ['hash-anchor'],
+              },
             },
-          },
-        ],
-      ];
+          ],
+        ];
 
-      return options;
-    },
-  });
+        return options;
+      },
+    });
 
   return {
     code,

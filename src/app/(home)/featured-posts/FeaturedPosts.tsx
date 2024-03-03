@@ -14,8 +14,8 @@ import Tooltip from '@/components/Tooltip';
 
 import {
   BlogFrontmatter,
-  SnippetFrontmatter,
   ProjectFrontmatter,
+  SnippetFrontmatter,
 } from '@/types/frontmatters';
 
 export default function FeaturedPosts({
