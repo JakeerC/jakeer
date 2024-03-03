@@ -21,7 +21,7 @@ export default function GithubCard({ repo, className }: GithubCardProps) {
   });
 
   return !error && repository ? (
-    <div className='not-prose'>
+    <div className="not-prose">
       <UnstyledLink
         href={repository.html_url}
         className={clsx(
@@ -34,8 +34,8 @@ export default function GithubCard({ repo, className }: GithubCardProps) {
           className
         )}
       >
-        <div className='flex items-center gap-2 text-sm md:text-base'>
-          <SiGithub className='ml-0.5 shrink-0 text-[1.2em]' />
+        <div className="flex items-center gap-2 text-sm md:text-base">
+          <SiGithub className="ml-0.5 shrink-0 text-[1.2em]" />
           <Accent className={clsx('truncate overflow-ellipsis font-semibold')}>
             {repository.full_name}
           </Accent>
@@ -43,13 +43,13 @@ export default function GithubCard({ repo, className }: GithubCardProps) {
         <p className={clsx('mt-2 text-sm text-gray-700 dark:text-gray-200')}>
           {repository.description}
         </p>
-        <div className='mt-2 flex gap-3'>
-          <div className='flex items-center gap-1 text-xs'>
-            <HiOutlineStar className='shrink-0 text-[1.2em]' />
+        <div className="mt-2 flex gap-3">
+          <div className="flex items-center gap-1 text-xs">
+            <HiOutlineStar className="shrink-0 text-[1.2em]" />
             <span>{repository.stargazers_count.toLocaleString()}</span>
           </div>
-          <div className='flex items-center gap-1 text-xs'>
-            <BiGitRepoForked className='shrink-0 text-[1.2em]' />
+          <div className="flex items-center gap-1 text-xs">
+            <BiGitRepoForked className="shrink-0 text-[1.2em]" />
             <span>{repository.forks.toLocaleString()}</span>
           </div>
         </div>
