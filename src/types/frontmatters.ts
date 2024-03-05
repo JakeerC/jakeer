@@ -14,16 +14,11 @@ export type BlogFrontmatter = {
   repost?: string;
 };
 
-export type ContentType =
-  | 'blog'
-  | 'library'
-  | 'projects'
-  | 'snippets'
-  | 'snippets';
+export type ContentType = 'blog' | 'snippets' | 'projects';
 
 export type PickFrontmatter<T extends ContentType> = T extends 'blog'
   ? BlogFrontmatter
-  : T extends 'library'
+  : T extends 'snippets'
     ? SnippetFrontmatter
     : ProjectFrontmatter;
 
