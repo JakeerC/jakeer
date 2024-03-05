@@ -32,7 +32,7 @@ export default function FeaturedPosts({
   const populatedPosts = useInjectContentMeta('blog', featuredPosts);
   const populatedIntro = useInjectContentMeta('blog', introPosts);
   const populatedProjects = useInjectContentMeta('projects', featuredProjects);
-  const populatedSnippets = useInjectContentMeta('library', featuredSnippets);
+  const populatedSnippets = useInjectContentMeta('snippets', featuredSnippets);
 
   return (
     <>
@@ -181,7 +181,7 @@ export default function FeaturedPosts({
             className={clsx('py-20', inView && 'fade-in-start')}
           >
             <article className="layout" data-fade="0">
-              <h2 className="text-2xl md:text-4xl" id="library">
+              <h2 className="text-2xl md:text-4xl" id="snippets">
                 <Accent>Snippets</Accent>
               </h2>
               <p className="mt-2 text-gray-600 dark:text-gray-300">

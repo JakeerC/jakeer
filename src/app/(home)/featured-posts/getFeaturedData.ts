@@ -6,7 +6,7 @@ export async function getFeaturedData() {
 
   const blogs = await getAllFilesFrontmatter('blog');
   const projects = await getAllFilesFrontmatter('projects');
-  const snippets = await getAllFilesFrontmatter('library');
+  const snippets = await getAllFilesFrontmatter('snippets');
 
   const featuredPosts = getFeatured(blogs, [
     '2023-retrospective',

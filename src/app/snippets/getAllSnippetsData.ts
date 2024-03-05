@@ -2,7 +2,7 @@ import { getTags, sortByTitle } from '@/lib/mdx.client';
 import { getAllFilesFrontmatter } from '@/lib/mdx.server';
 
 export async function getAllSnippetsData() {
-  const files = await getAllFilesFrontmatter('library');
+  const files = await getAllFilesFrontmatter('snippets');
   const snippets = sortByTitle(files);
 
   // Accumulate tags and remove duplicate

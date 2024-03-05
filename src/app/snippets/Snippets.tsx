@@ -30,7 +30,7 @@ const sortOptions: Array<SortOption> = [
 export default function Snippets({ snippets, tags }: SnippetsType) {
   const [sortOrder, setSortOrder] = React.useState<SortOption>(sortOptions[0]);
 
-  const populatedPosts = useInjectContentMeta('library', snippets);
+  const populatedPosts = useInjectContentMeta('snippets', snippets);
 
   //#region  //*=========== Search ===========
   const [search, setSearch] = React.useState<string>('');
@@ -80,7 +80,7 @@ export default function Snippets({ snippets, tags }: SnippetsType) {
     }
   };
 
-  /** Currently available tags based on filtered library */
+  /** Currently available tags based on filtered snippets */
   const filteredTags = getTags(filtered);
 
   /** Show accent if not disabled and selected  */
