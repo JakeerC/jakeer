@@ -3,10 +3,10 @@ import { ParsedUrlQuery } from 'querystring';
 import { getFileBySlug, getFileSlugArray } from '@/lib/mdx.server';
 
 export const generateStaticParams = async () => {
-  const posts = await getFileSlugArray('projects');
+  const projects = await getFileSlugArray('projects');
 
   return {
-    paths: posts.map(slug => ({
+    paths: projects.map(slug => ({
       params: {
         slug: slug,
       },
