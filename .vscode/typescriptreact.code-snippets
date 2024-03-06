@@ -167,6 +167,17 @@
     "prefix": "iml",
     "body": ["import Link from 'next/link';"],
   },
+  "Static SEO": {
+    "prefix": "sseo",
+    "body": [
+      "import { Metadata } from 'next';",
+      "",
+      " export const metadata: Metadata = {",
+      "   title: $1,",
+      "   description: $2,",
+      "};",
+    ],
+  },
   //#endregion  //*======== Next.js ===========
 
   //#region  //*=========== Snippet Wrap ===========

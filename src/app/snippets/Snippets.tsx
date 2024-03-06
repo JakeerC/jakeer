@@ -97,7 +97,7 @@ export default function Snippets({ snippets, tags }: SnippetsType) {
       <section className={clsx('fade-in-start')}>
         <div className="layout py-12">
           <h1 className="text-3xl md:text-5xl" data-fade="0">
-            <Accent>Shorts</Accent>
+            <Accent>Snippets</Accent>
           </h1>
           <p className="mt-2 text-gray-600 dark:text-gray-300" data-fade="1">
             Short article that's not long enough to be a blog post, usually

@@ -181,7 +181,11 @@ export default function Project({ code, frontmatter }: ProjectType) {
             </section>
 
             <figure className="mt-12">
-              <Discussions />
+              <Discussions
+                category="Projects"
+                categoryId="DIC_kwDOLXQEVc4CdxQl"
+                key={frontmatter.slug}
+              />
             </figure>
 
             <div className="mt-8 flex flex-col items-start gap-4 md:flex-row-reverse md:justify-between">

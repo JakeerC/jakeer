@@ -1,11 +1,36 @@
+'use client';
 import Giscus, { Repo, Theme } from '@giscus/react';
 import { useTheme } from 'next-themes';
 
-import { giscusCategoryId } from '@/constants/consts';
 import { commentFlag } from '@/constants/env';
-import { giscusCategory } from '@/constants/urls';
 
-export default function Comment() {
+type blogDiscussions = {
+  category: 'Blog';
+  categoryId: 'DIC_kwDOLXQEVc4CdxQe';
+};
+type snippetsDiscussions = {
+  category: 'Snippets';
+  categoryId: 'DIC_kwDOLXQEVc4CdxQs';
+};
+type projectsDiscussions = {
+  category: 'Projects';
+  categoryId: 'DIC_kwDOLXQEVc4CdxQl';
+};
+type guestbookDiscussions = {
+  category: 'Guestbook';
+  categoryId: 'DIC_kwDOLXQEVc4CdxQR';
+};
+
+type DiscussionsPropsType =
+  | blogDiscussions
+  | snippetsDiscussions
+  | projectsDiscussions
+  | guestbookDiscussions;
+
+export default function Discussions({
+  category,
+  categoryId,
+}: DiscussionsPropsType) {
   const { theme } = useTheme();
 
   return commentFlag ? (
@@ -13,8 +38,8 @@ export default function Comment() {
       key={theme}
       repo={(process.env.NEXT_PUBLIC_GISCUS_REPO as Repo) || ''}
       repoId={process.env.NEXT_PUBLIC_GISCUS_REPO_ID || ''}
-      category={giscusCategory}
-      categoryId={giscusCategoryId}
+      category={category}
+      categoryId={categoryId}
       mapping="pathname"
       reactionsEnabled="1"
       emitMetadata="0"
