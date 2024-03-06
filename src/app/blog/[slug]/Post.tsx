@@ -238,7 +238,11 @@ export default function Post({
             {/* <CarbonAds className="mt-8" /> */}
 
             <figure className="mt-12">
-              <Discussions key={frontmatter.slug} />
+              <Discussions
+                category="Blog"
+                categoryId="DIC_kwDOLXQEVc4CdxQe"
+                key={frontmatter.slug}
+              />
             </figure>
 
             {populatedRecommendations.length > 0 && (

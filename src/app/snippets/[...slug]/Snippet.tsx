@@ -121,16 +121,20 @@ export default function SingleSnippetPage({ code, frontmatter }: SnippetType) {
               </aside>
             </section>
             <figure className="mt-12">
-              <Discussions />
+              <Discussions
+                category="Snippets"
+                categoryId="DIC_kwDOLXQEVc4CdxQs"
+                key={frontmatter.slug}
+              />
             </figure>
 
             <div className="mt-8 flex flex-col items-start gap-4 md:flex-row-reverse md:justify-between">
               <CustomLink
-                href={`https://github.com/jakeerc/jakeer/blob/main/src/contents/shorts/${frontmatter.slug}.mdx`}
+                href={`https://github.com/jakeerc/jakeer/blob/main/src/contents/snippets/${frontmatter.slug}.mdx`}
               >
                 Edit this on GitHub
               </CustomLink>
-              <CustomLink href="/shorts">← Back to shorts</CustomLink>
+              <CustomLink href="/snippets">← Back to Snippets</CustomLink>
             </div>
           </div>
         </section>
