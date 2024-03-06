@@ -61,9 +61,9 @@ export default function Header({ large = false }: HeaderProps) {
       </a>
 
       {/* Gradient List */}
-      <div className="h-2 bg-gradient-to-tr from-primary-200 via-primary-300 to-primary-400" />
+      {/* <div className="h-2 bg-gradient-to-tr from-primary-200 via-primary-300 to-primary-400" /> */}
 
-      <div className="bg-white transition-colors dark:bg-dark dark:text-white">
+      <div className="bg-white/30 transition-colors dark:bg-dark/30 dark:text-white backdrop-blur-sm">
         <nav
           className={clsx(
             'layout flex items-center justify-between py-4',
