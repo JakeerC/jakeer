@@ -10,14 +10,16 @@ import useCopyToClipboard from '@/hooks/useCopyToClipboard';
 export function Pre({
   className,
   children,
+  'data-language': language,
   ...rest
-}: React.ComponentPropsWithRef<'pre'>) {
+}: React.ComponentPropsWithRef<'pre'> & { 'data-language': string }) {
   const preRef = React.useRef<HTMLPreElement>(null);
 
   const [isCopied, setIsCopied] = React.useState<boolean>(false);
   const [shouldWrap, setShouldWrap] = React.useState(false);
 
   const [copy] = useCopyToClipboard();
+  console.log({ rest });
 
   return (
     // word-break: break-word;
@@ -27,12 +29,21 @@ export function Pre({
       ref={preRef}
       className={cn([
         'group relative',
+        'pt-12',
+        'rounded-sm',
         // 'whitespace-pre-wrap break-words',
         className,
       ])}
       data-word-wrap={shouldWrap}
     >
       {children}
+      {language && (
+        <div className="absolute top-0 left-6 rounded-b-md border border-t-0 border-gray-600 px-3 py-1">
+          <span className="select-none bg-gradient-to-tr from-primary-300 to-primary-400 bg-clip-text font-medium text-transparent">
+            {language}
+          </span>
+        </div>
+      )}
       <div
         className={clsx(
           'opacity-0 transition focus-within:opacity-100 group-hover:opacity-100',

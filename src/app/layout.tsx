@@ -1,8 +1,10 @@
 /* Bismillah ir rahman ir rahim */
+import clsx from 'clsx';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 
 import './globals.css';
+import './mdx.css';
 
 import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
@@ -23,7 +25,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={clsx(inter.className, 'bg-white dark:bg-dark')}>
         <Providers>
           <Header />
           <div id="skip-nav">{children}</div>
