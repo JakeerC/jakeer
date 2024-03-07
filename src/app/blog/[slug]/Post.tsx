@@ -37,7 +37,7 @@ import ShareTweetButton from '@/components/links/ShareTweetButton';
 import UnstyledLink from '@/components/links/UnstyledLink';
 import CloudinaryImg from '@/components/media/CloudinaryImg';
 
-import { domain } from '@/constants/consts';
+import { domain } from '@/constants/urls';
 
 // import Seo from '@/components/Seo';
 import { BlogFrontmatter, BlogType } from '@/types/frontmatters';

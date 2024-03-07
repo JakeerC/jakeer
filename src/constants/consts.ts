@@ -8,5 +8,4 @@ export const navLinks = [
   { href: '/about', label: 'About' },
 ];
 
-export const domain = 'https://jakeer.vercel.app';
 export const emailId = 'jakeerchilakala@gmail.com';
