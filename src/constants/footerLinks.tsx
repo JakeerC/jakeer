@@ -1,4 +1,4 @@
-import { domain } from '@/constants/consts';
+import { domain } from '@/constants/urls';
 
 type FooterLinks = {
   href: string;

@@ -3,7 +3,7 @@ import fs from 'fs';
 
 import { getAllFilesFrontmatter } from '@/lib/mdx.server';
 
-import { domain } from '@/constants/consts';
+import { domain } from '@/constants/urls';
 
 export async function getRssXml() {
   const frontmatters = await getAllFilesFrontmatter('blog');

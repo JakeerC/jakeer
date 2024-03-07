@@ -11,7 +11,7 @@ import UnstyledLink from '@/components/links/UnstyledLink';
 
 import FeaturedPosts from '@/app/(home)/featured-posts/FeaturedPosts';
 import { getFeaturedData } from '@/app/(home)/featured-posts/getFeaturedData';
-import { domain } from '@/constants/consts';
+import { domain } from '@/constants/urls';
 
 export default async function IndexPage() {
   const { featuredPosts, featuredProjects, featuredSnippets, introPosts } =

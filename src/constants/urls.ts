@@ -13,3 +13,4 @@ export const defaultOGLogo = `${ogBaseURL}/images/logo.jpg`;
 //#endregion  //*======== open graph setup ===========
 
 export const subStackURL = 'https://jakeer.substack.com/';
+export const domain = 'https://jakeer.vercel.app';
