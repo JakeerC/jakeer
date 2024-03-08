@@ -1,8 +1,7 @@
-import { buildUrl } from 'cloudinary-build-url';
 import clsx from 'clsx';
 import Image from 'next/image';
 
-import { cloudinaryCloudName } from '@/constants/consts';
+import { generateCloudinaryImgURL } from '@/lib/helper';
 
 type CloudinaryImgType = {
   publicId: string;
@@ -34,32 +33,7 @@ export default function CloudinaryImg({
   aspect,
   ...rest
 }: CloudinaryImgType) {
-  // const urlBlurred = buildUrl(publicId, {
-  //   cloud: {
-  //     cloudName: cloudinaryCloudName,
-  //   },
-  //   transformations: {
-  //     effect: {
-  //       name: 'blur:1000',
-  //     },
-  //     quality: 1,
-  //     rawTransformation: aspect
-  //       ? `c_fill,ar_${aspect.width}:${aspect.height},w_${width}`
-  //       : undefined,
-  //   },
-  // });
-
-  const url = buildUrl(publicId, {
-    cloud: {
-      cloudName: cloudinaryCloudName,
-    },
-    transformations: {
-      rawTransformation: aspect
-        ? `c_fill,ar_${aspect.width}:${aspect.height},w_${width}`
-        : undefined,
-    },
-  });
-
+  const url = generateCloudinaryImgURL({ publicId, aspect, width });
   const aspectRatio = aspect ? aspect.width / aspect.height : undefined;
 
   const RESIZE_MAX_WIDTH = 1000;
