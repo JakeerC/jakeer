@@ -19,7 +19,6 @@ export function Pre({
   const [shouldWrap, setShouldWrap] = React.useState(false);
 
   const [copy] = useCopyToClipboard();
-  console.log({ rest });
 
   return (
     // word-break: break-word;

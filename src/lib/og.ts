@@ -1,3 +1,8 @@
+// ! currently not used
+// TODO:
+// * refactor og generator repo
+// * replace img url in generateMetadata
+
 import { defaultOGLogo, ogBaseURL } from '@/constants/urls';
 
 type OpenGraphType = {
