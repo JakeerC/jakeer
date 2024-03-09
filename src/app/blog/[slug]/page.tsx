@@ -9,7 +9,7 @@ export type SingleBlogPageProps = {
   recommendations: BlogFrontmatter[];
 } & BlogType;
 
-import { Metadata, ResolvingMetadata } from 'next';
+import { Metadata } from 'next';
 
 type Props = {
   params: { slug: string };
@@ -17,8 +17,8 @@ type Props = {
 };
 
 export async function generateMetadata(
-  { params }: Props,
-  parent: ResolvingMetadata
+  { params }: Props
+  // parent: ResolvingMetadata
 ): Promise<Metadata> {
   const { frontmatter } = await getPostData({ params });
 
@@ -29,14 +29,15 @@ export async function generateMetadata(
     aspect: { height: 2, width: 5 },
   });
   // optionally access and extend (rather than replace) parent metadata
-  const previousImages = (await parent).openGraph?.images || [];
+  // const previousImages = (await parent).openGraph?.images || [];
 
   return {
     title,
     description,
     keywords,
     openGraph: {
-      images: [imgURL, ...previousImages],
+      tags: keywords,
+      images: [imgURL],
     },
     category: 'blog',
   };
