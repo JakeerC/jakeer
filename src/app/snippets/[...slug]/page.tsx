@@ -32,7 +32,8 @@ export async function generateMetadata(
     description,
     keywords,
     openGraph: {
-      images: [imgURL, ...previousImages],
+      tags: keywords,
+      images: [...previousImages, imgURL],
     },
     category: 'blog',
   };
