@@ -14,7 +14,6 @@ import CustomLink from '@/components/links/CustomLink';
 import ShareTweetButton from '@/components/links/ShareTweetButton';
 import TOCLink from '@/components/links/TOCLink';
 import UnstyledLink from '@/components/links/UnstyledLink';
-import CloudinaryImg from '@/components/media/CloudinaryImg';
 import NextImage from '@/components/media/NextImage';
 import TechIcons, { TechListType } from '@/components/TechIcons';
 import TechStack from '@/components/TechStack';
@@ -124,12 +123,7 @@ export default function Components() {
         src="/images/new-tab.png"
         className="bg-green-600"
       />
-      <NextImage
-        alt="corner-arrow"
-        height={400}
-        width={400}
-        src="/images/blossoms.avif"
-      />
+
       <TechStack />
       <TechIcons techs={['react', 'nextjs'] as Array<TechListType>} />
       <Tooltip key="keyId" tipChildren={<p> test tooltip</p>}>
@@ -139,13 +133,6 @@ export default function Components() {
         </>
       </Tooltip>
 
-      <CloudinaryImg
-        alt="test"
-        height={400}
-        width={400}
-        publicId="banner/geometry"
-        aspect={{ width: 16, height: 9 }}
-      />
       <hr />
     </div>
   );
