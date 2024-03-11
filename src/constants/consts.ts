@@ -9,3 +9,6 @@ export const navLinks = [
 ];
 
 export const emailId = 'jakeerchilakala@gmail.com';
+
+export const personalProfilePicture =
+  'https://res.cloudinary.com/jakeer-cloudinary/image/upload/q_auto,f_auto,w_2560/personal/logo_round';
