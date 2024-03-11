@@ -2,6 +2,7 @@
 import clsx from 'clsx';
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
+import Script from 'next/script';
 
 import './globals.css';
 import './mdx.css';
@@ -52,6 +53,11 @@ export default function RootLayout({
           <div id="skip-nav">{children}</div>
           <Footer />
         </Providers>
+        <Script
+          defer={true}
+          src="https://analytics.us.umami.is/script.js"
+          data-website-id={process.env.NEXT_PUBLIC_UMAMI_WEBSITE_ID || ''}
+        />
       </body>
     </html>
   );
