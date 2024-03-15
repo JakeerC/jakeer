@@ -167,6 +167,32 @@
     "prefix": "iml",
     "body": ["import Link from 'next/link';"],
   },
+  "Import Next Link": {
+    "prefix": "iml",
+    "body": ["import Link from 'next/link';"],
+  },
+  "og Open graph": {
+    "prefix": "og",
+    "body": [
+      "openGraph: {",
+      " type: '$1',",
+      " url: `${domain}/$2`,",
+      "title: '$3',",
+      "description: $4,",
+      " siteName: 'Jakeer Personal Site',",
+      " images: [",
+      "   {",
+      "     url: og({",
+      "       siteName: '$3',",
+      "       ogType: '$5',",
+      "       description:",
+      "         '$6',",
+      "     }),",
+      "   },",
+      " ],",
+      "}",
+    ],
+  },
   "Static SEO": {
     "prefix": "sseo",
     "body": [
