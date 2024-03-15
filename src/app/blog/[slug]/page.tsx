@@ -11,6 +11,8 @@ export type SingleBlogPageProps = {
 
 import { Metadata } from 'next';
 
+import { og } from '@/lib/og';
+
 type Props = {
   params: { slug: string };
   searchParams?: { [key: string]: string | string[] | undefined };
@@ -24,12 +26,10 @@ export async function generateMetadata(
 
   const { title, description, banner, tags } = frontmatter;
   const keywords = tags?.split(',');
-  const imgURL = generateCloudinaryImgURL({
+  const bannerURL = generateCloudinaryImgURL({
     publicId: `banner/${banner}`,
     aspect: { height: 2, width: 5 },
   });
-  // optionally access and extend (rather than replace) parent metadata
-  // const previousImages = (await parent).openGraph?.images || [];
 
   return {
     title,
@@ -37,7 +37,9 @@ export async function generateMetadata(
     keywords,
     openGraph: {
       tags: keywords,
-      images: [imgURL],
+      images: [
+        og({ articleType: 'blog', templateTitle: title, banner: bannerURL }),
+      ],
     },
     category: 'blog',
   };
