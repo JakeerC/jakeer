@@ -28,31 +28,31 @@ export const footerLinks: FooterLinks[] = [
     href: '#', //TODO
     text: 'Docs',
     tooltip: 'Personal documentation about my best practices on development',
-    show: true,
+    show: false,
   },
   {
     href: '#', //TODO
     text: 'Book Notes',
     tooltip: 'Note collection of books that I read',
-    show: true,
+    show: false,
   },
   {
     href: '#', //TODO
     text: 'Starter Templates',
     tooltip: 'Starter that I build and use throughout my projects',
-    show: true,
+    show: false,
   },
   {
     href: '#', //TODO
     text: 'Analytics',
     tooltip: `${domain} views and visitors analytics`,
-    show: true,
+    show: false,
   },
   {
     href: '#', //TODO
     text: 'Statistics',
     tooltip: 'Blog, Projects, and Snippet Statistics',
-    show: true,
+    show: false,
   },
   {
     href: '/guestbook',
@@ -65,7 +65,7 @@ export const footerLinks: FooterLinks[] = [
     href: '/subscribe',
     text: 'Subscribe',
     tooltip: 'Get an email whenever I post, no spam',
-    show: true,
+    show: false,
   },
   {
     href: `${domain}/rss.xml`,

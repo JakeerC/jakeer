@@ -1,8 +1,37 @@
 import clsx from 'clsx';
+import { Metadata } from 'next';
+
+import { og } from '@/lib/og';
 
 import Accent from '@/components/Accent';
 import ButtonLink from '@/components/links/ButtonLink';
 import TechStack from '@/components/TechStack';
+
+import { aboutDesc } from '@/constants/consts';
+import { domain } from '@/constants/urls';
+
+export const metadata: Metadata = {
+  title: 'About',
+  description: aboutDesc,
+  applicationName: 'Jakeer Personal Site',
+  openGraph: {
+    type: 'website',
+    url: `${domain}/about`,
+    title: 'About Jakeer',
+    description: aboutDesc,
+    siteName: 'Jakeer Personal Site',
+    images: [
+      {
+        url: og({
+          siteName: 'About Jakeer',
+          ogType: 'gradient',
+          description:
+            'Jakeer is a passionate software developer who likes to learn and develop',
+        }),
+      },
+    ],
+  },
+};
 
 export default function AboutPage() {
   return (

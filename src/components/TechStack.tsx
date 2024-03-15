@@ -41,9 +41,7 @@ const stacks = [
     icon: SiNextdotjs,
     tooltip: (
       <>
-        <CustomLink href="https://nextjs.org">Next.js</CustomLink>, currently my
-        go-to framework because of the static generation, dynamic paths, and
-        built-in API. <em>ps: I like pages folder better than the new one.</em>
+        <CustomLink href="https://nextjs.org">Next.js</CustomLink>
       </>
     ),
   },
