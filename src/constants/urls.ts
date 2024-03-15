@@ -6,9 +6,9 @@
  * * ogBaseURL = "https://oggenerator.vercel.app/"
  */
 
-export const ogBaseURL = 'https://oggenerator.vercel.app/';
+export const ogBaseURL = 'https://oggenerator.vercel.app';
 
-export const defaultOGLogo = `${ogBaseURL}/images/logo.jpg`;
+export const defaultOGLogo = `${ogBaseURL}/images/logo.png`;
 
 //#endregion  //*======== open graph setup ===========
 
