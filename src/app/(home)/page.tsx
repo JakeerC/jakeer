@@ -1,7 +1,10 @@
 import clsx from 'clsx';
+import { Metadata } from 'next';
 import { IoArrowDownOutline } from 'react-icons/io5';
 import { IoNewspaperSharp } from 'react-icons/io5';
 import { SiGithub, SiX } from 'react-icons/si';
+
+import { og } from '@/lib/og';
 
 import Accent from '@/components/Accent';
 import CJ from '@/components/CJ';
@@ -11,8 +14,29 @@ import UnstyledLink from '@/components/links/UnstyledLink';
 
 import FeaturedPosts from '@/app/(home)/featured-posts/FeaturedPosts';
 import { getFeaturedData } from '@/app/(home)/featured-posts/getFeaturedData';
+import { homeDesc } from '@/constants/consts';
 import { domain } from '@/constants/urls';
 
+export const metadata: Metadata = {
+  title: 'Jakeer',
+  description: homeDesc,
+  openGraph: {
+    type: 'website',
+    url: `${domain}`,
+    title: 'Jakeer home page',
+    description: homeDesc,
+    siteName: 'Jakeer Personal Site',
+    images: [
+      {
+        url: og({
+          siteName: 'Jakeer home page',
+          ogType: 'gradient',
+          description: '',
+        }),
+      },
+    ],
+  },
+};
 export default async function IndexPage() {
   const { featuredPosts, featuredProjects, featuredSnippets, introPosts } =
     await getFeaturedData();
