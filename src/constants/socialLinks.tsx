@@ -1,5 +1,5 @@
 import { IconType } from 'react-icons';
-import { SiGithub, SiLinkedin, SiTwitter } from 'react-icons/si';
+import { SiGithub, SiLinkedin, SiX } from 'react-icons/si';
 
 import Accent from '@/components/Accent';
 
@@ -35,7 +35,7 @@ export const socialLinks: SocialLink[] = [
   },
   {
     href: 'https://clarence.link/twt',
-    icon: SiTwitter,
+    icon: SiX,
     id: 'Twitter',
     text: (
       <>
