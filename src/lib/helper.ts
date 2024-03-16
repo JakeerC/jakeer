@@ -9,6 +9,7 @@ export type GenerateURLParamsType = {
     width: number;
     height: number;
   };
+  quality?: number;
 };
 
 /**
@@ -24,8 +25,8 @@ export function generateBlurredCloudinaryImgURL({
     height: 630,
   },
   width = 256,
-  quality = 10,
-}: GenerateURLParamsType & { quality?: number }) {
+  quality = 1,
+}: GenerateURLParamsType) {
   return buildUrl(publicId, {
     cloud: {
       cloudName: cloudinaryCloudName,
@@ -54,12 +55,14 @@ export function generateCloudinaryImgURL({
     height: 630,
   },
   width = 256,
+  quality = 100,
 }: GenerateURLParamsType) {
   return buildUrl(publicId, {
     cloud: {
       cloudName: cloudinaryCloudName,
     },
     transformations: {
+      quality: quality,
       rawTransformation: aspect
         ? `c_fill,ar_${aspect.width}:${aspect.height},w_${width}`
         : undefined,

@@ -1,6 +1,7 @@
 import { Metadata, ResolvingMetadata } from 'next';
 
 import { generateCloudinaryImgURL } from '@/lib/helper';
+import { og } from '@/lib/og';
 
 import { getProjectData } from '@/app/projects/[slug]/helper';
 import Project from '@/app/projects/[slug]/Project';
@@ -20,12 +21,14 @@ export async function generateMetadata(
 
   const { title, description, banner, tags } = frontmatter;
   const keywords = tags?.split(',');
-  const imgURL = generateCloudinaryImgURL({
-    publicId: `banner/${banner}`,
-    aspect: { height: 2, width: 5 },
-  });
+
   // optionally access and extend (rather than replace) parent metadata
   const previousImages = (await parent).openGraph?.images || [];
+  const bannerURL = generateCloudinaryImgURL({
+    publicId: `banner/${banner}`,
+    aspect: { height: 2, width: 5 },
+    quality: 10,
+  });
 
   return {
     title,
@@ -33,9 +36,17 @@ export async function generateMetadata(
     keywords,
     openGraph: {
       tags: keywords,
-      images: [...previousImages, imgURL],
+      images: [
+        ...previousImages,
+        og({
+          ogType: 'article',
+          articleType: 'projects',
+          templateTitle: title,
+          banner: bannerURL,
+        }),
+      ],
     },
-    category: 'blog',
+    category: 'article',
   };
 }
 

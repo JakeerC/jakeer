@@ -1,14 +1,36 @@
 import { Metadata } from 'next';
 import * as React from 'react';
 
+import { og } from '@/lib/og';
+
 import Accent from '@/components/Accent';
 import Discussions from '@/components/Discussions';
 import CustomLink from '@/components/links/CustomLink';
 
+import { domain } from '@/constants/urls';
+
 export const metadata: Metadata = {
-  title: 'Jakeer | Guestbook',
+  title: 'Guestbook',
   description:
     'Leave whatever you like to say—message, appreciation, suggestions.',
+  openGraph: {
+    type: 'website',
+    url: `${domain}/guestbook`,
+    title: 'Jakeer Guestbook',
+    description:
+      'Leave whatever you like to say—message, appreciation, suggestions.',
+    siteName: 'Jakeer Personal Site',
+    images: [
+      {
+        url: og({
+          siteName: 'Jakeer Guestbook',
+          ogType: 'gradient',
+          description:
+            'Leave whatever you like to say—message, appreciation, suggestions.',
+        }),
+      },
+    ],
+  },
 };
 export default function GuestbookPage() {
   return (
