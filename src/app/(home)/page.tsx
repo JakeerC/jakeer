@@ -23,13 +23,13 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: `${domain}`,
-    title: 'Jakeer home page',
+    title: 'Jakeer',
     description: homeDesc,
     siteName: 'Jakeer Personal Site',
     images: [
       {
         url: og({
-          siteName: 'Jakeer home page',
+          siteName: 'Jakeer',
           ogType: 'gradient',
           description: '',
         }),
@@ -37,6 +37,7 @@ export const metadata: Metadata = {
     ],
   },
 };
+
 export default async function IndexPage() {
   const { featuredPosts, featuredProjects, featuredSnippets, introPosts } =
     await getFeaturedData();

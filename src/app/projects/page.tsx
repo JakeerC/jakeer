@@ -1,7 +1,10 @@
 import { Metadata } from 'next';
 
+import { og } from '@/lib/og';
+
 import { getAllProjectsData } from '@/app/projects/getAllProjectsData';
 import Projects from '@/app/projects/Projects';
+import { projectsDesc } from '@/constants/consts';
 import { domain } from '@/constants/urls';
 
 import { ProjectFrontmatter } from '@/types/frontmatters';
@@ -10,8 +13,24 @@ export type ProjectsType = { projects: ProjectFrontmatter[] };
 
 export const metadata: Metadata = {
   title: 'Jakeer | Projects',
-  description: `Showcase of projects which i built and contributed to.`,
+  description: projectsDesc,
   metadataBase: new URL('/projects', domain),
+  openGraph: {
+    type: 'website',
+    url: `${domain}/projects`,
+    title: 'Jakeer',
+    description: projectsDesc,
+    siteName: 'Jakeer Personal Site',
+    images: [
+      {
+        url: og({
+          siteName: 'Jakeer Projects',
+          ogType: 'gradient',
+          description: projectsDesc,
+        }),
+      },
+    ],
+  },
 };
 
 export default async function ProjectsPage() {

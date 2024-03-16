@@ -1,16 +1,35 @@
 import { Metadata } from 'next';
 import * as React from 'react';
 
+import { og } from '@/lib/og';
+
 import { getAllSnippetsData } from '@/app/snippets/getAllSnippetsData';
 import Snippets from '@/app/snippets/Snippets';
+import { snippetsDesc } from '@/constants/consts';
 import { domain } from '@/constants/urls';
 
 import { SnippetFrontmatter } from '@/types/frontmatters';
 
 export const metadata: Metadata = {
-  title: 'Jakeer | Snippets',
-  description: `Short article on code snippets and configurations.`,
+  title: 'Snippets',
+  description: snippetsDesc,
   metadataBase: new URL('/snippets/**', domain),
+  openGraph: {
+    type: 'website',
+    url: `${domain}/projects`,
+    title: 'Jakeer',
+    description: snippetsDesc,
+    siteName: 'Jakeer Personal Site',
+    images: [
+      {
+        url: og({
+          siteName: 'Short Code Snippets and Configurations',
+          ogType: 'gradient',
+          description: snippetsDesc,
+        }),
+      },
+    ],
+  },
 };
 
 export type SnippetsType = {

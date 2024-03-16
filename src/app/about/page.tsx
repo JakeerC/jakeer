@@ -23,10 +23,10 @@ export const metadata: Metadata = {
     images: [
       {
         url: og({
-          siteName: 'About Jakeer',
+          siteName: 'Jakeer',
           ogType: 'gradient',
           description:
-            'Jakeer is a passionate software developer who likes to learn and develop',
+            'Jakeer is a passionate software developer who likes to learn, share, teach and develop',
         }),
       },
     ],

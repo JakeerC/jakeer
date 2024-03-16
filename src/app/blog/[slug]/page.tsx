@@ -29,6 +29,7 @@ export async function generateMetadata(
   const bannerURL = generateCloudinaryImgURL({
     publicId: `banner/${banner}`,
     aspect: { height: 2, width: 5 },
+    quality: 10,
   });
 
   return {
@@ -38,10 +39,15 @@ export async function generateMetadata(
     openGraph: {
       tags: keywords,
       images: [
-        og({ articleType: 'blog', templateTitle: title, banner: bannerURL }),
+        og({
+          ogType: 'article',
+          articleType: 'blog',
+          templateTitle: title,
+          banner: bannerURL,
+        }),
       ],
     },
-    category: 'blog',
+    category: 'article',
   };
 }
 
