@@ -80,7 +80,7 @@
 }
 
 .hash-anchor:after {
-  @apply invisible absolute -right-5 top-1/2 -translate-y-1/2 text-lg text-primary-400 dark:text-primary-300;
+  @apply invisible absolute -left-5 top-1/2 -translate-y-1/2 text-lg text-primary-400 dark:text-primary-300;
   content: '#';
 }
 /* #endregion  /**======== Hash Anchor =========== */

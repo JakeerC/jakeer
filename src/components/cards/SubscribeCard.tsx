@@ -22,7 +22,7 @@ export default function SubscribeCard({
       </h3>
       <p className="mt-2 text-gray-700 dark:text-gray-300">
         {description ??
-          "Don't miss out 😉. Get an email whenever I post, no spam."}
+          "Don't miss out. Get an email whenever I post, no spam."}
       </p>
       <ButtonLink className="mt-2" href={subStackURL}>
         Subscribe Now
