@@ -1,6 +1,8 @@
 import * as React from 'react';
 
-export default function CJ(props) {
+export default function CJ(
+  props: React.JSX.IntrinsicAttributes & React.SVGProps<SVGSVGElement>
+) {
   return (
     <div className={props.className}>
       <svg
