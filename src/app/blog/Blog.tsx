@@ -33,34 +33,6 @@ const sortOptions: Array<SortOption> = [
   },
 ];
 
-import { Metadata } from 'next';
-
-import { og } from '@/lib/og';
-
-import { blogDesc } from '@/constants/consts';
-import { domain } from '@/constants/urls';
-
-export const metadata: Metadata = {
-  title: 'Jakeer | Blog',
-  description: blogDesc,
-  openGraph: {
-    type: 'article',
-    url: `${domain}/blog`,
-    title: "Jakker's blog",
-    description: blogDesc,
-    siteName: 'Jakeer Personal Site',
-    images: [
-      {
-        url: og({
-          siteName: 'Jakeer Personal Site',
-          ogType: 'gradient',
-          description:
-            ' Thoughts and tutorials about front-end development and design.',
-        }),
-      },
-    ],
-  },
-};
 export default function Blog({ posts, tags }: BlogType) {
   const populatedPosts = useInjectContentMeta('blog', posts);
 
