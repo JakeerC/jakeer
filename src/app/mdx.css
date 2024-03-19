@@ -33,6 +33,7 @@
 }
 
 .mdx.prose :where(h1, h2, h3, h4) {
+  @apply text-primary-300/90 dark:text-yellow-300;
   scroll-margin-top: 100px;
   position: relative;
   display: block;
@@ -80,7 +81,7 @@
 }
 
 .hash-anchor:after {
-  @apply invisible absolute -left-5 top-1/2 -translate-y-1/2 text-lg text-primary-400 dark:text-primary-300;
+  @apply invisible absolute -left-5 top-1/2 -translate-y-1/2 text-lg text-primary-300/90 dark:text-yellow-300;
   content: '#';
 }
 /* #endregion  /**======== Hash Anchor =========== */
@@ -91,7 +92,8 @@
 }
 
 html.dark pre {
-  @apply !bg-[#24292e];
+  /* @apply !bg-[#24292e]; */
+  @apply !bg-[#151e28];
 }
 html.light pre {
   @apply !bg-[#f2f7fc];
