@@ -156,7 +156,7 @@ const THEME_COLORS = [
   },
   {
     title: 'Primary 300',
-    subTitle: '#00e887',
+    subTitle: '#097bff',
     colorClassName: 'bg-primary-300',
   },
   {
