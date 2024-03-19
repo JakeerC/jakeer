@@ -6,16 +6,15 @@
   /* Customize these variable */
   /* https://github.com/adamwathan/tailwind-css-variable-text-opacity-demo */
   --tw-clr-primary-200: 219 255 0;
-  --tw-clr-primary-300: 0 232 135;
+  --tw-clr-primary-300: 9 123 255;
   --tw-clr-primary-400: 0 224 243;
   --tw-clr-primary-500: 0 196 253;
 
   --clr-primary-200: rgb(var(--tw-clr-primary-200)); /* #DBFF00 */
-  --clr-primary-300: rgb(var(--tw-clr-primary-300)); /* #00e887 */
+  --clr-primary-300: rgb(var(--tw-clr-primary-300)); /* main color*/
   --clr-primary-400: rgb(var(--tw-clr-primary-400)); /* #00e0f3 */
   --clr-primary-500: rgb(var(--tw-clr-primary-500)); /* #00c4fd */
 }
-
 @layer base {
   /* inter var - latin */
   /*  ? font is applied
@@ -140,7 +139,7 @@
     @apply translate-y-10 opacity-0 transition duration-300 ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100;
   }
   .fade-in-start [data-fade] {
-    @apply translate-y-0 opacity-100;
+    @apply delay-300 translate-y-0 opacity-100;
   }
   .fade-in-start [data-fade='1'] {
     transition-delay: 100ms;

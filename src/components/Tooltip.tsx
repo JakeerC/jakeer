@@ -10,6 +10,8 @@ type TooltipProps = {
 } & TippyProps;
 
 // ! send `children`  prop as single element or string
+
+// TODO: z-index comming below buttonlink
 export default function Tooltip({
   tipChildren,
   children,
