@@ -17,9 +17,7 @@ export default function CustomLink({
         className
       )}
     >
-      <span className="dark:bg-gradient-to-tr dark:from-primary-300 dark:to-primary-400 dark:bg-clip-text dark:text-transparent">
-        {children}
-      </span>
+      <span className="dark:text-gradient-primary-300-to-400">{children}</span>
     </UnstyledLink>
   );
 }

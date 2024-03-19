@@ -11,7 +11,7 @@
   --tw-clr-primary-500: 0 196 253;
 
   --clr-primary-200: rgb(var(--tw-clr-primary-200)); /* #DBFF00 */
-  --clr-primary-300: rgb(var(--tw-clr-primary-300)); /* main color*/
+  --clr-primary-300: rgb(var(--tw-clr-primary-300)); /* #097bff main color*/
   --clr-primary-400: rgb(var(--tw-clr-primary-400)); /* #00e0f3 */
   --clr-primary-500: rgb(var(--tw-clr-primary-500)); /* #00c4fd */
 }
@@ -126,6 +126,25 @@
       0 2px,
       100% 2px;
   }
+
+  /* #region  /**=========== gradients =========== */
+
+  .text-gradient-primary-300-to-400 {
+    @apply bg-gradient-to-tr from-primary-300 to-primary-400 bg-clip-text text-transparent;
+  }
+
+  .border-bottom-gradient-primary-300-to-400 {
+    border-style: solid;
+    border-width: 0 0 1px 0;
+    border-image: linear-gradient(to right, #097bff80, #00e0f380) 1;
+  }
+
+  .border-left-gradient-primary-300-to-400 {
+    border-style: solid;
+    border-width: 0 0 0 0.25rem;
+    border-image: linear-gradient(to top, #097bff, #00e0f3) 1;
+  }
+  /* #endregion  /**======== gradients =========== */
 
   /* #region  /**=========== Animate Shadow =========== */
   .animate-shadow {
