@@ -78,7 +78,12 @@
 }
 
 .hash-anchor:hover {
-  @apply animated-underline;
+  background-image: linear-gradient(
+    to right,
+    rgba(9, 123, 255, 1) 0%,
+    rgba(0, 224, 243, 1)
+  );
+  background-size: 100% 2px;
 }
 
 .hash-anchor:hover:after,
