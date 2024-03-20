@@ -21,11 +21,16 @@
 }
 
 .prose blockquote {
-  @apply border-left-gradient-primary-300-to-400;
+  /* @apply border-left-gradient-primary-300-to-400; ! build issue */
+  border-style: solid;
+  border-width: 0 0 0 0.25rem;
+  border-image: linear-gradient(to top, #097bff, #00e0f3) 1;
 }
 
 .prose hr {
-  @apply border-bottom-gradient-primary-300-to-400;
+  border-style: solid;
+  border-width: 0 0 1px 0;
+  border-image: linear-gradient(to right, #097bff80, #00e0f380) 1;
 }
 
 .mdx.prose :where(h1) {
@@ -73,7 +78,12 @@
 }
 
 .hash-anchor:hover {
-  @apply animated-underline;
+  background-image: linear-gradient(
+    to right,
+    rgba(9, 123, 255, 1) 0%,
+    rgba(0, 224, 243, 1)
+  );
+  background-size: 100% 2px;
 }
 
 .hash-anchor:hover:after,
