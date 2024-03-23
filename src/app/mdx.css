@@ -33,15 +33,15 @@
   border-image: linear-gradient(to right, #097bff80, #00e0f380) 1;
 }
 
-.mdx.prose :where(h1) {
-  @apply text-primary-300 dark:text-yellow-400;
-}
 .mdx.prose :where(h2) {
   @apply text-primary-300/90 dark:text-yellow-300;
 }
+.mdx.prose :where(h3) {
+  @apply text-primary-300/70 dark:text-yellow-300/90;
+}
 
 .mdx.prose :where(h1, h2, h3, h4) {
-  scroll-margin-top: 100px;
+  scroll-margin-top: 32px;
   position: relative;
   display: block;
   margin-right: 0.5rem;
@@ -76,14 +76,25 @@
   background-image: none;
   transition: none;
 }
+.light {
+  .hash-anchor:hover {
+    background-image: linear-gradient(
+      to right,
+      rgba(9, 123, 255, 1) 0%,
+      rgba(0, 224, 243, 1)
+    );
 
-.hash-anchor:hover {
-  background-image: linear-gradient(
-    to right,
-    rgba(9, 123, 255, 1) 0%,
-    rgba(0, 224, 243, 1)
-  );
-  background-size: 100% 2px;
+    background-size: 100% 2px;
+    transition: 0.9s ease;
+    transition-property: background-size, color, background-color, border-color;
+  }
+}
+.dark {
+  .hash-anchor:hover {
+    @apply bg-gradient-to-tr from-yellow-500 to-yellow-100;
+
+    background-size: 100% 2px;
+  }
 }
 
 .hash-anchor:hover:after,
@@ -92,8 +103,7 @@
 }
 
 .hash-anchor:after {
-  @apply invisible absolute -left-5 top-1/2 -translate-y-1/2 text-lg text-primary-300/90 dark:text-yellow-300;
-  content: '#';
+  @apply invisible absolute -left-5 top-1/2 -translate-y-1/2 text-lg text-primary-300/90 dark:text-yellow-300 md:content-['#'];
 }
 /* #endregion  /**======== Hash Anchor =========== */
 
@@ -141,6 +151,19 @@ html.light pre {
   @apply border-b-purple-600 bg-purple-400/50 font-bold !text-purple-700 dark:bg-purple-800/50 dark:!text-purple-200;
 }
 
+.prose
+  :where(code):not(
+    :where([class~='not-prose'], [class~='not-prose'] *)
+  )::before,
+.prose
+  :where(code):not(
+    :where([class~='not-prose'], [class~='not-prose'] *)
+  )::after {
+  content: '';
+}
+code:not(pre > code) {
+  @apply relative inline  py-[4.5px] px-[6px] my-[-1px] mx-[1px] bg-zinc-400/20 dark:bg-slate-400/20 rounded-md font-thin;
+}
 code {
   counter-reset: line;
 }
@@ -176,9 +199,16 @@ html.dark .prose [data-theme='light'] {
   @apply m-0;
 }
 
-[data-rehype-pretty-code-title],
+[data-rehype-pretty-code-title] {
+  @apply bg-[#e6eff9] px-6 py-2 text-sm font-medium dark:bg-gray-700 rounded-t-md drop-shadow-md;
+}
+
+[data-rehype-pretty-code-caption]::before {
+  @apply font-bold;
+  content: 'Note: ';
+}
 [data-rehype-pretty-code-caption] {
-  @apply bg-[#e6eff9] px-6 py-2 text-xs font-medium dark:bg-gray-700 rounded-t-md drop-shadow-md;
+  @apply bg-[#e6eff9] px-6 py-4 text-sm font-normal dark:bg-yellow-50/20 dark:text-yellow-400 dark:ring-1 dark:ring-yellow-100/50 rounded-md drop-shadow-md;
 }
 
 /* Word Wrap */
