@@ -4,6 +4,7 @@ import GithubCard from '@/components/cards/GithubCard';
 // import LiteYouTubeEmbed from 'react-lite-youtube-embed';
 import Quiz from '@/components/cards/Quiz';
 import TweetCard from '@/components/cards/TweetCard';
+import Li from '@/components/content/Li';
 import { Pre } from '@/components/content/Pre';
 import SplitImage, { Split } from '@/components/content/SplitImage';
 import CustomLink from '@/components/links/CustomLink';
@@ -22,6 +23,7 @@ const MDXComponents = {
   TweetCard,
   GithubCard,
   Quiz,
+  li: Li,
 };
 
 export default MDXComponents;
