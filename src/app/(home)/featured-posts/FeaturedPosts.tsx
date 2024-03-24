@@ -53,7 +53,7 @@ export default function FeaturedPosts({
               <div className="mt-8 h-full w-full md:mt-0">
                 <h2 className="text-4xl md:text-6xl">
                   <Accent className="inline decoration-clone leading-snug dark:leading-none">
-                    Rebuild your mental model
+                    Rethinking Frontend
                   </Accent>
                 </h2>
                 <div className="mt-4 text-base text-gray-600 dark:text-gray-300 md:text-lg">

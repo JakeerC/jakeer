@@ -9,11 +9,10 @@ export async function getFeaturedData() {
   const snippets = await getAllFilesFrontmatter('snippets');
 
   const featuredPosts = getFeatured(blogs, [
-    '2023-retrospective',
     'fully-reusable-components',
+    'nextjs-boilerplate-2023',
     'react-core-concept-rendering-state',
     'nextjs-auth-hoc',
-    'nextjs-boilerplate-2023',
     'nextjs-fetch-method',
   ]);
   const featuredProjects = getFeatured(projects, ['notiolink']);
@@ -25,7 +24,7 @@ export async function getFeaturedData() {
   ]);
 
   const introPosts = getFeatured(blogs, [
-    '2023-retrospective',
+    'nextjs-auth-hoc',
     'fully-reusable-components',
   ]);
 
