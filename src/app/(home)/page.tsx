@@ -91,11 +91,10 @@ export default async function IndexPage() {
                   className={clsx(
                     'absolute -inset-0.5 animate-tilt rounded blur',
                     'bg-gradient-to-r from-primary-300 to-primary-400',
-                    'dark:from-primary-200 dark:via-primary-300',
                     'opacity-75 transition duration-1000 group-hover:opacity-100 group-hover:duration-200'
                   )}
                 />
-                <ButtonLink href="#intro">Read the blog</ButtonLink>
+                <ButtonLink href="/blog">Read the blog</ButtonLink>
               </div>
               <ButtonLink href="/about">Learn more about me</ButtonLink>
             </div>
