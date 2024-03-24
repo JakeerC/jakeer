@@ -1,7 +1,7 @@
 /* Bismillah ir rahman ir rahim */
 import clsx from 'clsx';
 import type { Metadata, Viewport } from 'next';
-import { Inter } from 'next/font/google';
+import { Rubik } from 'next/font/google';
 import Script from 'next/script';
 
 import './globals.css';
@@ -13,7 +13,7 @@ import Header from '@/components/layout/Header';
 import { Providers } from '@/app/providers';
 import { domain } from '@/constants/urls';
 
-const inter = Inter({ subsets: ['latin'] });
+const rubik = Rubik({ subsets: ['latin'] });
 
 export const viewport: Viewport = {
   themeColor: [
@@ -47,7 +47,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={clsx(inter.className, 'bg-white dark:bg-dark')}>
+      <body className={clsx(rubik.className, 'bg-white dark:bg-dark')}>
         <Providers>
           <Header />
           <div id="skip-nav">{children}</div>
