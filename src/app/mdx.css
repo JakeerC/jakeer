@@ -1,4 +1,5 @@
 .prose {
+  position: relative;
   max-width: 50rem;
 }
 
@@ -15,16 +16,35 @@
   margin-top: 0;
 }
 
-.prose blockquote p:first-of-type::before,
-.prose blockquote p:last-of-type::after {
-  content: '';
+.prose blockquote {
+  @apply border-none flex items-center justify-center;
 }
 
-.prose blockquote {
-  /* @apply border-left-gradient-primary-300-to-400; ! build issue */
-  border-style: solid;
-  border-width: 0 0 0 0.25rem;
-  border-image: linear-gradient(to top, #097bff, #00e0f3) 1;
+.prose blockquote p {
+  @apply dark:text-white/50 text-dark/50;
+  position: relative;
+
+  line-height: 1.4rem;
+}
+.prose blockquote p:first-of-type::before {
+  content: '“';
+  font-family: 'Times New Roman', serif;
+  font-size: 6em;
+  font-weight: bold;
+  position: absolute;
+  left: -1rem;
+  top: 5px;
+  opacity: 0.2;
+}
+.prose blockquote p:last-of-type::after {
+  content: '”';
+  font-family: 'Times New Roman', serif;
+  font-size: 6em;
+  font-weight: bold;
+  position: absolute;
+  right: 2rem;
+  top: 8px;
+  opacity: 0.2;
 }
 
 .prose hr {
