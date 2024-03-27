@@ -15,13 +15,14 @@
 .prose > ul > li > :first-child {
   margin-top: 0;
 }
+/* ================================================================ */
 
 .prose blockquote {
   @apply border-none flex items-center justify-center my-12;
 }
 
 .prose blockquote p {
-  @apply dark:text-white/50 text-dark/50 py-4 px-8;
+  @apply dark:text-white/50 text-dark/50 py-4 px-8 md:max-w-[80%];
   position: relative;
 
   line-height: 1.4rem;
@@ -31,10 +32,22 @@
   font-family: 'Times New Roman', serif;
 }
 .prose blockquote p:last-of-type::after {
-  @apply content-['”'] text-[6rem] font-bold absolute  -right-2 md:-right-8  -bottom-2 opacity-20;
+  @apply content-['”'] text-[6rem] font-bold absolute  -right-2 md:-right-4  -bottom-2 opacity-20;
   font-family: 'Times New Roman', serif;
 }
 
+/* Custom Heading Style for Projects */
+.mdx.prose.projects blockquote {
+  font-style: normal;
+}
+.mdx.prose.projects blockquote:first-of-type h2 {
+  margin-top: 1rem;
+}
+.mdx.prose.projects blockquote.with-icons h2 {
+  margin-bottom: 0;
+}
+
+/* ================================================================ */
 .prose hr {
   border-style: solid;
   border-width: 0 0 1px 0;
@@ -66,17 +79,6 @@
   li {
     list-style: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="rgba(9, 123, 255, 0.7)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" ><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>');
   }
-}
-
-/* Custom Heading Style for Projects */
-.mdx.prose.projects blockquote {
-  font-style: normal;
-}
-.mdx.prose.projects blockquote:first-of-type h2 {
-  margin-top: 1rem;
-}
-.mdx.prose.projects blockquote.with-icons h2 {
-  margin-bottom: 0;
 }
 
 /* Apply shadow to Youtube Embed */
@@ -213,7 +215,6 @@ html.dark .prose [data-theme='light'] {
 [data-rehype-pretty-code-fragment] > pre {
   @apply m-0;
 }
-
 [data-rehype-pretty-code-title] {
   @apply bg-[#e6eff9] px-6 py-2 text-sm font-medium dark:bg-gray-700 rounded-t-md drop-shadow-md;
 }
