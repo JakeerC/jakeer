@@ -11,10 +11,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "prepare": "husky && husky install",
+    "prepare": "husky",
     "fix-lint": "npx eslint . --fix",
     "lint": "npx eslint . --fix && next lint",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "check-types": "tsc --pretty --noEmit",
+    "check-format": "prettier --check .",
+    "check-lint": "eslint . --ext ts --ext tsx --ext js"
   },
   "dependencies": {
     "@giscus/react": "^3.0.0",
