@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@giscus/react": "^3.0.0",
-    "@headlessui/react": "^1.7.18",
+    "@headlessui/react": "^1.7.19",
     "@tanstack/react-query": "^5.29.2",
     "@tippyjs/react": "^4.2.6",
     "axios": "^1.6.8",
