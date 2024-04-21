@@ -7,18 +7,17 @@ import { SiGithub, SiX } from 'react-icons/si';
 import { og } from '@/lib/og';
 
 import Accent from '@/components/Accent';
-import CJ from '@/components/CJ';
 import ButtonLink from '@/components/links/ButtonLink';
-import CustomLink from '@/components/links/CustomLink';
 import UnstyledLink from '@/components/links/UnstyledLink';
 
 import FeaturedPosts from '@/app/(home)/featured-posts/FeaturedPosts';
 import { getFeaturedData } from '@/app/(home)/featured-posts/getFeaturedData';
 import { homeDesc } from '@/constants/consts';
-import { domain } from '@/constants/urls';
+import { domain, githubURL, twitterURL } from '@/constants/urls';
 
 export const metadata: Metadata = {
-  title: 'Jakeer',
+  title:
+    'Jakeer | Personal Website | Jakeer is a passionate software developer who likes to learn, share, teach and develop',
   description: homeDesc,
   openGraph: {
     type: 'website',
@@ -31,7 +30,8 @@ export const metadata: Metadata = {
         url: og({
           siteName: 'Jakeer',
           ogType: 'gradient',
-          description: '',
+          description:
+            'Jakeer is a passionate software developer who likes to learn, share, teach and develop',
         }),
       },
     ],
@@ -62,15 +62,10 @@ export default async function IndexPage() {
               You can call me <Accent>Jakeer</Accent>
             </h1>
             <p
-              className="mt-2 max-w-4xl leading-relaxed text-gray-700 dark:text-gray-200 md:mt-3 text-sm md:text-base 2xl:text-lg"
+              className="max-w-4xl mt-2 text-sm leading-relaxed text-gray-700 dark:text-gray-200 md:mt-3 md:text-base 2xl:text-lg"
               data-fade="2"
             >
-              Front-end Engineer at{' '}
-              <CustomLink
-                href="https://#" // TODO
-              >
-                Company Name
-              </CustomLink>
+              Front-end Engineer
             </p>
             <p
               className={clsx(
@@ -86,21 +81,12 @@ export default async function IndexPage() {
               data-fade="5"
               className="mt-8 flex flex-wrap gap-4 md:!text-lg"
             >
-              <div className="group relative">
-                <div
-                  className={clsx(
-                    'absolute -inset-0.5 animate-tilt rounded blur',
-                    'bg-gradient-to-r from-primary-300 to-primary-400',
-                    'opacity-75 transition duration-1000 group-hover:opacity-100 group-hover:duration-200'
-                  )}
-                />
-                <ButtonLink href="/blog">Read the blog</ButtonLink>
-              </div>
-              <ButtonLink href="/about">Learn more about me</ButtonLink>
+              <ButtonLink href="/blog">Blog</ButtonLink>
+              <ButtonLink href="/about">More about me</ButtonLink>
             </div>
             <div
               data-fade="6"
-              className="mt-4 flex flex-wrap gap-4 gap-y-2 md:mt-8"
+              className="flex flex-wrap gap-4 mt-4 gap-y-2 md:mt-8"
             >
               <UnstyledLink
                 href={`${domain}/files/resume.pdf`}
@@ -115,7 +101,7 @@ export default async function IndexPage() {
                 <span>Resume</span>
               </UnstyledLink>
               <UnstyledLink
-                href="https://#" // TODO
+                href={twitterURL}
                 className={clsx(
                   'inline-flex items-center gap-1 text-sm font-medium md:text-base',
                   'group text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white',
@@ -123,11 +109,11 @@ export default async function IndexPage() {
                   'transition-colors'
                 )}
               >
-                <SiX className="shrink-0 transition-colors" />
+                <SiX className="transition-colors shrink-0" />
                 <span>@jakeerchilakala</span>
               </UnstyledLink>
               <UnstyledLink
-                href="https://github.com/jakeerc"
+                href={githubURL}
                 className={clsx(
                   'inline-flex items-center gap-1 text-sm font-medium md:text-base',
                   'text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white',
@@ -148,16 +134,8 @@ export default async function IndexPage() {
               'hover:text-primary-300 focus-visible:text-primary-300'
             )}
           >
-            <IoArrowDownOutline className="h-8 w-8 animate-bounce md:h-10 md:w-10" />
+            <IoArrowDownOutline className="w-8 h-8 animate-bounce md:h-10 md:w-10" />
           </UnstyledLink>
-          <CJ
-            className={clsx(
-              'absolute top-8 right-6',
-              'translate-y-[37%] transform-gpu',
-              'w-[calc(100%-3rem)] md:w-[600px] 2xl:w-[900px]',
-              'z-[-1] opacity-70 dark:opacity-30'
-            )}
-          />
         </section>
         <FeaturedPosts
           featuredPosts={featuredPosts}
