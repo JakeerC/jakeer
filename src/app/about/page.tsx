@@ -38,7 +38,7 @@ export default function AboutPage() {
     <>
       <main>
         <section className="fade-in-start">
-          <div className="layout pt-20">
+          <div className="pt-20 layout">
             <h2 data-fade="0">About</h2>
             <h1 className="mt-1" data-fade="1">
               <Accent>Jakeer</Accent>
@@ -69,7 +69,7 @@ export default function AboutPage() {
           </div>
         </section>
         <section className="fade-in-start">
-          <div className="layout pt-8">
+          <div className="pt-8 layout">
             <h3 className="mt-4" data-fade="8">
               Tech Stack
             </h3>
@@ -77,15 +77,14 @@ export default function AboutPage() {
               <TechStack />
             </figure>
             <div
-              className="mt-12 flex content-center justify-center gap-x-4 md:justify-start"
+              className="flex content-center justify-center mt-12 gap-x-4 md:justify-start"
               data-fade="6"
             >
-              <div className="w-22 group relative" data-fade="6">
+              <div className="relative w-22 group" data-fade="6">
                 <div
                   className={clsx(
                     'absolute -inset-0.5 animate-tilt rounded blur',
                     'bg-gradient-to-r from-primary-300 to-primary-400',
-                    'dark:from-primary-200 dark:via-primary-300',
                     'opacity-75 transition duration-1000 group-hover:opacity-100 group-hover:duration-200'
                   )}
                 />
@@ -93,7 +92,7 @@ export default function AboutPage() {
                   Hire me
                 </ButtonLink>
               </div>
-              <div className="group relative w-24" data-fade="7">
+              <div className="relative w-24 group" data-fade="7">
                 <ButtonLink
                   href="/files/resume.pdf"
                   target="_blank"
@@ -102,7 +101,7 @@ export default function AboutPage() {
                   Resume
                 </ButtonLink>
               </div>
-              <div className="group relative w-24" data-fade="8">
+              <div className="relative w-24 group" data-fade="8">
                 <ButtonLink href="#contact">Contact</ButtonLink>
               </div>
             </div>
@@ -110,9 +109,9 @@ export default function AboutPage() {
         </section>
 
         <section>
-          <div className="layout mt-16">
+          <div className="mt-16 layout">
             <h2>Contact</h2>
-            <article className="prose mt-4 dark:prose-invert">
+            <article className="mt-4 prose dark:prose-invert">
               <p>
                 Do contact me if you need my opinion about web development,
                 especially frontend works. I’ll be happy to help!
