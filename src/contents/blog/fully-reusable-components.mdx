@@ -5,6 +5,7 @@ description: 'Creating a component is fairly easy, but doing them correctly is a
 englishOnly: 'true'
 banner: 'logos'
 tags: 'nextjs,react,tailwindcss'
+color: '#882e24'
 ---
 
 ## Introduction
@@ -262,7 +263,7 @@ We merge the `className` using `clsx` function, so any class that we pass outsid
 However, in the rendered code we will have two different margin-top classes.
 
 ```tsx
-<div class="mt-12 mt-4">...</div>
+<div class="mt-4 mt-12">...</div>
 ```
 
 Which is not good. We can use [tailwind-merge](https://www.npmjs.com/package/tailwind-merge) library to solve that.
