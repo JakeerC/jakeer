@@ -1,5 +1,3 @@
-import { domain } from '@/constants/urls';
-
 export const primaryNavLinks = [
   { href: '/', label: 'Home', show: true },
   { href: '/blog', label: 'Blog', show: true },
@@ -12,7 +10,7 @@ export const secondaryNavLinks = [
   {
     href: 'https://github.com/jakeerc/jakeer',
     label: 'Source Code',
-    show: true,
+    show: false, // move this beside copyright
   },
   {
     href: '/design',
@@ -41,8 +39,13 @@ export const secondaryNavLinks = [
     show: false,
   },
   {
-    href: `${domain}/rss.xml`,
+    href: `/rss.xml`,
     label: 'RSS',
+    show: true,
+  },
+  {
+    href: `/sitemap.xml`,
+    label: 'Sitemap',
     show: true,
   },
 ];
