@@ -12,6 +12,7 @@ export type BlogFrontmatter = {
   lastUpdated?: string;
   tags: string;
   repost?: string;
+  color: string;
 };
 
 export type ContentType = 'blog' | 'snippets' | 'projects';
@@ -54,6 +55,7 @@ export type ProjectFrontmatter = {
   link?: string;
   github?: string;
   youtube?: string;
+  color: string;
 };
 
 export type ProjectType = {

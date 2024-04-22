@@ -16,20 +16,6 @@
   --clr-primary-500: rgb(var(--tw-clr-primary-500)); /* #00c4fd */
 }
 @layer base {
-  /* inter var - latin */
-  /*  ? font is applied
-  @font-face {
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 100 900;
-    font-display: optional;
-    src: url('/fonts/inter-var-latin.woff2') format('woff2');
-    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA,
-      U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212,
-      U+2215, U+FEFF, U+FFFD;
-  } 
-  */
-
   html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
@@ -45,42 +31,36 @@
     background: rgba(var(--tw-clr-primary-300) / 0.3);
   }
 
-  .cursor-newtab {
-    cursor:
-      url('/images/new-tab.png') 10 10,
-      pointer;
-  }
-
   /* #region  /**=========== Default Typography =========== */
   h1,
   .h1 {
-    @apply font-primary text-2xl font-bold md:text-4xl;
+    @apply text-2xl font-bold font-primary md:text-4xl;
   }
 
   h2,
   .h2 {
-    @apply font-primary text-xl font-bold md:text-3xl;
+    @apply text-xl font-bold font-primary md:text-3xl;
   }
 
   h3,
   .h3 {
-    @apply font-primary text-lg font-bold md:text-2xl;
+    @apply text-lg font-bold font-primary md:text-2xl;
   }
 
   h4,
   .h4 {
-    @apply font-primary text-base font-bold md:text-lg;
+    @apply text-base font-bold font-primary md:text-lg;
   }
 
   body,
   .body {
-    @apply font-primary text-sm md:text-base;
+    @apply text-sm font-primary md:text-base;
   }
   /* #endregion  /**======== Default Typography =========== */
 
   .layout {
     max-width: 68rem;
-    @apply mx-auto w-11/12;
+    @apply w-11/12 mx-auto;
   }
 
   .bg-dark a.custom-link {
@@ -130,7 +110,7 @@
   /* #region  /**=========== gradients =========== */
 
   .text-gradient-primary-300-to-400 {
-    @apply bg-gradient-to-tr from-primary-300 to-primary-400 bg-clip-text text-transparent;
+    @apply text-transparent bg-gradient-to-tr from-primary-300 to-primary-400 bg-clip-text;
   }
 
   /* #endregion  /**======== gradients =========== */
@@ -144,7 +124,7 @@
 
   /* #region  /**=========== Fade In =========== */
   [data-fade] {
-    @apply translate-y-10 opacity-0 transition duration-300 ease-out motion-reduce:translate-y-0 motion-reduce:opacity-100;
+    @apply transition duration-300 ease-out translate-y-10 opacity-0 motion-reduce:translate-y-0 motion-reduce:opacity-100;
   }
   .fade-in-start [data-fade] {
     @apply delay-300 translate-y-0 opacity-100;
@@ -199,7 +179,7 @@
   overflow: hidden;
 }
 .tweet-custom-border {
-  @apply rounded-xl border-r border-gray-300 dark:border-gray-700;
+  @apply border-r border-gray-300 rounded-xl dark:border-gray-700;
 }
 @media (min-width: 595px) {
   .tweet-custom-border {
