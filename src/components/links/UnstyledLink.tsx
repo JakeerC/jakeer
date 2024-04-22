@@ -28,14 +28,14 @@ export default function UnstyledLink({
       </Link>
     );
   }
-
+  // TODO: add ::after style for new tab links
   return (
     <a
       target="_blank"
       rel="noopener noreferrer"
       href={href}
       {...rest}
-      className={clsx(className, 'cursor-newtab')}
+      className={clsx(className)}
     >
       {children}
     </a>
