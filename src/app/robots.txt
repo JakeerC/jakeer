@@ -1,0 +1,6 @@
+User-agent: *
+Disallow: /static/fonts/
+Disallow: /static/js/
+Disallow: /static/audio/
+Sitemap: https://jakeer.vercel.app/sitemap.xml
+Host: https://jakeer.vercel.app

@@ -8,8 +8,8 @@ export type BlogFrontmatter = {
   title: string;
   description: string;
   banner: string;
-  publishedAt: string;
-  lastUpdated?: string;
+  publishedAt: Date;
+  lastUpdated?: Date;
   tags: string;
   repost?: string;
   color: string;
