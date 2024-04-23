@@ -17,9 +17,9 @@ export default function SubscribeCard({
 }: SubscribeCardProps) {
   return (
     <div className={clsx('rounded border p-4 dark:border-gray-600', className)}>
-      <h3>
+      <h2>
         <Accent>{title ?? 'Join to the newsletter list'}</Accent>
-      </h3>
+      </h2>
       <p className="mt-2 text-gray-700 dark:text-gray-300">
         {description ??
           "Don't miss out. Get an email whenever I post, no spam."}

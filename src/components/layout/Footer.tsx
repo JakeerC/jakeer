@@ -74,6 +74,7 @@ function SocialLinks() {
               <UnstyledLink
                 className="inline-flex items-center justify-center rounded-sm focus:outline-none focus-visible:ring focus-visible:ring-primary-300"
                 href={social.href}
+                aria-label={social.ariaLabel}
               >
                 <social.icon className="w-4 h-4 text-gray-600 transition-colors hover:text-primary-300 dark:text-gray-300 dark:hover:text-primary-300" />
               </UnstyledLink>

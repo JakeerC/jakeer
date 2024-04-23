@@ -12,3 +12,17 @@ export const blogDesc =
 export const snippetsDesc = `Short article on code snippets and configurations.`;
 
 export const projectsDesc = `Short article on code snippets and configurations.`;
+
+export const commonMetaKeywords = [
+  'jakeer',
+  'cloudinary',
+  'reactive',
+  'react',
+  'reactjs',
+  'nextjs',
+  'frontend',
+  'blog',
+  'snippets',
+  'personal',
+  'portfolio',
+];
