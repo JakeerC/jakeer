@@ -36,9 +36,9 @@ export default function SnippetsCard({
         className="block h-full rounded-md focus:outline-none focus-visible:ring focus-visible:ring-primary-300"
       >
         <div className="p-4">
-          <h4 className="font-semibold tracking-tight text-gray-800 dark:text-gray-100">
+          <h2 className="font-semibold tracking-tight text-gray-800 dark:text-gray-100">
             {snippet.title}
-          </h4>
+          </h2>
 
           <div className="mt-2 flex flex-wrap gap-x-1 gap-y-1 text-sm text-black dark:text-gray-100">
             {snippet.tags.split(',').map(tag => (

@@ -28,7 +28,7 @@ export default function ProjectCard({ project, className }: ProjectCardProps) {
         href={`/projects/${project.slug}`}
         className="flex h-full flex-col items-start rounded-md p-4 focus:outline-none focus-visible:ring focus-visible:ring-primary-300"
       >
-        <h4>{project.title}</h4>
+        <h2>{project.title}</h2>
         <p className="mb-auto text-sm text-gray-700 dark:text-gray-300">
           {project.description}
         </p>
