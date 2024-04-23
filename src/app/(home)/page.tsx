@@ -12,19 +12,34 @@ import UnstyledLink from '@/components/links/UnstyledLink';
 
 import FeaturedPosts from '@/app/(home)/featured-posts/FeaturedPosts';
 import { getFeaturedData } from '@/app/(home)/featured-posts/getFeaturedData';
-import { homeDesc } from '@/constants/consts';
+import { commonMetaKeywords, homeDesc } from '@/constants/consts';
 import { domain, githubURL, twitterURL } from '@/constants/urls';
 
 export const metadata: Metadata = {
   title:
     'Jakeer | Personal Website | Jakeer is a passionate software developer who likes to learn, share, teach and develop',
   description: homeDesc,
+  keywords: commonMetaKeywords,
+  twitter: {
+    title: 'Jakeer | Personal Website',
+    card: 'summary_large_image',
+    site: '@jakeerchilakala',
+    creator: '@jakeerchilakala',
+    description: homeDesc,
+    images: og({
+      siteName: 'Jakeer',
+      ogType: 'gradient',
+      description:
+        'Jakeer is a passionate software developer who likes to learn, share, teach and develop',
+    }),
+  },
   openGraph: {
     type: 'website',
     url: `${domain}`,
     title: 'Jakeer',
     description: homeDesc,
     siteName: 'Jakeer Personal Site',
+
     images: [
       {
         url: og({

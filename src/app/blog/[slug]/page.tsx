@@ -13,6 +13,8 @@ import { Metadata } from 'next';
 
 import { og } from '@/lib/og';
 
+import { commonMetaKeywords } from '@/constants/consts';
+
 type Props = {
   params: { slug: string };
   searchParams?: { [key: string]: string | string[] | undefined };
@@ -25,7 +27,8 @@ export async function generateMetadata(
   const { frontmatter } = await getPostData({ params });
 
   const { title, description, banner, tags } = frontmatter;
-  const keywords = tags?.split(',');
+  const tagsList = tags?.split(',');
+  const keywords = [...tagsList, ...commonMetaKeywords];
   const bannerURL = generateCloudinaryImgURL({
     publicId: `banner/${banner}`,
     aspect: { height: 2, width: 5 },
@@ -36,6 +39,14 @@ export async function generateMetadata(
     title,
     description,
     keywords,
+    twitter: {
+      title,
+      card: 'summary_large_image',
+      site: '@jakeerchilakala',
+      creator: '@jakeerchilakala',
+      description,
+      images: bannerURL,
+    },
     openGraph: {
       tags: keywords,
       images: [

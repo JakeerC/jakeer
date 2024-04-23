@@ -5,6 +5,7 @@ import { og } from '@/lib/og';
 
 import { getProjectData } from '@/app/projects/[slug]/helper';
 import Project from '@/app/projects/[slug]/Project';
+import { commonMetaKeywords } from '@/constants/consts';
 
 import { ProjectType } from '@/types/frontmatters';
 
@@ -20,7 +21,8 @@ export async function generateMetadata(
   const { frontmatter } = await getProjectData({ params });
 
   const { title, description, banner, tags } = frontmatter;
-  const keywords = tags?.split(',');
+  const tagsList = tags?.split(',');
+  const keywords = [...tagsList, ...commonMetaKeywords];
 
   // optionally access and extend (rather than replace) parent metadata
   const previousImages = (await parent).openGraph?.images || [];
@@ -34,6 +36,14 @@ export async function generateMetadata(
     title,
     description,
     keywords,
+    twitter: {
+      title,
+      card: 'summary_large_image',
+      site: '@jakeerchilakala',
+      creator: '@jakeerchilakala',
+      description,
+      images: bannerURL,
+    },
     openGraph: {
       tags: keywords,
       images: [
