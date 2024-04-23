@@ -9,18 +9,20 @@ import useInjectContentMeta from '@/hooks/useInjectContentMeta';
 
 import Accent from '@/components/Accent';
 import Button from '@/components/buttons/Button';
+import ButtonGroup, {
+  ButtonGroupOption,
+} from '@/components/buttons/ButtonGroup';
 import BlogCard from '@/components/cards/BlogCard';
 import SubscribeCard from '@/components/cards/SubscribeCard';
 import ContentPlaceholder from '@/components/content/ContentPlaceholder';
 import Tag, { SkipNavTag } from '@/components/content/Tag';
 import StyledInput from '@/components/form/StyledInput';
-import SortListbox, { SortOption } from '@/components/SortListbox';
 
 import { BlogType } from '@/app/blog/page';
 
 import { BlogFrontmatter, InjectedMeta } from '@/types/frontmatters';
 
-const sortOptions: Array<SortOption> = [
+const sortOptions: Array<ButtonGroupOption> = [
   {
     id: 'date',
     name: 'Recent',
@@ -37,7 +39,7 @@ export default function Blog({ posts, tags }: BlogType) {
   const populatedPosts = useInjectContentMeta('blog', posts);
 
   /** Lazy init from session storage to preserve preference on revisit */
-  const [sortOrder, setSortOrder] = React.useState<SortOption>(
+  const [sortOrder, setSortOrder] = React.useState<ButtonGroupOption>(
     () => sortOptions[Number(getFromSessionStorage('blog-sort')) || 0]
   );
   const [isEnglish, setIsEnglish] = React.useState<boolean>(true);
@@ -116,7 +118,7 @@ export default function Blog({ posts, tags }: BlogType) {
   return (
     <>
       <section className={clsx('fade-in-start')}>
-        <div className="layout py-12">
+        <div className="py-12 layout">
           <h1 className="text-3xl md:text-5xl" data-fade="0">
             <Accent>Blog {!isEnglish && 'Other Languages'}</Accent>
           </h1>
@@ -132,7 +134,7 @@ export default function Blog({ posts, tags }: BlogType) {
             type="text"
           />
           <div
-            className="mt-2 flex flex-wrap items-baseline justify-start gap-2 text-sm text-gray-600 dark:text-gray-300"
+            className="flex flex-wrap items-baseline justify-start gap-2 mt-2 text-sm text-gray-600 dark:text-gray-300"
             data-fade="3"
           >
             <span className="font-medium">Choose topic:</span>
@@ -149,7 +151,7 @@ export default function Blog({ posts, tags }: BlogType) {
             </SkipNavTag>
           </div>
           <div
-            className="relative z-10 mt-6 flex flex-col items-end gap-4 text-gray-600 dark:text-gray-300 md:flex-row md:items-center md:justify-end"
+            className="relative z-10 flex flex-col items-end gap-4 mt-6 text-gray-600 dark:text-gray-300 md:flex-row md:items-center md:justify-end"
             data-fade="4"
           >
             <Button
@@ -161,14 +163,14 @@ export default function Blog({ posts, tags }: BlogType) {
             >
               Read in {isEnglish ? 'Other Languages' : 'English'}
             </Button>
-            <SortListbox
+            <ButtonGroup
               selected={sortOrder}
               setSelected={setSortOrder}
               options={sortOptions}
             />
           </div>
           <ul
-            className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-3"
+            className="grid gap-4 mt-4 sm:grid-cols-2 xl:grid-cols-3"
             data-fade="5"
           >
             {currentPosts.length > 0 ? (

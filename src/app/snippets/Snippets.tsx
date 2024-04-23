@@ -8,17 +8,19 @@ import { getTags, sortTitleFn } from '@/lib/mdx.client';
 import useInjectContentMeta from '@/hooks/useInjectContentMeta';
 
 import Accent from '@/components/Accent';
+import ButtonGroup, {
+  ButtonGroupOption,
+} from '@/components/buttons/ButtonGroup';
 import SnippetsCard from '@/components/cards/SnippetsCard';
 import ContentPlaceholder from '@/components/content/ContentPlaceholder';
 import Tag, { SkipNavTag } from '@/components/content/Tag';
 import StyledInput from '@/components/form/StyledInput';
-import SortListbox, { SortOption } from '@/components/SortListbox';
 
 import { SnippetsType } from '@/app/snippets/page';
 
 import { SnippetFrontmatter } from '@/types/frontmatters';
 
-const sortOptions: Array<SortOption> = [
+const sortOptions: Array<ButtonGroupOption> = [
   {
     id: 'name',
     name: 'A-Z',
@@ -28,7 +30,9 @@ const sortOptions: Array<SortOption> = [
 ];
 
 export default function Snippets({ snippets, tags }: SnippetsType) {
-  const [sortOrder, setSortOrder] = React.useState<SortOption>(sortOptions[0]);
+  const [sortOrder, setSortOrder] = React.useState<ButtonGroupOption>(
+    sortOptions[0]
+  );
 
   const populatedPosts = useInjectContentMeta('snippets', snippets);
 
@@ -95,7 +99,7 @@ export default function Snippets({ snippets, tags }: SnippetsType) {
   return (
     <main>
       <section className={clsx('fade-in-start')}>
-        <div className="layout py-12">
+        <div className="py-12 layout">
           <h1 className="text-3xl md:text-5xl" data-fade="0">
             <Accent>Snippets</Accent>
           </h1>
@@ -112,7 +116,7 @@ export default function Snippets({ snippets, tags }: SnippetsType) {
             type="text"
           />
           <div
-            className="mt-2 flex flex-wrap items-baseline justify-start gap-2 text-sm text-gray-600 dark:text-gray-300"
+            className="flex flex-wrap items-baseline justify-start gap-2 mt-2 text-sm text-gray-600 dark:text-gray-300"
             data-fade="3"
           >
             <span className="font-medium">Choose topic:</span>
@@ -129,10 +133,10 @@ export default function Snippets({ snippets, tags }: SnippetsType) {
             </SkipNavTag>
           </div>
           <div
-            className="relative z-10 mt-4 flex flex-col items-end gap-4 text-gray-600 dark:text-gray-300 md:mt-8"
+            className="relative z-10 flex flex-col items-end gap-4 mt-4 text-gray-600 dark:text-gray-300 md:mt-8"
             data-fade="4"
           >
-            <SortListbox
+            <ButtonGroup
               selected={sortOrder}
               setSelected={setSortOrder}
               options={sortOptions}
@@ -140,7 +144,7 @@ export default function Snippets({ snippets, tags }: SnippetsType) {
           </div>
 
           <ul
-            className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-3"
+            className="grid gap-4 mt-4 sm:grid-cols-2 xl:grid-cols-3"
             data-fade="5"
           >
             {filtered.length > 0 ? (
