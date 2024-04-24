@@ -47,6 +47,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <meta httpEquiv="Content-Security-Policy" content="script-src 'none'" />
+      </head>
       <body className={clsx(rubik.className, 'bg-white dark:bg-dark')}>
         <Providers>
           <Header />
