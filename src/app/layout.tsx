@@ -11,6 +11,7 @@ import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
 
 import { Providers } from '@/app/providers';
+import { commonMetaKeywords } from '@/constants/consts';
 import { domain } from '@/constants/urls';
 
 const rubik = Rubik({ subsets: ['latin'] });
@@ -30,7 +31,7 @@ export const metadata: Metadata = {
   creator: 'Jakeer',
   generator: 'Next.js',
   referrer: 'origin-when-cross-origin',
-  keywords: ['Next.js', 'React', 'JavaScript'],
+  keywords: ['Next.js', 'React', 'JavaScript', ...commonMetaKeywords],
   metadataBase: new URL('/', domain),
   // themeColor: [ // * moved this part to viewport
   //   { media: '(prefers-color-scheme: dark)', color: '#0e1111' },
@@ -47,9 +48,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <meta httpEquiv="Content-Security-Policy" content="script-src 'none'" />
-      </head>
       <body className={clsx(rubik.className, 'bg-white dark:bg-dark')}>
         <Providers>
           <Header />
