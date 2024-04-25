@@ -10,7 +10,6 @@ import BlogCard from '@/components/cards/BlogCard';
 import ProjectCard from '@/components/cards/ProjectCard';
 import SnippetsCard from '@/components/cards/SnippetsCard';
 import ButtonLink from '@/components/links/ButtonLink';
-import Tooltip from '@/components/Tooltip';
 
 import {
   BlogFrontmatter,
@@ -22,7 +21,7 @@ export default function FeaturedPosts({
   featuredPosts,
   featuredProjects,
   featuredSnippets,
-  introPosts,
+  // introPosts,
 }: {
   featuredPosts: BlogFrontmatter[];
   featuredProjects: ProjectFrontmatter[];
@@ -30,13 +29,13 @@ export default function FeaturedPosts({
   introPosts: BlogFrontmatter[];
 }) {
   const populatedPosts = useInjectContentMeta('blog', featuredPosts);
-  const populatedIntro = useInjectContentMeta('blog', introPosts);
+  // const populatedIntro = useInjectContentMeta('blog', introPosts);
   const populatedProjects = useInjectContentMeta('projects', featuredProjects);
   const populatedSnippets = useInjectContentMeta('snippets', featuredSnippets);
 
   return (
     <>
-      <InView triggerOnce rootMargin="-40% 0px">
+      {/* <InView triggerOnce rootMargin="-40% 0px">
         {({ ref, inView }) => (
           <section
             ref={ref}
@@ -103,7 +102,7 @@ export default function FeaturedPosts({
             </article>
           </section>
         )}
-      </InView>
+      </InView> */}
 
       <InView triggerOnce rootMargin="-40% 0px">
         {({ ref, inView }) => (
@@ -115,7 +114,7 @@ export default function FeaturedPosts({
               <h2 className="text-2xl md:text-4xl" id="blog">
                 <Accent>Featured Posts</Accent>
               </h2>
-              <ul className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+              <ul className="mt-4 grid gap-4 sm:grid-cols-1 xl:grid-cols-2">
                 {populatedPosts.map((post, i) => (
                   <BlogCard
                     key={post.slug}
