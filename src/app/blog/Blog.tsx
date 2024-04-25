@@ -170,7 +170,7 @@ export default function Blog({ posts, tags }: BlogType) {
             />
           </div>
           <ul
-            className="grid gap-4 mt-4 sm:grid-cols-2 xl:grid-cols-3"
+            className="grid gap-4 mt-4 sm:grid-cols-2 xl:grid-cols-2"
             data-fade="5"
           >
             {currentPosts.length > 0 ? (
