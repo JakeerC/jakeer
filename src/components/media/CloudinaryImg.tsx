@@ -7,6 +7,7 @@ type CloudinaryImgType = {
   publicId: string;
   height: string | number;
   width: string | number;
+  quality?: number;
   alt: string;
   title?: string;
   className?: string;
@@ -31,9 +32,10 @@ export default function CloudinaryImg({
   mdx = false,
   style,
   aspect,
+  quality = 50,
   ...rest
 }: CloudinaryImgType) {
-  const url = generateCloudinaryImgURL({ publicId, aspect, width });
+  const url = generateCloudinaryImgURL({ publicId, aspect, width, quality });
   const aspectRatio = aspect ? aspect.width / aspect.height : undefined;
 
   const RESIZE_MAX_WIDTH = 1000;
@@ -60,7 +62,7 @@ export default function CloudinaryImg({
           'bg-slate-800 before:blur-md',
           aspectRatio ? `aspect-[${aspectRatio.toString()}] ` : '',
           imgClassName
-        )} //! TODO : refact if breaks, may break as we are using dynamic
+        )}
         src={url}
         alt={alt}
         title={title || alt}
