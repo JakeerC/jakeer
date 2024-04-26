@@ -5,34 +5,29 @@
 
 * Like Button
 * Count views, likes
-* Analytics
-
 */
 }
 import clsx from 'clsx';
 import { format } from 'date-fns';
 import { getMDXComponent } from 'mdx-bundler/client';
 import * as React from 'react';
-import { HiOutlineClock } from 'react-icons/hi';
-import { MdCalendarToday, MdHistory } from 'react-icons/md';
+import { HiCalendar, HiOutlineClock } from 'react-icons/hi';
 
 import { hexToRgb } from '@/lib/color';
 import { cleanBlogPrefix } from '@/lib/helper.client';
 import { getReadableColor } from '@/lib/readableColor';
-// import useContentMeta from '@/hooks/useContentMeta';
 import useInjectContentMeta from '@/hooks/useInjectContentMeta';
 import useScrollSpy from '@/hooks/useScrollspy';
 
 import Accent from '@/components/Accent';
 import BlogCard from '@/components/cards/BlogCard';
 import SubscribeCard from '@/components/cards/SubscribeCard';
-// import LikeButton from '@/components/content/LikeButton';
+import ArticleMeta from '@/components/content/ArticleMeta';
 import MDXComponents from '@/components/content/MDXComponents';
 import TableOfContents, {
   HeadingScrollSpy,
 } from '@/components/content/TableOfContents';
 import Discussions from '@/components/Discussions';
-// import Layout from '@/components/layout/Layout';
 import CustomLink from '@/components/links/CustomLink';
 import ShareTweetButton from '@/components/links/ShareTweetButton';
 import UnstyledLink from '@/components/links/UnstyledLink';
@@ -40,7 +35,6 @@ import CloudinaryImg from '@/components/media/CloudinaryImg';
 
 import { domain } from '@/constants/urls';
 
-// import Seo from '@/components/Seo';
 import { BlogFrontmatter, BlogType } from '@/types/frontmatters';
 
 type SingleBlogPageProps = {
@@ -139,35 +133,27 @@ export default function Post({
             {frontmatter.title}
           </h1>
 
-          <p className="flex gap-2 mt-2 text-sm text-gray-600 first:flex-wrap lex dark:text-gray-300">
-            <MdCalendarToday className="text-lg" />{' '}
-            {format(new Date(frontmatter.publishedAt), 'MMMM dd, yyyy')}{' '}
-            <span aria-hidden="true" className="font-bold">
-              ·
-            </span>{' '}
-            <HiOutlineClock className="inline-block text-base" />
-            <span>{frontmatter.readingTime.text}</span>
-          </p>
+          <ArticleMeta articleFrontMatter={frontmatter} />
           {frontmatter.lastUpdated && (
-            <div className="flex flex-wrap gap-2 mt-2 text-sm text-gray-700 dark:text-gray-200">
+            <div className="flex flex-wrap gap-2 mt-2 text-sm text-slate-500 dark:text-slate-400">
               <p className="flex flex-wrap gap-2">
-                Last updated on <MdCalendarToday className="text-lg" />{' '}
+                Updated on <HiCalendar />{' '}
                 {format(new Date(frontmatter.lastUpdated), 'MMMM dd, yyyy')}.
               </p>
               <UnstyledLink
                 href={COMMIT_HISTORY_LINK}
                 className={clsx(
                   'inline-flex items-center gap-1 rounded-sm font-medium',
-                  'text-gray-600 hover:text-gray-900 dark:text-gray-300 dark:hover:text-primary-300',
+                  'text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-primary-300',
                   'focus:outline-none focus-visible:ring focus-visible:ring-primary-300'
                 )}
               >
-                <MdHistory className="text-lg" />
+                <HiOutlineClock />
                 <span>See changes</span>
               </UnstyledLink>
             </div>
           )}
-          <div className="flex items-center justify-start gap-2 mt-6 text-sm font-medium text-gray-600 dark:text-gray-300">
+          <div className="flex items-center justify-start gap-2 mt-6 text-sm font-medium text-slate-600 dark:text-slate-300">
             {/* {meta?.devtoViews ? (
                   <Tooltip
                     tipChildren={
@@ -211,7 +197,7 @@ export default function Post({
             </CustomLink>
           )}
 
-          <hr className="dark:border-gray-600" />
+          <hr className="dark:border-slate-600" />
 
           <section className="lg:grid lg:grid-cols-[auto,250px] lg:gap-8">
             <article className="w-full mx-auto mt-4 prose transition-colors mdx dark:prose-invert">
