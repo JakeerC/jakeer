@@ -114,7 +114,7 @@ export default function FeaturedPosts({
               <h2 className="text-2xl md:text-4xl" id="blog">
                 <Accent>Featured Posts</Accent>
               </h2>
-              <ul className="mt-4 grid gap-4 sm:grid-cols-1 xl:grid-cols-2">
+              <ul className="mt-4 grid gap-4 sm:grid-cols-2 md:grid-cols-3">
                 {populatedPosts.map((post, i) => (
                   <BlogCard
                     key={post.slug}
