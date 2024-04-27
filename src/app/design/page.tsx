@@ -19,7 +19,7 @@ import TechIcons from '@/components/TechIcons';
 import TechStack from '@/components/TechStack';
 import Tooltip from '@/components/Tooltip';
 
-import { TechListNameType } from '@/constants';
+import { TechListNameType } from '@/types/techList';
 
 export default function Components() {
   const { theme } = useTheme();

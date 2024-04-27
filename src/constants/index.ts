@@ -18,7 +18,7 @@ export {
   snippetsDesc,
 } from './seoMetaData';
 export { socialLinks } from './socialLinks';
-export { techList, type TechListNameType } from './techList';
+export { techList } from './techList';
 export { THEME_COLOR_DARK, THEME_COLOR_LIGHT } from './theme';
 export {
   defaultOGLogo,

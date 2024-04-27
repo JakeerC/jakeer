@@ -5,9 +5,8 @@ import UnstyledLink from '@/components/links/UnstyledLink';
 import CloudinaryImg from '@/components/media/CloudinaryImg';
 import TechIcons from '@/components/TechIcons';
 
-import { TechListNameType } from '@/constants';
-
 import { ProjectFrontmatter } from '@/types/frontmatters';
+import { TechListNameType } from '@/types/techList';
 
 type ProjectCardProps = {
   project: ProjectFrontmatter;

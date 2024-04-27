@@ -112,5 +112,3 @@ export const techList: Record<string, { name: string; icon: IconType }> = {
     name: 'Swift',
   },
 };
-
-export type TechListNameType = keyof typeof techList;

@@ -1,9 +1,10 @@
-// ! dependencies => Tooltip
 import clsx from 'clsx';
 
 import Tooltip from '@/components/Tooltip';
 
-import { techList, TechListNameType } from '@/constants';
+import { techList } from '@/constants';
+
+import { TechListNameType } from '@/types/techList';
 
 export type TechIconsProps = {
   techs: Array<TechListNameType>;
