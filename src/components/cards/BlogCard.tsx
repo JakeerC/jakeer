@@ -1,7 +1,6 @@
 import clsx from 'clsx';
 import * as React from 'react';
 
-import Accent from '@/components/Accent';
 import ArticleMeta from '@/components/content/ArticleMeta';
 import Tag from '@/components/content/Tag';
 import UnstyledLink from '@/components/links/UnstyledLink';
@@ -55,7 +54,7 @@ export default function BlogCard({
             <div
               className={clsx(
                 'absolute bottom-2 w-full px-4 py-2',
-                'mt-2 flex flex-wrap justify-end',
+                'mt-2 flex flex-wrap justify-end gap-1',
                 'text-sm text-black dark:text-gray-100'
               )}
             >
@@ -64,9 +63,9 @@ export default function BlogCard({
                   tabIndex={-1}
                   className="bg-opacity-80 dark:!bg-opacity-70"
                   key={tag}
-                >
-                  {checkTagged?.(tag) ? <Accent>{tag}</Accent> : tag}
-                </Tag>
+                  techName={tag}
+                  isChecked={checkTagged?.(tag)}
+                />
               ))}
             </div>
           </div>
