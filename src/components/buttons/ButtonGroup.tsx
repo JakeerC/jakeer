@@ -26,8 +26,7 @@ export default function ButtonGroup({
           className={clsx(
             'inline-block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-primary-300/5 focus:relative dark:bg-dark',
             selected.name === opt.name
-              ? // ? 'bg-primary-300/20 dark:bg-primary-300 hover:bg-primary-300/20 hover:dark:bg-primary-300 dark:text-white'
-                'bg-gradient-to-tr from-primary-300/40 via-primary-300/40 to-primary-400/40 dark:from-primary-300 dark:to-primary-400 '
+              ? 'bg-active'
               : 'text-gray-700 dark:text-gray-300'
           )}
           key={opt.name}

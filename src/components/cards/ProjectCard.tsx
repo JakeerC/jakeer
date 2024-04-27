@@ -3,7 +3,9 @@ import * as React from 'react';
 
 import UnstyledLink from '@/components/links/UnstyledLink';
 import CloudinaryImg from '@/components/media/CloudinaryImg';
-import TechIcons, { TechListType } from '@/components/TechIcons';
+import TechIcons from '@/components/TechIcons';
+
+import { TechListType } from '@/constants/techList';
 
 import { ProjectFrontmatter } from '@/types/frontmatters';
 
