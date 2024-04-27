@@ -15,9 +15,11 @@ import ShareTweetButton from '@/components/links/ShareTweetButton';
 import TOCLink from '@/components/links/TOCLink';
 import UnstyledLink from '@/components/links/UnstyledLink';
 import NextImage from '@/components/media/NextImage';
-import TechIcons, { TechListType } from '@/components/TechIcons';
+import TechIcons from '@/components/TechIcons';
 import TechStack from '@/components/TechStack';
 import Tooltip from '@/components/Tooltip';
+
+import { TechListType } from '@/constants/techList';
 
 export default function Components() {
   const { theme } = useTheme();

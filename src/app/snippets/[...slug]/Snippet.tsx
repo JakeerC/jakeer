@@ -86,6 +86,7 @@ export default function SingleSnippetPage({ code, frontmatter }: SnippetType) {
                     tabIndex={-1}
                     className="bg-opacity-80 dark:!bg-opacity-60"
                     key={tag}
+                    techName={tag}
                   >
                     {tag}
                   </Tag>

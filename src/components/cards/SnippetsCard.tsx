@@ -46,6 +46,8 @@ export default function SnippetsCard({
                 tabIndex={-1}
                 className="bg-opacity-80 dark:!bg-opacity-60"
                 key={tag}
+                techName={tag}
+                isChecked={checkTagged?.(tag)}
               >
                 {checkTagged?.(tag) ? <Accent>{tag}</Accent> : tag}
               </Tag>

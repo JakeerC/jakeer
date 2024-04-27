@@ -134,19 +134,19 @@ export default function Blog({ posts, tags }: BlogType) {
             type="text"
           />
           <div
-            className="flex flex-wrap items-baseline justify-start gap-2 mt-2 text-sm text-gray-600 dark:text-gray-300"
+            className="flex flex-wrap justify-start gap-2 mt-2 text-sm text-gray-600 dark:text-gray-300"
             data-fade="3"
           >
-            <span className="font-medium">Choose topic:</span>
+            <span className="font-medium self-end">Choose topic:</span>
             <SkipNavTag>
               {tags.map(tag => (
                 <Tag
                   key={tag}
                   onClick={() => toggleTag(tag)}
                   disabled={!filteredTags.includes(tag)}
-                >
-                  {checkTagged(tag) ? <Accent>{tag}</Accent> : tag}
-                </Tag>
+                  techName={tag}
+                  isChecked={checkTagged(tag)}
+                />
               ))}
             </SkipNavTag>
           </div>
