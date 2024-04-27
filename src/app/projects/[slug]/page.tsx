@@ -5,7 +5,7 @@ import { og } from '@/lib/og';
 
 import { getProjectData } from '@/app/projects/[slug]/helper';
 import Project from '@/app/projects/[slug]/Project';
-import { commonMetaKeywords } from '@/constants/consts';
+import { commonMetaKeywords } from '@/constants';
 
 import { ProjectType } from '@/types/frontmatters';
 

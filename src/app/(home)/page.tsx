@@ -12,8 +12,8 @@ import UnstyledLink from '@/components/links/UnstyledLink';
 
 import FeaturedPosts from '@/app/(home)/featured-posts/FeaturedPosts';
 import { getFeaturedData } from '@/app/(home)/featured-posts/getFeaturedData';
-import { commonMetaKeywords, homeDesc } from '@/constants/consts';
-import { domain, githubURL, twitterURL } from '@/constants/urls';
+import { commonMetaKeywords, homeDesc } from '@/constants';
+import { domain, githubURL, twitterURL } from '@/constants';
 
 export const metadata: Metadata = {
   title:

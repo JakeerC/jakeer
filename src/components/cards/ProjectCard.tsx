@@ -5,7 +5,7 @@ import UnstyledLink from '@/components/links/UnstyledLink';
 import CloudinaryImg from '@/components/media/CloudinaryImg';
 import TechIcons from '@/components/TechIcons';
 
-import { TechListType } from '@/constants/techList';
+import { TechListNameType } from '@/constants';
 
 import { ProjectFrontmatter } from '@/types/frontmatters';
 
@@ -35,7 +35,9 @@ export default function ProjectCard({ project, className }: ProjectCardProps) {
           {project.description}
         </p>
         <div className="mt-2">
-          <TechIcons techs={project.techs.split(',') as Array<TechListType>} />
+          <TechIcons
+            techs={project.techs.split(',') as Array<TechListNameType>}
+          />
         </div>
 
         <CloudinaryImg

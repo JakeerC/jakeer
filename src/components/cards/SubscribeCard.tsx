@@ -3,7 +3,7 @@ import clsx from 'clsx';
 import Accent from '@/components/Accent';
 import ButtonLink from '@/components/links/ButtonLink';
 
-import { subStackURL } from '@/constants/urls';
+import { subStackURL } from '@/constants';
 
 type SubscribeCardProps = {
   className?: string;

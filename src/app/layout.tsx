@@ -11,8 +11,8 @@ import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
 
 import { Providers } from '@/app/providers';
-import { commonMetaKeywords } from '@/constants/consts';
-import { domain } from '@/constants/urls';
+import { commonMetaKeywords } from '@/constants';
+import { domain } from '@/constants';
 
 const rubik = Rubik({ subsets: ['latin'] });
 

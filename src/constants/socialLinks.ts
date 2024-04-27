@@ -1,7 +1,7 @@
 import { IconType } from 'react-icons';
 import { SiGithub, SiGmail, SiLinkedin, SiRss, SiX } from 'react-icons/si';
 
-import { domain, githubURL, linkedInURL, twitterURL } from '@/constants/urls';
+import { domain, githubURL, linkedInURL, twitterURL } from './urls';
 
 type SocialLink = {
   href: string;

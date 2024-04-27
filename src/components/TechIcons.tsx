@@ -3,10 +3,10 @@ import clsx from 'clsx';
 
 import Tooltip from '@/components/Tooltip';
 
-import { techList, TechListType } from '@/constants/techList';
+import { techList, TechListNameType } from '@/constants';
 
 export type TechIconsProps = {
-  techs: Array<TechListType>;
+  techs: Array<TechListNameType>;
 } & React.ComponentPropsWithoutRef<'ul'>;
 
 export default function TechIcons({ className, techs }: TechIconsProps) {

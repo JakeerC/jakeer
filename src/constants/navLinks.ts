@@ -8,11 +8,6 @@ export const primaryNavLinks = [
 
 export const secondaryNavLinks = [
   {
-    href: 'https://github.com/jakeerc/jakeer',
-    label: 'Source Code',
-    show: false, // move this beside copyright
-  },
-  {
     href: '/design',
     label: 'Design',
     show: true,

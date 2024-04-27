@@ -5,7 +5,7 @@ import { og } from '@/lib/og';
 
 import { getSnippetData } from '@/app/snippets/[...slug]/helper';
 import SingleSnippetPage from '@/app/snippets/[...slug]/Snippet';
-import { commonMetaKeywords } from '@/constants/consts';
+import { commonMetaKeywords } from '@/constants';
 
 import { SnippetType } from '@/types/frontmatters';
 

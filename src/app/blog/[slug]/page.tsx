@@ -13,7 +13,7 @@ import { Metadata } from 'next';
 
 import { og } from '@/lib/og';
 
-import { commonMetaKeywords } from '@/constants/consts';
+import { commonMetaKeywords } from '@/constants';
 
 type Props = {
   params: { slug: string };

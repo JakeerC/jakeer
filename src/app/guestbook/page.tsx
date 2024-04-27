@@ -7,7 +7,7 @@ import Accent from '@/components/Accent';
 import Discussions from '@/components/Discussions';
 import CustomLink from '@/components/links/CustomLink';
 
-import { domain } from '@/constants/urls';
+import { domain } from '@/constants';
 
 export const metadata: Metadata = {
   title: 'Guestbook',

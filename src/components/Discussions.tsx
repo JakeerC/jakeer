@@ -2,7 +2,7 @@
 import Giscus, { Repo, Theme } from '@giscus/react';
 import { useTheme } from 'next-themes';
 
-import { commentFlag } from '@/constants/env';
+import { commentFlag } from '@/constants';
 
 type blogDiscussions = {
   category: 'Blog';

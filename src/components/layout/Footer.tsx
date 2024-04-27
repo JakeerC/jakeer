@@ -3,8 +3,8 @@ import * as React from 'react';
 import { Jakeer } from '@/components/CJ';
 import UnstyledLink from '@/components/links/UnstyledLink';
 
-import { primaryNavLinks, secondaryNavLinks } from '@/constants/navLinks';
-import { socialLinks } from '@/constants/socialLinks';
+import { primaryNavLinks, secondaryNavLinks } from '@/constants';
+import { socialLinks } from '@/constants';
 
 export default function Footer() {
   return (

@@ -10,7 +10,7 @@ import ThemeButton from '@/components/buttons/ThemeButton';
 import { Jakeer } from '@/components/CJ';
 import UnstyledLink from '@/components/links/UnstyledLink';
 
-import { primaryNavLinks } from '@/constants/navLinks';
+import { primaryNavLinks } from '@/constants';
 
 type HeaderProps = {
   large?: boolean;

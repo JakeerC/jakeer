@@ -3,8 +3,8 @@ import { MetadataRoute } from 'next';
 
 import { getAllFilesFrontmatter } from '@/lib/mdx.server';
 
-import { primaryNavLinks, secondaryNavLinks } from '@/constants/navLinks';
-import { domain } from '@/constants/urls';
+import { domain } from '@/constants';
+import { primaryNavLinks, secondaryNavLinks } from '@/constants';
 
 const today = ((): Date => {
   const d = new Date();

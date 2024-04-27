@@ -5,7 +5,7 @@ import { HiRefresh } from 'react-icons/hi';
 
 import ButtonLink from '@/components/links/ButtonLink';
 
-import { isProd } from '@/constants/env';
+import { isProd } from '@/constants';
 
 export default function ReloadDevtool() {
   const pathname = usePathname();

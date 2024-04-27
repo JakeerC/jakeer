@@ -19,7 +19,7 @@ import TechIcons from '@/components/TechIcons';
 import TechStack from '@/components/TechStack';
 import Tooltip from '@/components/Tooltip';
 
-import { TechListType } from '@/constants/techList';
+import { TechListNameType } from '@/constants';
 
 export default function Components() {
   const { theme } = useTheme();
@@ -127,7 +127,7 @@ export default function Components() {
       />
 
       <TechStack />
-      <TechIcons techs={['react', 'nextjs'] as Array<TechListType>} />
+      <TechIcons techs={['react', 'nextjs'] as Array<TechListNameType>} />
       <Tooltip key="keyId" tipChildren={<p> test tooltip</p>}>
         <>
           <SiTailwindcss />

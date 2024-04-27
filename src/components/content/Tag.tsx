@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 
-import { techList } from '@/constants/techList';
+import { techList } from '@/constants';
 
 export default function Tag({
   children,

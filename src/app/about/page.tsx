@@ -7,8 +7,8 @@ import Accent from '@/components/Accent';
 import ButtonLink from '@/components/links/ButtonLink';
 import TechStack from '@/components/TechStack';
 
-import { aboutDesc } from '@/constants/consts';
-import { domain } from '@/constants/urls';
+import { aboutDesc } from '@/constants';
+import { domain } from '@/constants';
 
 export const metadata: Metadata = {
   title: 'About',
