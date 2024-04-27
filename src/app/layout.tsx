@@ -4,8 +4,8 @@ import type { Metadata, Viewport } from 'next';
 import { Rubik } from 'next/font/google';
 import Script from 'next/script';
 
-import './globals.css';
-import './mdx.css';
+import '@/styles/globals.css';
+import '@/styles/mdx.css';
 
 import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
