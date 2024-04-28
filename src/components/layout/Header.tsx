@@ -40,18 +40,12 @@ export default function Header({ large = false }: HeaderProps) {
   return (
     <header
       className={clsx(
-        ` fixed top-0 h-full
-          w-screen z-3
-          left-0 right-0
-          bg-gradient-to-b from-white to-white/10
-          dark:from-dark dark:to-dark/10
-          bg-blend-hard-white
-          backdrop-blur
-          transform-gpu
-          transition-[max-height]
-          duration-300
-          max-h-20 tablet-sm:max-h-21`,
         'sticky top-0 z-50 transition-shadow',
+        'max-h-20 w-[100%] overflow-x-hidden',
+        'bg-gradient-to-b from-white to-white/10',
+        'dark:from-dark dark:to-dark/10',
+        'backdrop-blur',
+        'duration-300',
         !onTop && 'shadow-sm'
       )}
     >
@@ -95,8 +89,7 @@ export default function Header({ large = false }: HeaderProps) {
                   className={clsx(
                     'transition-colors',
                     'bg-primary-300/0 group-hover:bg-primary-300/20 dark:group-hover:bg-primary-300/0',
-                    href === baseRoute &&
-                      '!bg-primary-300/50 dark:bg-gradient-to-tr dark:from-primary-300 dark:to-primary-400 dark:bg-clip-text dark:text-transparent'
+                    href === baseRoute && 'text-accent'
                   )}
                 >
                   {label}
