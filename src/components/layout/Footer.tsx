@@ -51,7 +51,7 @@ function SecondaryNavLinks({
           show && (
             <li key={label}>
               <UnstyledLink
-                className="text-sm font-medium rounded-sm opacity-40 hover:opacity-100 animated-underline focus:outline-none focus-visible:ring focus-visible:ring-primary-300 dark:text-gray-200"
+                className="text-sm font-medium rounded-sm opacity-40 hover:opacity-100 animated-underline focus-focus dark:text-gray-200"
                 href={href}
               >
                 {label}
@@ -72,7 +72,7 @@ function SocialLinks() {
           social.show && (
             <li key={social.href}>
               <UnstyledLink
-                className="inline-flex items-center justify-center rounded-sm focus:outline-none focus-visible:ring focus-visible:ring-primary-300"
+                className="inline-flex items-center justify-center rounded-sm focus-focus"
                 href={social.href}
                 aria-label={social.ariaLabel}
               >

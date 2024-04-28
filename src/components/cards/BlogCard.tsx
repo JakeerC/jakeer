@@ -36,7 +36,7 @@ export default function BlogCard({
       onClick={onClick}
     >
       <UnstyledLink
-        className="block h-full rounded-md focus:outline-none focus-visible:ring focus-visible:ring-primary-300"
+        className="block h-full rounded-md focus-focus"
         href={`/blog/${post.slug}`}
       >
         {!hideBanner && (

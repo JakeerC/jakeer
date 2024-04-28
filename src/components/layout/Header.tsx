@@ -5,7 +5,6 @@ import clsx from 'clsx';
 import { usePathname } from 'next/navigation';
 import * as React from 'react';
 
-import Accent from '@/components/Accent';
 import ThemeButton from '@/components/buttons/ThemeButton';
 import { Jakeer } from '@/components/CJ';
 import UnstyledLink from '@/components/links/UnstyledLink';
@@ -64,12 +63,11 @@ export default function Header({ large = false }: HeaderProps) {
           'font-medium text-black dark:text-white',
           'bg-white dark:bg-dark',
           'group dark:hover:text-primary-300',
-          'focus:outline-none focus:ring focus:ring-primary-300',
           'absolute left-4 top-4',
-          '-translate-y-16 focus:translate-y-0'
+          '-translate-y-16 focus-focus focus:translate-y-0'
         )}
       >
-        <Accent>Skip to main content</Accent>
+        Skip to main content
       </a>
 
       <nav
@@ -90,7 +88,7 @@ export default function Header({ large = false }: HeaderProps) {
                   'rounded-sm py-2 transition-colors',
                   'font-medium text-black dark:text-white',
                   'group dark:hover:text-primary-300',
-                  'focus:outline-none focus-visible:ring focus-visible:ring-primary-300'
+                  'focus-focus'
                 )}
               >
                 <span
