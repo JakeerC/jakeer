@@ -1,6 +1,6 @@
 import buildUrl from 'cloudinary-build-url';
 
-import { cloudinaryCloudName } from '@/constants/consts';
+import { cloudinaryCloudName } from '@/constants';
 
 export type GenerateURLParamsType = {
   publicId: string;

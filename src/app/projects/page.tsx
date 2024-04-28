@@ -4,8 +4,8 @@ import { og } from '@/lib/og';
 
 import { getAllProjectsData } from '@/app/projects/getAllProjectsData';
 import Projects from '@/app/projects/Projects';
-import { projectsDesc } from '@/constants/consts';
-import { domain } from '@/constants/urls';
+import { projectsDesc } from '@/constants';
+import { domain } from '@/constants';
 
 import { ProjectFrontmatter } from '@/types/frontmatters';
 

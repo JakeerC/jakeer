@@ -67,5 +67,9 @@ c-37 -59 -68 -110 -68 -114 0 -6 -43 -81 -378 -659 -95 -163 -191 -330 -214
 }
 
 export function Jakeer() {
-  return <UnstyledLink href="/">{'< Jakeer />'}</UnstyledLink>;
+  return (
+    <UnstyledLink href="/" className="text-xl font-bold">
+      {'< Jakeer />'}
+    </UnstyledLink>
+  );
 }

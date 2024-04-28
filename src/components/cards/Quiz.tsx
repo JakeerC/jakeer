@@ -15,7 +15,7 @@ export default function Quiz(props: QuizType) {
   };
 
   return (
-    <div className="prose relative mt-8 w-full !max-w-none rounded border p-4 pt-8 dark:prose-invert dark:border-gray-600">
+    <div className="prose relative mt-8 w-full !max-w-none rounded border p-4 pt-8 dark:prose-invert dark:border-slate-600">
       <div className="text-center">
         <h4 className="text-lg md:text-xl">{props.question}</h4>
         {props.description && (
@@ -37,14 +37,14 @@ export default function Quiz(props: QuizType) {
               onClick={() => handleAnswer(answerIndex)}
               className={clsx(
                 'relative rounded-md p-2',
-                'border dark:border-gray-600',
+                'border dark:border-slate-600',
                 'transition-colors',
                 'disabled:cursor-not-allowed',
                 {
-                  'hover:bg-gray-50 dark:hover:bg-gray-900': !selectedOption,
-                  'bg-green-300 text-gray-800 dark:bg-green-400':
+                  'hover:bg-slate-50 dark:hover:bg-slate-900': !selectedOption,
+                  'bg-green-300 text-slate-800 dark:bg-green-400':
                     selectedOption && optionStatus === 'correct',
-                  'bg-red-300 text-gray-800 dark:bg-red-400':
+                  'bg-red-300 text-slate-800 dark:bg-red-400':
                     selectedOption === answerIndex && optionStatus === 'wrong',
                 }
               )}
@@ -70,7 +70,7 @@ export default function Quiz(props: QuizType) {
       <div
         className={clsx(
           'absolute left-4 top-0 rounded-b-md px-2 py-1',
-          'border border-t-0 dark:border-gray-600'
+          'border border-t-0 dark:border-slate-600'
         )}
       >
         <Accent>pop quiz!</Accent>

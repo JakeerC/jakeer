@@ -5,7 +5,7 @@ import { og } from '@/lib/og';
 
 import { getProjectData } from '@/app/projects/[slug]/helper';
 import Project from '@/app/projects/[slug]/Project';
-import { commonMetaKeywords } from '@/constants/consts';
+import { commonMetaKeywords } from '@/constants';
 
 import { ProjectType } from '@/types/frontmatters';
 
@@ -20,8 +20,9 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const { frontmatter } = await getProjectData({ params });
 
-  const { title, description, banner, tags } = frontmatter;
-  const tagsList = tags?.split(',');
+  const { title, description, banner, techs } = frontmatter;
+
+  const tagsList = techs?.split(',') ?? [];
   const keywords = [...tagsList, ...commonMetaKeywords];
 
   // optionally access and extend (rather than replace) parent metadata
@@ -39,8 +40,6 @@ export async function generateMetadata(
     twitter: {
       title,
       card: 'summary_large_image',
-      site: '@jakeerchilakala',
-      creator: '@jakeerchilakala',
       description,
       images: bannerURL,
     },

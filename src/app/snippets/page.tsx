@@ -5,8 +5,8 @@ import { og } from '@/lib/og';
 
 import { getAllSnippetsData } from '@/app/snippets/getAllSnippetsData';
 import Snippets from '@/app/snippets/Snippets';
-import { snippetsDesc } from '@/constants/consts';
-import { domain } from '@/constants/urls';
+import { snippetsDesc } from '@/constants';
+import { domain } from '@/constants';
 
 import { SnippetFrontmatter } from '@/types/frontmatters';
 

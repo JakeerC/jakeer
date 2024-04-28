@@ -20,7 +20,9 @@ export const twitterURL = 'https://twitter.com/jakeerchilakala';
 
 export const linkedInURL = 'https://www.linkedin.com/in/chilakalajakeer';
 
-export const githubURL = 'https://github.com/jakeerc';
-
 export const personalProfilePicture =
   'https://res.cloudinary.com/jakeer-cloudinary/image/upload/q_auto,f_auto,w_2560/personal/logo_round';
+
+export const githubURL = 'https://github.com/jakeerc';
+
+export const sourceCodeRepo = 'https://github.com/jakeerc/jakeer';

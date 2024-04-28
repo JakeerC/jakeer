@@ -1,4 +1,3 @@
-// import { IoLogoVercel } from 'react-icons/io5';
 import { IconType } from 'react-icons';
 import { AiOutlineMacCommand } from 'react-icons/ai';
 import {
@@ -113,5 +112,3 @@ export const techList: Record<string, { name: string; icon: IconType }> = {
     name: 'Swift',
   },
 };
-export const techNamesList = Object.keys(techList);
-export type TechListType = keyof typeof techList;

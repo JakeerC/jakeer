@@ -4,41 +4,62 @@ import type { Metadata, Viewport } from 'next';
 import { Rubik } from 'next/font/google';
 import Script from 'next/script';
 
-import './globals.css';
-import './mdx.css';
+import '@/styles/globals.css';
+import '@/styles/mdx.css';
+
+import { og } from '@/lib/og';
 
 import Footer from '@/components/layout/Footer';
 import Header from '@/components/layout/Header';
 
 import { Providers } from '@/app/providers';
-import { commonMetaKeywords } from '@/constants/consts';
-import { domain } from '@/constants/urls';
+import {
+  applicationName,
+  commonMetaKeywords,
+  defaultTitle,
+  homeDesc,
+  THEME_COLOR_DARK,
+  THEME_COLOR_LIGHT,
+  twitterUserId,
+} from '@/constants';
+import { domain } from '@/constants';
 
 const rubik = Rubik({ subsets: ['latin'] });
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: dark)', color: '#0e1111' },
-    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+    { media: '(prefers-color-scheme: dark)', color: THEME_COLOR_DARK },
+    { media: '(prefers-color-scheme: light)', color: THEME_COLOR_LIGHT },
   ],
 };
 
 export const metadata: Metadata = {
-  title: 'Jakeer | Personal Website',
+  title: defaultTitle,
   description: 'Personal Website of Jakeer.',
-  applicationName: 'Jakeer Personal Site',
+  applicationName: applicationName,
   authors: [{ name: 'JakeerC', url: domain }],
   creator: 'Jakeer',
   generator: 'Next.js',
   referrer: 'origin-when-cross-origin',
   keywords: ['Next.js', 'React', 'JavaScript', ...commonMetaKeywords],
   metadataBase: new URL('/', domain),
-  // themeColor: [ // * moved this part to viewport
-  //   { media: '(prefers-color-scheme: dark)', color: '#0e1111' },
-  //   { media: '(prefers-color-scheme: light)', color: '#ffffff' },
-  // ],
   robots: 'follow, index',
-  openGraph: { images: ['/favicon/large-og.jpeg'] },
+  twitter: {
+    title: defaultTitle,
+    card: 'summary_large_image',
+    site: twitterUserId,
+    creator: twitterUserId,
+    description: homeDesc,
+    images: og({
+      siteName: applicationName,
+      ogType: 'gradient',
+      description: homeDesc,
+    }),
+  },
+  openGraph: {
+    siteName: applicationName,
+    images: ['/favicon/large-og.jpeg'],
+  },
 };
 
 export default function RootLayout({

@@ -64,7 +64,7 @@
   }
 
   .bg-dark a.custom-link {
-    @apply border-gray-200 hover:border-gray-200/0;
+    @apply border-slate-200 hover:border-slate-200/0;
   }
 
   .min-h-main {
@@ -73,12 +73,11 @@
 }
 
 @layer utilities {
-  .accent {
-    @apply dark:bg-gradient-to-tr dark:from-primary-300 dark:to-primary-400 dark:bg-clip-text dark:text-transparent;
+  .focus-focus {
+    @apply focus:outline-none focus-visible:ring focus-visible:ring-primary-300;
   }
-
-  .accent-highlight {
-    @apply bg-primary-300/50 dark:bg-gradient-to-tr dark:from-primary-300 dark:to-primary-400 dark:bg-clip-text dark:text-transparent;
+  .text-accent {
+    @apply !bg-primary-300/50 dark:bg-gradient-to-tr dark:from-primary-300 dark:to-primary-400 dark:bg-clip-text dark:text-transparent;
   }
   .bg-active {
     @apply bg-gradient-to-tr from-primary-300/40 via-primary-300/40 to-primary-400/40 dark:from-primary-300 dark:to-primary-400 dark:!text-slate-700 hover:dark:text-slate-700;
@@ -160,29 +159,31 @@
     transition-delay: 900ms;
   }
   /* #endregion  /**======== Fade In =========== */
-}
+} /* ! Not used */
 /* Tippy */
 .tippy-tooltip [x-circle] {
   background-color: transparent !important;
 }
-
+/* ! Not used */
 .tippy-tooltip {
   padding: 0 0.8rem;
 }
 
 /* YT Lite */
+/* ! Not used */
 .yt-lite::before {
   content: none !important;
 }
 
 /* #region  /**=========== Twitter Embed =========== */
+/* ! Not used */
 .twitter-tweet.twitter-tweet-rendered {
   margin: 0 auto !important;
   border-radius: 12px;
   overflow: hidden;
 }
 .tweet-custom-border {
-  @apply border-r border-gray-300 rounded-xl dark:border-gray-700;
+  @apply border-r border-slate-300 rounded-xl dark:border-slate-700;
 }
 @media (min-width: 595px) {
   .tweet-custom-border {
@@ -192,6 +193,8 @@
 /* #endregion  /**======== Twitter Embed =========== */
 
 /* #region /**=========== Like Button Animation =========== */
+
+/* ! Not used */
 .heart-animate {
   transition: transform 80ms cubic-bezier(0.64, 0.57, 0.67, 1.53);
   transform: scale(1);
@@ -205,7 +208,7 @@
 }
 
 .heart-button:focus-visible .heart-animate {
-  @apply rounded-sm focus:outline-none focus-visible:ring focus-visible:ring-primary-300;
+  @apply rounded-sm focus-focus;
 }
 
 .heart-animate:active,

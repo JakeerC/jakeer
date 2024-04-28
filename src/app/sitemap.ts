@@ -3,13 +3,11 @@ import { MetadataRoute } from 'next';
 
 import { getAllFilesFrontmatter } from '@/lib/mdx.server';
 
-import { primaryNavLinks, secondaryNavLinks } from '@/constants/navLinks';
-import { domain } from '@/constants/urls';
+import { domain } from '@/constants';
+import { primaryNavLinks, secondaryNavLinks } from '@/constants';
 
 const today = ((): Date => {
   const d = new Date();
-  // Colombia TimeZone (UTC-5)
-  d.setUTCHours(-5);
   return d;
 })();
 

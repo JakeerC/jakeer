@@ -2,7 +2,7 @@
 import clsx from 'clsx';
 import { useTheme } from 'next-themes';
 import * as React from 'react';
-import { FiMoon, FiSun } from 'react-icons/fi';
+import { RxMoon, RxSun } from 'react-icons/rx';
 
 type ThemeButtonProps = React.ComponentPropsWithoutRef<'button'>;
 
@@ -15,9 +15,9 @@ export default function ThemeButton({ className, ...rest }: ThemeButtonProps) {
   return (
     <button
       className={clsx(
-        'rounded-md p-2 focus:outline-none md:p-2.5',
-        'hover:border-primary-300 hover:text-primary-300 dark:hover:border-primary-300 dark:hover:text-primary-300',
-        'focus:border focus-visible:border-primary-300 focus-visible:text-primary-300 dark:focus-visible:border-primary-300 dark:focus-visible:text-primary-300',
+        'rounded-md p-2 md:p-2.5',
+        'hover:text-primary-300 dark:hover:text-primary-300',
+        'focus-focus',
         'text-lg md:text-xl',
         className
       )}
@@ -25,7 +25,7 @@ export default function ThemeButton({ className, ...rest }: ThemeButtonProps) {
       onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
       aria-label={theme}
     >
-      {mounted ? <>{theme === 'dark' ? <FiMoon /> : <FiSun />}</> : <FiSun />}
+      {mounted ? <>{theme === 'dark' ? <RxMoon /> : <RxSun />}</> : <RxSun />}
     </button>
   );
 }

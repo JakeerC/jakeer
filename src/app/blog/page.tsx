@@ -4,8 +4,8 @@ import { og } from '@/lib/og';
 
 import Blog from '@/app/blog/Blog';
 import { getAllBlogData } from '@/app/blog/getAllBlogData';
-import { blogDesc } from '@/constants/consts';
-import { domain } from '@/constants/urls';
+import { blogDesc } from '@/constants';
+import { domain } from '@/constants';
 
 import { BlogFrontmatter } from '@/types/frontmatters';
 
@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'article',
     url: `${domain}/blog`,
-    title: "Jakker's blog",
+    title: "Jakeer's blog",
     description: blogDesc,
     siteName: 'Jakeer Personal Site',
     images: [

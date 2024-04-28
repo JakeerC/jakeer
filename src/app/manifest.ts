@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next';
 
-import { homeDesc } from '@/constants/consts';
-import { THEME_COLOR_DARK, THEME_COLOR_LIGHT } from '@/constants/theme';
+import { homeDesc } from '@/constants';
+import { THEME_COLOR_DARK, THEME_COLOR_LIGHT } from '@/constants';
 
 export default function manifest(): MetadataRoute.Manifest {
   return {

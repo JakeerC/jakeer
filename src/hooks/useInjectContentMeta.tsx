@@ -7,7 +7,7 @@ import { pickContentMeta } from '@/lib/contentMeta';
 import { cleanBlogPrefix } from '@/lib/helper.client';
 import { getContentMeta } from '@/lib/requests/content-meta';
 
-import { contentMetaFlag } from '@/constants/env';
+import { contentMetaFlag } from '@/constants';
 
 import {
   ContentType,

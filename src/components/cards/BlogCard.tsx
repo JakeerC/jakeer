@@ -26,7 +26,7 @@ export default function BlogCard({
   return (
     <li
       className={clsx(
-        'w-full rounded-md border border-gray-300 bg-white dark:border-gray-600 dark:bg-dark',
+        'w-full rounded-md border border-slate-300 bg-white dark:border-slate-600 dark:bg-dark',
         'scale-100 hover:scale-[1.02] active:scale-[0.97] motion-safe:transform-gpu',
         'transition duration-100',
         'motion-reduce:hover:scale-100',
@@ -36,7 +36,7 @@ export default function BlogCard({
       onClick={onClick}
     >
       <UnstyledLink
-        className="block h-full rounded-md focus:outline-none focus-visible:ring focus-visible:ring-primary-300"
+        className="block h-full rounded-md focus-focus"
         href={`/blog/${post.slug}`}
       >
         {!hideBanner && (
@@ -55,7 +55,7 @@ export default function BlogCard({
               className={clsx(
                 'absolute bottom-2 w-full px-4 py-2',
                 'mt-2 flex flex-wrap justify-end gap-1',
-                'text-sm text-black dark:text-gray-100'
+                'text-sm text-black dark:text-slate-100'
               )}
             >
               {post.tags.split(',').map(tag => (
@@ -71,12 +71,12 @@ export default function BlogCard({
           </div>
         )}
         <div className="p-4">
-          <h2 className="text-gray-800 dark:text-gray-100 text-[1.125rem] leading-7">
+          <h2 className="text-slate-800 dark:text-slate-100 h3 leading-7">
             {post.title}
           </h2>
 
           <ArticleMeta articleFrontMatter={post} />
-          <p className="text-sm text-gray-700 dark:text-gray-300">
+          <p className="text-sm text-slate-700 dark:text-slate-300">
             {post.description}
           </p>
         </div>

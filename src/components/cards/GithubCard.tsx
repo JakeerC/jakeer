@@ -27,7 +27,7 @@ export default function GithubCard({ repo, className }: GithubCardProps) {
         className={clsx(
           '!block max-w-xl',
           'not-prose px-4 py-3',
-          'rounded-lg border border-gray-300 dark:border-gray-600',
+          'rounded-lg border border-slate-300 dark:border-slate-600',
           'scale-100 transform-gpu hover:scale-[1.02] active:scale-[0.97]',
           'transition duration-100',
           'animate-shadow',
@@ -40,7 +40,7 @@ export default function GithubCard({ repo, className }: GithubCardProps) {
             {repository.full_name}
           </Accent>
         </div>
-        <p className={clsx('mt-2 text-sm text-gray-700 dark:text-gray-200')}>
+        <p className={clsx('mt-2 text-sm text-slate-700 dark:text-slate-200')}>
           {repository.description}
         </p>
         <div className="mt-2 flex gap-3">
@@ -60,8 +60,8 @@ export default function GithubCard({ repo, className }: GithubCardProps) {
       className={clsx(
         'mx-auto !block max-w-xl',
         'not-prose px-4 py-3',
-        'rounded-lg border border-gray-300 dark:border-gray-600',
-        'animate-pulse bg-gray-300 dark:bg-gray-600',
+        'rounded-lg border border-slate-300 dark:border-slate-600',
+        'animate-pulse bg-slate-300 dark:bg-slate-600',
         'h-[111px] animate-pulse'
       )}
     />

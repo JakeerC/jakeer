@@ -1,4 +1,4 @@
-import { defaultOGLogo, ogBaseURL } from '@/constants/urls';
+import { defaultOGLogo, ogBaseURL } from '@/constants';
 
 // TODO: conditionally optional type check
 type OpenGraphType =

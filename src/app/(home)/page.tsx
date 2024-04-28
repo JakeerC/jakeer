@@ -12,38 +12,28 @@ import UnstyledLink from '@/components/links/UnstyledLink';
 
 import FeaturedPosts from '@/app/(home)/featured-posts/FeaturedPosts';
 import { getFeaturedData } from '@/app/(home)/featured-posts/getFeaturedData';
-import { commonMetaKeywords, homeDesc } from '@/constants/consts';
-import { domain, githubURL, twitterURL } from '@/constants/urls';
+import {
+  applicationName,
+  defaultTitle,
+  domain,
+  githubURL,
+  githubUserId,
+  homeDesc,
+  twitterURL,
+  twitterUserId,
+} from '@/constants';
 
 export const metadata: Metadata = {
-  title:
-    'Jakeer | Personal Website | Jakeer is a passionate software developer who likes to learn, share, teach and develop',
-  description: homeDesc,
-  keywords: commonMetaKeywords,
-  twitter: {
-    title: 'Jakeer | Personal Website',
-    card: 'summary_large_image',
-    site: '@jakeerchilakala',
-    creator: '@jakeerchilakala',
-    description: homeDesc,
-    images: og({
-      siteName: 'Jakeer',
-      ogType: 'gradient',
-      description:
-        'Jakeer is a passionate software developer who likes to learn, share, teach and develop',
-    }),
-  },
   openGraph: {
     type: 'website',
     url: `${domain}`,
-    title: 'Jakeer',
+    title: defaultTitle,
     description: homeDesc,
-    siteName: 'Jakeer Personal Site',
-
+    siteName: applicationName,
     images: [
       {
         url: og({
-          siteName: 'Jakeer',
+          siteName: applicationName,
           ogType: 'gradient',
           description:
             'Jakeer is a passionate software developer who likes to learn, share, teach and develop',
@@ -77,14 +67,14 @@ export default async function IndexPage() {
               You can call me <Accent>Jakeer</Accent>
             </h1>
             <p
-              className="max-w-4xl mt-2 text-sm leading-relaxed text-gray-700 dark:text-gray-200 md:mt-3 md:text-base 2xl:text-lg"
+              className="max-w-4xl mt-2 text-sm leading-relaxed text-slate-700 dark:text-slate-200 md:mt-3 md:text-base 2xl:text-lg"
               data-fade="2"
             >
               Front-end Engineer
             </p>
             <p
               className={clsx(
-                'mt-4 max-w-4xl text-gray-700 dark:text-gray-200 md:mt-6',
+                'mt-4 max-w-4xl text-slate-700 dark:text-slate-200 md:mt-6',
                 'md:text-lg 2xl:text-xl'
               )}
               data-fade="3"
@@ -107,8 +97,8 @@ export default async function IndexPage() {
                 href={`${domain}/files/resume.pdf`}
                 className={clsx(
                   'inline-flex items-center gap-1 text-sm font-medium md:text-base',
-                  'text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white',
-                  'focus:outline-none focus-visible:ring focus-visible:ring-primary-300',
+                  'text-slate-600 hover:text-black dark:text-slate-400 dark:hover:text-white',
+                  'focus-focus',
                   'transition-colors'
                 )}
               >
@@ -119,25 +109,25 @@ export default async function IndexPage() {
                 href={twitterURL}
                 className={clsx(
                   'inline-flex items-center gap-1 text-sm font-medium md:text-base',
-                  'group text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white',
-                  'focus:outline-none focus-visible:ring focus-visible:ring-primary-300',
+                  'group text-slate-600 hover:text-black dark:text-slate-400 dark:hover:text-white',
+                  'focus-focus',
                   'transition-colors'
                 )}
               >
                 <SiX className="transition-colors shrink-0" />
-                <span>@jakeerchilakala</span>
+                <span>{twitterUserId}</span>
               </UnstyledLink>
               <UnstyledLink
                 href={githubURL}
                 className={clsx(
                   'inline-flex items-center gap-1 text-sm font-medium md:text-base',
-                  'text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white',
-                  'focus:outline-none focus-visible:ring focus-visible:ring-primary-300',
+                  'text-slate-600 hover:text-black dark:text-slate-400 dark:hover:text-white',
+                  'focus-focus',
                   'transition-colors'
                 )}
               >
                 <SiGithub className="shrink-0" />
-                <span>jakeerc</span>
+                <span>{githubUserId}</span>
               </UnstyledLink>
             </div>
           </article>

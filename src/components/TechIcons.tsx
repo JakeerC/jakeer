@@ -1,12 +1,13 @@
-// ! dependencies => Tooltip
 import clsx from 'clsx';
 
 import Tooltip from '@/components/Tooltip';
 
-import { techList, TechListType } from '@/constants/techList';
+import { techList } from '@/constants';
+
+import { TechListNameType } from '@/types/techList';
 
 export type TechIconsProps = {
-  techs: Array<TechListType>;
+  techs: Array<TechListNameType>;
 } & React.ComponentPropsWithoutRef<'ul'>;
 
 export default function TechIcons({ className, techs }: TechIconsProps) {
@@ -19,7 +20,7 @@ export default function TechIcons({ className, techs }: TechIconsProps) {
 
         return (
           <Tooltip key={current.name} tipChildren={<p>{current.name}</p>}>
-            <li className="text-xl text-gray-700 dark:text-gray-200">
+            <li className="text-xl text-slate-700 dark:text-slate-200">
               <current.icon />
             </li>
           </Tooltip>
