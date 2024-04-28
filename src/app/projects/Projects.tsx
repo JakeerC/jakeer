@@ -15,7 +15,7 @@ export default function Projects({ projects }: ProjectsType) {
               <Accent>Projects</Accent>
             </h1>
             <p data-fade="1" className="mt-2 text-gray-600 dark:text-gray-300">
-              Showcase of my works.
+              Showcase of my work.
             </p>
 
             <ul

@@ -11,8 +11,10 @@ export {
 export { primaryNavLinks, secondaryNavLinks } from './navLinks';
 export {
   aboutDesc,
+  applicationName,
   blogDesc,
   commonMetaKeywords,
+  defaultTitle,
   homeDesc,
   projectsDesc,
   snippetsDesc,
@@ -35,3 +37,5 @@ export {
 export const cloudinaryCloudName = 'jakeer-cloudinary'; // ToDO : rename in  cloud
 
 export const emailId = 'jakeerchilakala@gmail.com';
+export const twitterUserId = '@jakeerchilakala';
+export const githubUserId = 'jakeerc';

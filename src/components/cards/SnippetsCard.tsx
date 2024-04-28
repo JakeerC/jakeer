@@ -36,7 +36,7 @@ export default function SnippetsCard({
         className="block h-full rounded-md focus:outline-none focus-visible:ring focus-visible:ring-primary-300"
       >
         <div className="p-4">
-          <h2 className="font-semibold tracking-tight text-gray-800 dark:text-gray-100">
+          <h2 className="font-semibold tracking-tight text-gray-800 dark:text-gray-100 h3">
             {snippet.title}
           </h2>
 

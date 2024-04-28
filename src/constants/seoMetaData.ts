@@ -1,3 +1,6 @@
+export const applicationName = 'Jakeer Personal Site';
+export const defaultTitle =
+  'Jakeer | Personal Website | Jakeer is a passionate software developer who likes to learn, share, teach and develop';
 export const aboutDesc =
   'Jakeer is a passionate software developer who likes to learn, share, teach and develop';
 export const homeDesc =

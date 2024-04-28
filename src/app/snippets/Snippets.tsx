@@ -1,8 +1,7 @@
 'use client';
 import clsx from 'clsx';
 import * as React from 'react';
-import { GiTechnoHeart } from 'react-icons/gi';
-import { HiSortAscending } from 'react-icons/hi';
+import { HiCalendar, HiEye } from 'react-icons/hi';
 
 import { getTags, sortTitleFn } from '@/lib/mdx.client';
 import useInjectContentMeta from '@/hooks/useInjectContentMeta';
@@ -22,11 +21,11 @@ import { SnippetFrontmatter } from '@/types/frontmatters';
 
 const sortOptions: Array<ButtonGroupOption> = [
   {
-    id: 'name',
-    name: 'A-Z',
-    icon: HiSortAscending,
+    id: 'recent',
+    name: 'Recent',
+    icon: HiCalendar,
   },
-  { id: 'popular', name: 'Popular', icon: GiTechnoHeart },
+  { id: 'popular', name: 'Popular', icon: HiEye },
 ];
 
 export default function Snippets({ snippets, tags }: SnippetsType) {

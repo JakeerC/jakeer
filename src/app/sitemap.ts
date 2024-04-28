@@ -8,8 +8,6 @@ import { primaryNavLinks, secondaryNavLinks } from '@/constants';
 
 const today = ((): Date => {
   const d = new Date();
-  // Colombia TimeZone (UTC-5)
-  d.setUTCHours(-5);
   return d;
 })();
 

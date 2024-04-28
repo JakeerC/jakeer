@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'article',
     url: `${domain}/blog`,
-    title: "Jakker's blog",
+    title: "Jakeer's blog",
     description: blogDesc,
     siteName: 'Jakeer Personal Site',
     images: [

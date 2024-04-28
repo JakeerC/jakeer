@@ -71,7 +71,7 @@ export default function BlogCard({
           </div>
         )}
         <div className="p-4">
-          <h2 className="text-gray-800 dark:text-gray-100 text-[1.125rem] leading-7">
+          <h2 className="text-gray-800 dark:text-gray-100 h3 leading-7">
             {post.title}
           </h2>
 

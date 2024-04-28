@@ -12,38 +12,28 @@ import UnstyledLink from '@/components/links/UnstyledLink';
 
 import FeaturedPosts from '@/app/(home)/featured-posts/FeaturedPosts';
 import { getFeaturedData } from '@/app/(home)/featured-posts/getFeaturedData';
-import { commonMetaKeywords, homeDesc } from '@/constants';
-import { domain, githubURL, twitterURL } from '@/constants';
+import {
+  applicationName,
+  defaultTitle,
+  domain,
+  githubURL,
+  githubUserId,
+  homeDesc,
+  twitterURL,
+  twitterUserId,
+} from '@/constants';
 
 export const metadata: Metadata = {
-  title:
-    'Jakeer | Personal Website | Jakeer is a passionate software developer who likes to learn, share, teach and develop',
-  description: homeDesc,
-  keywords: commonMetaKeywords,
-  twitter: {
-    title: 'Jakeer | Personal Website',
-    card: 'summary_large_image',
-    site: '@jakeerchilakala',
-    creator: '@jakeerchilakala',
-    description: homeDesc,
-    images: og({
-      siteName: 'Jakeer',
-      ogType: 'gradient',
-      description:
-        'Jakeer is a passionate software developer who likes to learn, share, teach and develop',
-    }),
-  },
   openGraph: {
     type: 'website',
     url: `${domain}`,
-    title: 'Jakeer',
+    title: defaultTitle,
     description: homeDesc,
-    siteName: 'Jakeer Personal Site',
-
+    siteName: applicationName,
     images: [
       {
         url: og({
-          siteName: 'Jakeer',
+          siteName: applicationName,
           ogType: 'gradient',
           description:
             'Jakeer is a passionate software developer who likes to learn, share, teach and develop',
@@ -125,7 +115,7 @@ export default async function IndexPage() {
                 )}
               >
                 <SiX className="transition-colors shrink-0" />
-                <span>@jakeerchilakala</span>
+                <span>{twitterUserId}</span>
               </UnstyledLink>
               <UnstyledLink
                 href={githubURL}
@@ -137,7 +127,7 @@ export default async function IndexPage() {
                 )}
               >
                 <SiGithub className="shrink-0" />
-                <span>jakeerc</span>
+                <span>{githubUserId}</span>
               </UnstyledLink>
             </div>
           </article>

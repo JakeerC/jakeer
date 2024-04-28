@@ -21,7 +21,6 @@ export default function FeaturedPosts({
   featuredPosts,
   featuredProjects,
   featuredSnippets,
-  // introPosts,
 }: {
   featuredPosts: BlogFrontmatter[];
   featuredProjects: ProjectFrontmatter[];
@@ -29,81 +28,11 @@ export default function FeaturedPosts({
   introPosts: BlogFrontmatter[];
 }) {
   const populatedPosts = useInjectContentMeta('blog', featuredPosts);
-  // const populatedIntro = useInjectContentMeta('blog', introPosts);
   const populatedProjects = useInjectContentMeta('projects', featuredProjects);
   const populatedSnippets = useInjectContentMeta('snippets', featuredSnippets);
 
   return (
     <>
-      {/* <InView triggerOnce rootMargin="-40% 0px">
-        {({ ref, inView }) => (
-          <section
-            ref={ref}
-            id="intro"
-            className={clsx('py-20', inView && 'fade-in-start')}
-          >
-            <article
-              className={clsx(
-                'layout flex flex-col-reverse items-center md:flex-row md:justify-start',
-                'md:gap-4'
-              )}
-              data-fade="0"
-            >
-              <div className="mt-8 h-full w-full md:mt-0">
-                <h2 className="text-4xl md:text-6xl">
-                  <Accent className="inline decoration-clone leading-snug dark:leading-none">
-                    Rethinking Frontend
-                  </Accent>
-                </h2>
-                <div className="mt-4 text-base text-gray-600 dark:text-gray-300 md:text-lg">
-                  <Tooltip
-                    withUnderline
-                    tipChildren={
-                      <>
-                        A mental model is an explanation of someone's{' '}
-                        <strong>thought process</strong> about how something
-                        works. You can use it as your own guide that you can
-                        test through some cases.
-                      </>
-                    }
-                  >
-                    <span>Mental model</span>
-                  </Tooltip>{' '}
-                  will make front-end development more{' '}
-                  <strong className="text-gray-700 dark:text-gray-200">
-                    predictable
-                  </strong>{' '}
-                  by seeing how they work{' '}
-                  <strong className="text-gray-700 dark:text-gray-200">
-                    fundamentally
-                  </strong>
-                  . In my blog, I'm sharing how I approach something and how my
-                  mental model affect my learning about a certain topic.
-                </div>
-              </div>
-              <div className="h-full w-full">
-                <ul className="relative h-full">
-                  <BlogCard
-                    className={clsx(
-                      'absolute max-w-[350px] transform-gpu',
-                      'top-1/2 translate-y-[-55%] md:translate-y-[-50%] lg:translate-y-[-60%]',
-                      'left-1/2 -translate-x-1/2 md:translate-x-[-50%] lg:translate-x-[-30%]',
-                      'rotate-3 md:rotate-6 lg:rotate-12',
-                      'pointer-events-none md:pointer-events-auto'
-                    )}
-                    post={populatedIntro[1]}
-                  />
-                  <BlogCard
-                    className="mx-auto max-w-[350px]"
-                    post={populatedIntro[0]}
-                  />
-                </ul>
-              </div>
-            </article>
-          </section>
-        )}
-      </InView> */}
-
       <InView triggerOnce rootMargin="-40% 0px">
         {({ ref, inView }) => (
           <section

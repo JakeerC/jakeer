@@ -13,17 +13,14 @@ import { Metadata } from 'next';
 
 import { og } from '@/lib/og';
 
-import { commonMetaKeywords } from '@/constants';
+import { commonMetaKeywords, twitterUserId } from '@/constants';
 
 type Props = {
   params: { slug: string };
   searchParams?: { [key: string]: string | string[] | undefined };
 };
 
-export async function generateMetadata(
-  { params }: Props
-  // parent: ResolvingMetadata
-): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { frontmatter } = await getPostData({ params });
 
   const { title, description, banner, tags } = frontmatter;
@@ -42,8 +39,8 @@ export async function generateMetadata(
     twitter: {
       title,
       card: 'summary_large_image',
-      site: '@jakeerchilakala',
-      creator: '@jakeerchilakala',
+      site: twitterUserId,
+      creator: twitterUserId,
       description,
       images: bannerURL,
     },

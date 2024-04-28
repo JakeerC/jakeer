@@ -60,7 +60,7 @@ export default function Blog({ posts, tags }: BlogType) {
       post =>
         post.title.toLowerCase().includes(search.toLowerCase()) ||
         post.description.toLowerCase().includes(search.toLowerCase()) ||
-        // Check if splitted search contained in tag
+        // Check if split search contained in tag
         search
           .toLowerCase()
           .split(' ')

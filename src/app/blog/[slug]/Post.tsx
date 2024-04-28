@@ -14,7 +14,6 @@ import * as React from 'react';
 import { HiCalendar, HiOutlineClock } from 'react-icons/hi';
 
 import { hexToRgb } from '@/lib/color';
-import { cleanBlogPrefix } from '@/lib/helper.client';
 import { getReadableColor } from '@/lib/readableColor';
 import useInjectContentMeta from '@/hooks/useInjectContentMeta';
 import useScrollSpy from '@/hooks/useScrollspy';
@@ -33,7 +32,7 @@ import ShareTweetButton from '@/components/links/ShareTweetButton';
 import UnstyledLink from '@/components/links/UnstyledLink';
 import CloudinaryImg from '@/components/media/CloudinaryImg';
 
-import { domain } from '@/constants';
+import { domain, sourceCodeRepo } from '@/constants';
 
 import { BlogFrontmatter, BlogType } from '@/types/frontmatters';
 
@@ -55,17 +54,11 @@ export default function Post({
 
   const readableColor = getReadableColor(frontmatter.color, true);
   const shadowColor = hexToRgb(readableColor, 0.85);
-  //#region  //*=========== Link Constants ===========
-  const COMMIT_HISTORY_LINK = `https://github.com/jakeerc/jakeer/commits/main/src/contents/blog/${frontmatter.slug}.mdx`;
-  const GITHUB_EDIT_LINK = `https://github.com/jakeerc/jakeer/blob/main/src/contents/blog/${frontmatter.slug}.mdx`;
-  // const OG_BANNER_LINK = `https://res.cloudinary.com/jakeer-cloudinary/image/upload/f_auto,g_auto,c_fill,ar_4:5,w_1200/jakeer/banner/${frontmatter.banner}`;
-  //#endregion  //*======== Link Constants ===========
 
-  //#region  //*=========== Blog Language ===========
-  // TODO: add implementation, should be bugged if folder/id-slug.mdx
-  const cleanSlug = cleanBlogPrefix(frontmatter.slug);
-  const isEnglish = cleanSlug === frontmatter.slug;
-  //#endregion  //*======== Blog Language ===========
+  //#region  //*=========== Link Constants ===========
+  const COMMIT_HISTORY_LINK = `${sourceCodeRepo}/commits/main/src/contents/blog/${frontmatter.slug}.mdx`;
+  const GITHUB_EDIT_LINK = `${sourceCodeRepo}/blob/main/src/contents/blog/${frontmatter.slug}.mdx`;
+  //#endregion  //*======== Link Constants ===========
 
   //#region  //*=========== Content Meta ===========
   // const contentSlug = `b_${cleanSlug}`;
@@ -188,14 +181,6 @@ export default function Post({
                   </Accent>
                 </div> */}
           </div>
-          {!frontmatter?.englishOnly && (
-            <CustomLink
-              href={`/blog/${isEnglish ? 'id-' : ''}${cleanSlug}`}
-              className="mt-4"
-            >
-              Read in {isEnglish ? 'Other Languages' : 'English'}
-            </CustomLink>
-          )}
 
           <hr className="dark:border-slate-600" />
 
@@ -230,8 +215,6 @@ export default function Post({
             url={`${domain}/blog/${frontmatter.slug}`}
             title={frontmatter.title}
           />
-
-          {/* <CarbonAds className="mt-8" /> */}
 
           <figure className="mt-12">
             <Discussions

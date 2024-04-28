@@ -38,9 +38,6 @@ export async function generateMetadata(
     keywords,
     twitter: {
       title,
-      card: 'summary_large_image',
-      site: '@jakeerchilakala',
-      creator: '@jakeerchilakala',
       description,
       images: bannerURL,
     },
