@@ -102,7 +102,7 @@ export default function Snippets({ snippets, tags }: SnippetsType) {
           <h1 className="text-3xl md:text-5xl" data-fade="0">
             <Accent>Snippets</Accent>
           </h1>
-          <p className="mt-2 text-gray-600 dark:text-gray-300" data-fade="1">
+          <p className="mt-2 text-slate-600 dark:text-slate-300" data-fade="1">
             Short article that's not long enough to be a blog post, usually
             comes from my personal notes.
           </p>
@@ -115,7 +115,7 @@ export default function Snippets({ snippets, tags }: SnippetsType) {
             type="text"
           />
           <div
-            className="flex flex-wrap justify-start gap-2 mt-2 text-sm text-gray-600 dark:text-gray-300"
+            className="flex flex-wrap justify-start gap-2 mt-2 text-sm text-slate-600 dark:text-slate-300"
             data-fade="3"
           >
             <span className="font-medium self-end">Choose topic:</span>
@@ -134,7 +134,7 @@ export default function Snippets({ snippets, tags }: SnippetsType) {
             </SkipNavTag>
           </div>
           <div
-            className="relative z-10 flex flex-col items-end gap-4 mt-4 text-gray-600 dark:text-gray-300 md:mt-8"
+            className="relative z-10 flex flex-col items-end gap-4 mt-4 text-slate-600 dark:text-slate-300 md:mt-8"
             data-fade="4"
           >
             <ButtonGroup

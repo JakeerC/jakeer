@@ -38,7 +38,7 @@ export default function Components() {
             <Accent>Website's Design</Accent>
           </h1>
 
-          <p data-fade="1" className="mt-2 text-gray-600 dark:text-gray-300">
+          <p data-fade="1" className="mt-2 text-slate-600 dark:text-slate-300">
             color palette
           </p>
 
@@ -46,7 +46,7 @@ export default function Components() {
             data-fade="2"
             className={clsx(
               'mt-8 rounded p-4',
-              'border-2 border-dashed border-gray-300 dark:border-gray-600 '
+              'border-2 border-dashed border-slate-300 dark:border-slate-600 '
             )}
           >
             <div className="flex items-end justify-between">
@@ -54,7 +54,7 @@ export default function Components() {
               <ThemeButton />
             </div>
 
-            <p className="mt-1 text-sm text-gray-600 dark:text-gray-300">
+            <p className="mt-1 text-sm text-slate-600 dark:text-slate-300">
               Font Family: Inter
             </p>
 

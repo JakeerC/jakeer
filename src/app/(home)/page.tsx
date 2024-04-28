@@ -67,14 +67,14 @@ export default async function IndexPage() {
               You can call me <Accent>Jakeer</Accent>
             </h1>
             <p
-              className="max-w-4xl mt-2 text-sm leading-relaxed text-gray-700 dark:text-gray-200 md:mt-3 md:text-base 2xl:text-lg"
+              className="max-w-4xl mt-2 text-sm leading-relaxed text-slate-700 dark:text-slate-200 md:mt-3 md:text-base 2xl:text-lg"
               data-fade="2"
             >
               Front-end Engineer
             </p>
             <p
               className={clsx(
-                'mt-4 max-w-4xl text-gray-700 dark:text-gray-200 md:mt-6',
+                'mt-4 max-w-4xl text-slate-700 dark:text-slate-200 md:mt-6',
                 'md:text-lg 2xl:text-xl'
               )}
               data-fade="3"
@@ -97,7 +97,7 @@ export default async function IndexPage() {
                 href={`${domain}/files/resume.pdf`}
                 className={clsx(
                   'inline-flex items-center gap-1 text-sm font-medium md:text-base',
-                  'text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white',
+                  'text-slate-600 hover:text-black dark:text-slate-400 dark:hover:text-white',
                   'focus-focus',
                   'transition-colors'
                 )}
@@ -109,7 +109,7 @@ export default async function IndexPage() {
                 href={twitterURL}
                 className={clsx(
                   'inline-flex items-center gap-1 text-sm font-medium md:text-base',
-                  'group text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white',
+                  'group text-slate-600 hover:text-black dark:text-slate-400 dark:hover:text-white',
                   'focus-focus',
                   'transition-colors'
                 )}
@@ -121,7 +121,7 @@ export default async function IndexPage() {
                 href={githubURL}
                 className={clsx(
                   'inline-flex items-center gap-1 text-sm font-medium md:text-base',
-                  'text-gray-600 hover:text-black dark:text-gray-400 dark:hover:text-white',
+                  'text-slate-600 hover:text-black dark:text-slate-400 dark:hover:text-white',
                   'focus-focus',
                   'transition-colors'
                 )}

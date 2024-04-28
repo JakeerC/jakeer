@@ -122,7 +122,7 @@ export default function Blog({ posts, tags }: BlogType) {
           <h1 className="text-3xl md:text-5xl" data-fade="0">
             <Accent>Blog {!isEnglish && 'Other Languages'}</Accent>
           </h1>
-          <p className="mt-2 text-gray-600 dark:text-gray-300" data-fade="1">
+          <p className="mt-2 text-slate-600 dark:text-slate-300" data-fade="1">
             Thoughts and tutorials about front-end development and design.
           </p>
           <StyledInput
@@ -134,7 +134,7 @@ export default function Blog({ posts, tags }: BlogType) {
             type="text"
           />
           <div
-            className="flex flex-wrap justify-start gap-2 mt-2 text-sm text-gray-600 dark:text-gray-300"
+            className="flex flex-wrap justify-start gap-2 mt-2 text-sm text-slate-600 dark:text-slate-300"
             data-fade="3"
           >
             <span className="font-medium self-end">Choose topic:</span>
@@ -151,7 +151,7 @@ export default function Blog({ posts, tags }: BlogType) {
             </SkipNavTag>
           </div>
           <div
-            className="relative z-10 flex flex-col items-end gap-4 mt-6 text-gray-600 dark:text-gray-300 md:flex-row md:items-center md:justify-end"
+            className="relative z-10 flex flex-col items-end gap-4 mt-6 text-slate-600 dark:text-slate-300 md:flex-row md:items-center md:justify-end"
             data-fade="4"
           >
             <Button

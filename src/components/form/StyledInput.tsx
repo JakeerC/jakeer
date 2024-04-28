@@ -10,7 +10,7 @@ export default function StyledInput({
       className={clsx(
         className,
         'w-full rounded-md dark:bg-dark',
-        'border border-gray-300 dark:border-gray-600',
+        'border border-slate-300 dark:border-slate-600',
         'focus-focus'
       )}
       {...rest}

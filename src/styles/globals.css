@@ -64,7 +64,7 @@
   }
 
   .bg-dark a.custom-link {
-    @apply border-gray-200 hover:border-gray-200/0;
+    @apply border-slate-200 hover:border-slate-200/0;
   }
 
   .min-h-main {
@@ -180,7 +180,7 @@
   overflow: hidden;
 }
 .tweet-custom-border {
-  @apply border-r border-gray-300 rounded-xl dark:border-gray-700;
+  @apply border-r border-slate-300 rounded-xl dark:border-slate-700;
 }
 @media (min-width: 595px) {
   .tweet-custom-border {

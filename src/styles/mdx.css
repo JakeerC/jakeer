@@ -216,7 +216,7 @@ html.dark .prose [data-theme='light'] {
   @apply m-0;
 }
 [data-rehype-pretty-code-title] {
-  @apply bg-[#e6eff9] px-6 py-2 text-sm font-medium dark:bg-gray-700 rounded-t-md drop-shadow-md;
+  @apply bg-[#e6eff9] px-6 py-2 text-sm font-medium dark:bg-slate-700 rounded-t-md drop-shadow-md;
 }
 
 [data-rehype-pretty-code-caption]::before {

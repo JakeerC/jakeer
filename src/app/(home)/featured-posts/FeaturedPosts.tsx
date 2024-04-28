@@ -76,7 +76,7 @@ export default function FeaturedPosts({
               <h2 className="text-2xl md:text-4xl" id="projects">
                 <Accent>Featured Projects</Accent>
               </h2>
-              <p className="mt-2 text-gray-600 dark:text-gray-300">
+              <p className="mt-2 text-slate-600 dark:text-slate-300">
                 Some projects that I'm proud of
               </p>
               <ul className="mt-4 grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
@@ -112,7 +112,7 @@ export default function FeaturedPosts({
               <h2 className="text-2xl md:text-4xl" id="snippets">
                 <Accent>Snippets</Accent>
               </h2>
-              <p className="mt-2 text-gray-600 dark:text-gray-300">
+              <p className="mt-2 text-slate-600 dark:text-slate-300">
                 Snippet article that's not long enough to be a blog post,
                 usually comes from my personal notes.
               </p>

@@ -37,7 +37,7 @@ export function Pre({
     >
       {children}
       {language && (
-        <div className="absolute top-0 left-6 rounded-b-md border border-t-0 border-gray-600 px-3 py-1">
+        <div className="absolute top-0 left-6 rounded-b-md border border-t-0 border-slate-600 px-3 py-1">
           <span className="select-none bg-gradient-to-tr from-primary-300 to-primary-400 bg-clip-text font-medium text-transparent">
             {language}
           </span>
@@ -55,9 +55,9 @@ export function Pre({
           className={clsx([
             'md:hidden',
             'rounded p-1 text-lg transition-colors md:block',
-            'border border-gray-300 dark:border-gray-600',
-            'text-gray-700 dark:text-gray-300',
-            'bg-[#f2f7fc] hover:bg-gray-100 dark:bg-[#22272e] dark:hover:bg-gray-700',
+            'border border-slate-300 dark:border-slate-600',
+            'text-slate-700 dark:text-slate-300',
+            'bg-[#f2f7fc] hover:bg-slate-100 dark:bg-[#22272e] dark:hover:bg-slate-700',
           ])}
         >
           <BsTextWrap />
@@ -72,9 +72,9 @@ export function Pre({
           title="Copy code"
           className={clsx([
             'rounded p-1 text-lg transition-colors md:block',
-            'border border-gray-300 dark:border-gray-600',
-            'text-gray-700 dark:text-gray-300',
-            'bg-[#f2f7fc] hover:bg-gray-100 dark:bg-[#22272e] dark:hover:bg-gray-700',
+            'border border-slate-300 dark:border-slate-600',
+            'text-slate-700 dark:text-slate-300',
+            'bg-[#f2f7fc] hover:bg-slate-100 dark:bg-[#22272e] dark:hover:bg-slate-700',
           ])}
         >
           {isCopied ? <BiCheck /> : <BiCopy />}

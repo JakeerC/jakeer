@@ -24,10 +24,10 @@ export default function ButtonGroup({
       {options.map(opt => (
         <button
           className={clsx(
-            'inline-block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-primary-300/5 focus:relative dark:bg-dark focus-focus', //TODO: focus-focus not visible properly
+            'inline-block px-4 py-2 text-sm font-medium text-slate-700 hover:bg-primary-300/5 focus:relative dark:bg-dark focus-focus', //TODO: focus-focus not visible properly
             selected.name === opt.name
               ? 'bg-active'
-              : 'text-gray-700 dark:text-gray-300'
+              : 'text-slate-700 dark:text-slate-300'
           )}
           key={opt.name}
           onClick={() => setSelected(opt)}

@@ -36,7 +36,7 @@ export default function GuestbookPage() {
           <h1>
             <Accent>Guestbook</Accent>
           </h1>
-          <p className="mt-2 text-gray-700 dark:text-gray-200">
+          <p className="mt-2 text-slate-700 dark:text-slate-200">
             Leave whatever you like to say—message, appreciation, suggestions.
             If you got some questions, you can leave them on the
             <CustomLink href={`${sourceCodeRepo}/discussions/categories/ama`}>

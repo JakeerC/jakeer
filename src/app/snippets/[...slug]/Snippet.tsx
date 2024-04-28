@@ -59,12 +59,12 @@ export default function SingleSnippetPage({ code, frontmatter }: SnippetType) {
     <main>
       <div className="layout">
         <section className="">
-          <div className="border-b-thin pb-4 dark:border-gray-600">
+          <div className="border-b-thin pb-4 dark:border-slate-600">
             <h1 className="mt-4">{frontmatter.title}</h1>
-            <p className="mt-2 text-sm text-gray-600 dark:text-gray-300">
+            <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
               {frontmatter.description}
             </p>
-            <div className="mt-2 flex flex-wrap gap-x-1 gap-y-1 text-sm text-black dark:text-gray-100">
+            <div className="mt-2 flex flex-wrap gap-x-1 gap-y-1 text-sm text-black dark:text-slate-100">
               {frontmatter.tags.split(',').map(tag => (
                 <Tag
                   tabIndex={-1}
@@ -78,7 +78,7 @@ export default function SingleSnippetPage({ code, frontmatter }: SnippetType) {
             </div>
           </div>
 
-          <hr className="dark:border-gray-600" />
+          <hr className="dark:border-slate-600" />
         </section>
         <section className="lg:grid lg:grid-cols-[auto,250px] lg:gap-8">
           <article className="mdx prose mx-auto mt-4 w-full transition-colors dark:prose-invert">

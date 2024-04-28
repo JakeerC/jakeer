@@ -17,7 +17,7 @@ export default function ProjectCard({ project, className }: ProjectCardProps) {
     <li
       className={clsx(
         'project-card rounded-md md:w-full',
-        'border dark:border-gray-600  bg-white dark:bg-dark',
+        'border dark:border-slate-600  bg-white dark:bg-dark',
         'scale-100 hover:scale-[1.02] active:scale-[0.97] motion-safe:transform-gpu',
         'transition duration-100',
         'motion-reduce:hover:scale-100',
@@ -30,7 +30,7 @@ export default function ProjectCard({ project, className }: ProjectCardProps) {
         className="flex h-full flex-col items-start rounded-md p-4 focus-focus"
       >
         <h2>{project.title}</h2>
-        <p className="mb-auto text-sm text-gray-700 dark:text-gray-300">
+        <p className="mb-auto text-sm text-slate-700 dark:text-slate-300">
           {project.description}
         </p>
         <div className="mt-2">
