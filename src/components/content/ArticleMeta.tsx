@@ -8,7 +8,8 @@ import { BlogFrontmatter } from '@/types/frontmatters';
 export default function ArticleMeta({
   articleFrontMatter: article,
   views,
-}: {
+  ...rest
+}: React.ComponentProps<'div'> & {
   articleFrontMatter: BlogFrontmatter;
   views?: number | string;
 }) {
@@ -18,6 +19,7 @@ export default function ArticleMeta({
         'flex-1 flex flex-wrap items-center justify-start gap-2',
         'text-sm text-slate-500 dark:text-slate-400 my-2'
       )}
+      {...rest}
     >
       <HiCalendar />
       <time>

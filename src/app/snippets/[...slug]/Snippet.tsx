@@ -57,8 +57,8 @@ export default function SingleSnippetPage({ code, frontmatter }: SnippetType) {
 
   return (
     <main>
-      <div className="layout">
-        <section className="">
+      <div className="layout fade-in-start">
+        <section className="" data-fade="0">
           <div className="border-b-thin pb-4 dark:border-slate-600">
             <h1 className="mt-4">{frontmatter.title}</h1>
             <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
@@ -80,7 +80,10 @@ export default function SingleSnippetPage({ code, frontmatter }: SnippetType) {
 
           <hr className="dark:border-slate-600" />
         </section>
-        <section className="lg:grid lg:grid-cols-[auto,250px] lg:gap-8">
+        <section
+          className="lg:grid lg:grid-cols-[auto,250px] lg:gap-8"
+          data-fade="1"
+        >
           <article className="mdx prose mx-auto mt-4 w-full transition-colors dark:prose-invert">
             <Component
               components={

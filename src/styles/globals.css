@@ -126,37 +126,37 @@
 
   /* #region  /**=========== Fade In =========== */
   [data-fade] {
-    @apply transition duration-300 ease-out translate-y-10 opacity-0 motion-reduce:translate-y-0 motion-reduce:opacity-100;
+    @apply animate-in fade-in duration-1000 fill-mode-both motion-reduce:animate-none;
   }
   .fade-in-start [data-fade] {
-    @apply delay-300 translate-y-0 opacity-100;
+    animation-delay: 300ms;
   }
   .fade-in-start [data-fade='1'] {
-    transition-delay: 100ms;
+    animation-delay: 500ms;
   }
   .fade-in-start [data-fade='2'] {
-    transition-delay: 200ms;
+    animation-delay: 700ms;
   }
   .fade-in-start [data-fade='3'] {
-    transition-delay: 300ms;
+    animation-delay: 900ms;
   }
   .fade-in-start [data-fade='4'] {
-    transition-delay: 400ms;
+    animation-delay: 1000ms;
   }
   .fade-in-start [data-fade='5'] {
-    transition-delay: 500ms;
+    animation-delay: 1100ms;
   }
   .fade-in-start [data-fade='6'] {
-    transition-delay: 600ms;
+    animation-delay: 1200ms;
   }
   .fade-in-start [data-fade='7'] {
-    transition-delay: 700ms;
+    animation-delay: 1300ms;
   }
   .fade-in-start [data-fade='8'] {
-    transition-delay: 800ms;
+    animation-delay: 1300ms;
   }
   .fade-in-start [data-fade='9'] {
-    transition-delay: 900ms;
+    animation-delay: 1400ms;
   }
   /* #endregion  /**======== Fade In =========== */
 } /* ! Not used */
