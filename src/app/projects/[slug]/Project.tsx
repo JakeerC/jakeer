@@ -62,8 +62,8 @@ export default function Project({ code, frontmatter }: ProjectType) {
 
   return (
     <main>
-      <div className="layout">
-        <section className="">
+      <div className="layout fade-in-start">
+        <section className="" data-fade="0">
           <CloudinaryImg
             publicId={`banner/${frontmatter.banner}`}
             alt={frontmatter.title}
@@ -157,7 +157,10 @@ export default function Project({ code, frontmatter }: ProjectType) {
           {/* //*======== article meta =========== */}
           <hr className="mt-4 dark:border-slate-600" />
         </section>
-        <section className="lg:grid lg:grid-cols-[auto,250px] lg:gap-8">
+        <section
+          className="lg:grid lg:grid-cols-[auto,250px] lg:gap-8 "
+          data-fade="0"
+        >
           <article className="mdx projects prose mx-auto w-full transition-colors dark:prose-invert">
             <Component
               components={
