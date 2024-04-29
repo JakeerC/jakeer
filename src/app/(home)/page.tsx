@@ -138,6 +138,7 @@ export default async function IndexPage() {
               'cursor-pointer rounded-md transition-colors',
               'hover:text-primary-300 focus-visible:text-primary-300'
             )}
+            data-fade="7"
           >
             <IoArrowDownOutline className="w-8 h-8 animate-bounce md:h-10 md:w-10" />
           </UnstyledLink>
