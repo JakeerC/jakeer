@@ -30,14 +30,23 @@ export default function TableOfContents({
       )}
       title="click to see content overview"
     >
-      <summary className="m-2 p-2 cursor-pointer flex gap-2 items-center focus-focus relative">
+      <summary
+        className={clsx(
+          'relative',
+          'm-2 p-2',
+          'cursor-pointer focus-focus',
+          'flex gap-2 items-center'
+        )}
+      >
         <TbMenuOrder className="text-xl" />
         <h3 className="text-slate-900 dark:text-slate-100 md:text-xl">
           Table of Contents
         </h3>
       </summary>
-      <hr className="dark:border-slate-500" />
-      <div className="mx-8 px-4 my-4 flex flex-col space-y-2 text-sm">
+      <hr className="border-slate-300 dark:border-slate-500" />
+      <div
+        className={clsx('mx-8 my-4 px-4', 'flex flex-col', 'space-y-2 text-sm')}
+      >
         {toc
           ? toc.map(({ id, level, text }) => (
               <TOCLink
