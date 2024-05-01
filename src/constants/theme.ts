@@ -3,3 +3,5 @@
 export const THEME_COLOR_LIGHT = '#ffffff';
 
 export const THEME_COLOR_DARK = '#0f141b';
+
+export const ARTICLE_MAX_WIDTH = '68ch';
