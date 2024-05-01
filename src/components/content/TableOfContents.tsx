@@ -1,7 +1,8 @@
-'use client';
 import * as React from 'react';
+import { TbMenuOrder } from 'react-icons/tb';
 
 import TOCLink from '@/components/links/TOCLink';
+import clsx from 'clsx';
 
 export type HeadingScrollSpy = Array<{
   id: string;
@@ -20,50 +21,23 @@ export default function TableOfContents({
   activeSection,
   minLevel,
 }: TableOfContentsProps) {
-  //#region  //*=========== Scroll into view ===========
-  const lastPosition = React.useRef<number>(0);
-
-  React.useEffect(() => {
-    const container = document.getElementById('toc-container');
-    const activeLink = document.getElementById(`link-${activeSection}`);
-
-    if (container && activeLink) {
-      // Get container properties
-      const cTop = container.scrollTop;
-      const cBottom = cTop + container.clientHeight;
-
-      // Get activeLink properties
-      const lTop = activeLink.offsetTop - container.offsetTop;
-      const lBottom = lTop + activeLink.clientHeight;
-
-      // Check if in view
-      const isTotal = lTop >= cTop && lBottom <= cBottom;
-
-      const isScrollingUp = lastPosition.current > window.scrollY;
-      lastPosition.current = window.scrollY;
-
-      if (!isTotal) {
-        // Scroll by the whole clientHeight
-        const offset = 25;
-        const top = isScrollingUp
-          ? lTop - container.clientHeight + offset
-          : lTop - offset;
-
-        container.scrollTo({ top, behavior: 'smooth' });
-      }
-    }
-  }, [activeSection]);
-  //#endregion  //*======== Scroll into view ===========
-
   return (
-    <div
+    <details
       id="toc-container"
-      className="hidden max-h-[calc(100vh-9rem-113px)] overflow-auto pb-4 lg:block"
+      className={clsx(
+        'border border-slate-300 dark:border-slate-500 rounded-md',
+        'overflow-auto'
+      )}
+      title="click to see content overview"
     >
-      <h3 className="text-slate-900 dark:text-slate-100 md:text-xl">
-        Table of Contents
-      </h3>
-      <div className="mt-4 flex flex-col space-y-2 text-sm">
+      <summary className="m-2 p-2 cursor-pointer flex gap-2 items-center focus-focus relative">
+        <TbMenuOrder className="text-xl" />
+        <h3 className="text-slate-900 dark:text-slate-100 md:text-xl">
+          Table of Contents
+        </h3>
+      </summary>
+      <hr className="dark:border-slate-500" />
+      <div className="mx-8 px-4 my-4 flex flex-col space-y-2 text-sm">
         {toc
           ? toc.map(({ id, level, text }) => (
               <TOCLink
@@ -77,6 +51,6 @@ export default function TableOfContents({
             ))
           : null}
       </div>
-    </div>
+    </details>
   );
 }
