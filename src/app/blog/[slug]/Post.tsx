@@ -90,7 +90,7 @@ export default function Post({
   }, [frontmatter.slug]);
   //#endregion  //*======== Scrollspy ===========
   return (
-    <>
+    <main>
       <article
         className={clsx('fade-in-start', `max-w-[${ARTICLE_MAX_WIDTH}] m-auto`)}
       >
@@ -111,7 +111,7 @@ export default function Post({
           )}
           style={{ height: '85vh', maxHeight: 384, width: '100vw' }}
         />
-        <section className="">
+        <section className="" data-fade="0">
           <h1
             className={clsx(
               'mt-12',
@@ -124,13 +124,11 @@ export default function Post({
                 '--title-color': readableColor,
               } as React.CSSProperties
             }
-            data-fade="0"
           >
             {frontmatter.title}
           </h1>
           <ArticleMeta
             articleFrontMatter={frontmatter}
-            data-fade="0"
             commitHistoryLink={COMMIT_HISTORY_LINK}
           />
 
@@ -199,6 +197,6 @@ export default function Post({
           <CustomLink href="/blog">← Back to blog</CustomLink>
         </div>
       </section>
-    </>
+    </main>
   );
 }
