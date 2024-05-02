@@ -3,21 +3,26 @@ import { format } from 'date-fns';
 import * as React from 'react';
 import { HiCalendar, HiOutlineClock, HiOutlineEye } from 'react-icons/hi';
 
-import { BlogFrontmatter } from '@/types/frontmatters';
+import { BlogFrontmatter, SnippetFrontmatter } from '@/types/frontmatters';
 import { GoDotFill } from 'react-icons/go';
 import { LuDot } from 'react-icons/lu';
 import UnstyledLink from '@/components/links/UnstyledLink';
 import { RiFileHistoryLine } from 'react-icons/ri';
+import Tag from '@/components/content/Tag';
 
 export default function ArticleMeta({
   articleFrontMatter: article,
+  showMetaData = true,
+  showTags = false,
   views,
   commitHistoryLink,
   ...rest
 }: React.ComponentProps<'div'> & {
-  articleFrontMatter: BlogFrontmatter;
+  articleFrontMatter: BlogFrontmatter | SnippetFrontmatter;
   commitHistoryLink?: string;
   views?: number | string;
+  showTags?: boolean;
+  showMetaData?: boolean;
 }) {
   const parentClasses = clsx(
     'flex-1 flex flex-wrap items-center justify-start gap-2',
@@ -25,33 +30,50 @@ export default function ArticleMeta({
   );
   return (
     <div {...rest}>
-      <div className={parentClasses}>
-        <HiCalendar />
-        <time>
-          {format(
-            new Date(article.lastUpdated ?? article.publishedAt),
-            'MMMM dd, yyyy'
-          )}
-        </time>
+      {showTags && (
+        <div className={parentClasses}>
+          {article.tags.split(',').map(tag => (
+            <Tag
+              tabIndex={-1}
+              className="bg-opacity-80 dark:!bg-opacity-60"
+              key={tag}
+              techName={tag}
+            >
+              {tag}
+            </Tag>
+          ))}
+        </div>
+      )}
+      {showMetaData && (
+        <div className={parentClasses}>
+          <HiCalendar />
+          <time>
+            {format(
+              new Date(article.lastUpdated ?? article.publishedAt),
+              'MMMM dd, yyyy'
+            )}
+          </time>
 
-        <span aria-hidden="true" className="font-bold">
-          ·
-        </span>
-        <HiOutlineClock className="inline-block text-base" />
-        <span>{article.readingTime.text}</span>
-        {views?.toLocaleString() && (
-          <>
-            <span aria-hidden="true" className="font-bold">
-              ·
-            </span>
-            <div className="flex items-center gap-1">
-              <HiOutlineEye className="inline-block text-base" />
-              <span>{views?.toLocaleString()} views</span>
-            </div>
-          </>
-        )}
-      </div>
-      {article.lastUpdated && commitHistoryLink && (
+          <span aria-hidden="true" className="font-bold">
+            ·
+          </span>
+          <HiOutlineClock className="inline-block text-base" />
+          <span>{article.readingTime.text}</span>
+          {views?.toLocaleString() && (
+            <>
+              <span aria-hidden="true" className="font-bold">
+                ·
+              </span>
+              <div className="flex items-center gap-1">
+                <HiOutlineEye className="inline-block text-base" />
+                <span>{views?.toLocaleString()} views</span>
+              </div>
+            </>
+          )}
+        </div>
+      )}
+
+      {showMetaData && article.lastUpdated && commitHistoryLink && (
         <div className={parentClasses}>
           Last updated on <HiCalendar />
           <time>{format(new Date(article.lastUpdated), 'MMMM dd, yyyy')}</time>
