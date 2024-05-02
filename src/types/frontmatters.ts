@@ -36,6 +36,10 @@ export type SnippetFrontmatter = {
   readingTime: ReadTimeResults;
   description: string;
   tags: string;
+  publishedAt: string;
+  lastUpdated?: string;
+  banner?: string;
+  color?: string;
 };
 
 export type SnippetType = {
