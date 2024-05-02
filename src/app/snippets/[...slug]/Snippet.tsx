@@ -23,9 +23,17 @@ import Discussions from '@/components/Discussions';
 import CustomLink from '@/components/links/CustomLink';
 
 import { SnippetType } from '@/types/frontmatters';
+import clsx from 'clsx';
+import { ARTICLE_MAX_WIDTH } from '@/constants';
+import CloudinaryImg from '@/components/media/CloudinaryImg';
+import { getReadableColor } from '@/lib/readableColor';
+import { hexToRgb } from '@/lib/color';
 
 export default function SingleSnippetPage({ code, frontmatter }: SnippetType) {
   const Component = React.useMemo(() => getMDXComponent(code), [code]);
+
+  const readableColor = getReadableColor(frontmatter.color || '#097bff', true);
+  const shadowColor = hexToRgb(readableColor, 0.85);
 
   //#region  //*=========== Content Meta ===========
   // const contentSlug = `l_${frontmatter.slug.replace('/', '|')}`;
@@ -57,10 +65,45 @@ export default function SingleSnippetPage({ code, frontmatter }: SnippetType) {
 
   return (
     <main>
-      <div className="layout fade-in-start">
+      <article
+        className={clsx('fade-in-start', `max-w-[${ARTICLE_MAX_WIDTH}] m-auto`)}
+      >
+        {frontmatter.banner && (
+          <CloudinaryImg
+            publicId={`banner/${frontmatter.banner}`}
+            alt={`Photo from unsplash: ${frontmatter.banner}`}
+            width={1200}
+            height={(1200 * 2) / 5}
+            aspect={{ height: 2, width: 5 }}
+            imgClassName="object-cover w-full h-full"
+            className={clsx(
+              'overflow-hidden -z-1',
+              'max-w-[calc(100vw_+_calc(100vw_-_100%))]',
+              'absolute top-0 -left-[calc(100vw_-_100%)] -right-[calc(100vw_-_100%)]',
+              'pointer-events-none blur transition',
+              'saturate-125 opacity-40 dark:opacity-65',
+              '[mask-image:linear-gradient(to_bottom,rgba(0,0,0,0.9)_0%,rgba(0,0,0,0)_100%)]'
+            )}
+            style={{ height: '85vh', maxHeight: 384, width: '100vw' }}
+          />
+        )}
         <section className="" data-fade="0">
           <div className="border-b-thin pb-4 dark:border-slate-600">
-            <h1 className="mt-4">{frontmatter.title}</h1>
+            <h1
+              className={clsx(
+                'mt-12',
+                'text-shadow dark:text-[var(--title-color)] dark:saturate-150',
+                'dark:!shadow-background'
+              )}
+              style={
+                {
+                  '--tw-shadow-color': shadowColor,
+                  '--title-color': readableColor,
+                } as React.CSSProperties
+              }
+            >
+              {frontmatter.title}
+            </h1>
             <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
               {frontmatter.description}
             </p>
@@ -80,10 +123,7 @@ export default function SingleSnippetPage({ code, frontmatter }: SnippetType) {
 
           <hr className="dark:border-slate-600" />
         </section>
-        <section
-          className="lg:grid lg:grid-cols-[auto,250px] lg:gap-8"
-          data-fade="1"
-        >
+        <section data-fade="1">
           <article className="mdx prose mx-auto mt-4 w-full transition-colors dark:prose-invert">
             <Component
               components={
@@ -94,19 +134,6 @@ export default function SingleSnippetPage({ code, frontmatter }: SnippetType) {
               }
             />
           </article>
-
-          <aside className="py-4">
-            <div className="sticky top-36">
-              <TableOfContents
-                toc={toc}
-                minLevel={minLevel}
-                activeSection={activeSection}
-              />
-              {/* <div className="flex items-center justify-center py-8">
-                    <LikeButton slug={contentSlug} />
-                  </div> */}
-            </div>
-          </aside>
         </section>
         <figure className="mt-12">
           <Discussions
@@ -124,7 +151,7 @@ export default function SingleSnippetPage({ code, frontmatter }: SnippetType) {
           </CustomLink>
           <CustomLink href="/snippets">← Back to Snippets</CustomLink>
         </div>
-      </div>
+      </article>
     </main>
   );
 }
