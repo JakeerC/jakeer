@@ -7,25 +7,30 @@
 * Count views, likes
 */
 }
+import clsx from 'clsx';
 import { getMDXComponent } from 'mdx-bundler/client';
 import * as React from 'react';
 
-// import useContentMeta from '@/hooks/useContentMeta';
-import useScrollSpy from '@/hooks/useScrollspy';
+import { hexToRgb } from '@/lib/color';
+import { getReadableColor } from '@/lib/readableColor';
 
+// import useContentMeta from '@/hooks/useContentMeta';
+import ArticleMeta from '@/components/content/ArticleMeta';
 // import LikeButton from '@/components/content/LikeButton';
 import MDXComponents from '@/components/content/MDXComponents';
-import TableOfContents, {
-  HeadingScrollSpy,
-} from '@/components/content/TableOfContents';
-import Tag from '@/components/content/Tag';
 import Discussions from '@/components/Discussions';
 import CustomLink from '@/components/links/CustomLink';
+import CloudinaryImg from '@/components/media/CloudinaryImg';
+
+import { ARTICLE_MAX_WIDTH } from '@/constants';
 
 import { SnippetType } from '@/types/frontmatters';
 
 export default function SingleSnippetPage({ code, frontmatter }: SnippetType) {
   const Component = React.useMemo(() => getMDXComponent(code), [code]);
+
+  const readableColor = getReadableColor(frontmatter.color, true); // TODO: default color to darker shade of primary color
+  const shadowColor = hexToRgb(readableColor, 0.85);
 
   //#region  //*=========== Content Meta ===========
   // const contentSlug = `l_${frontmatter.slug.replace('/', '|')}`;
@@ -33,57 +38,76 @@ export default function SingleSnippetPage({ code, frontmatter }: SnippetType) {
   //#endregion  //*======== Content Meta ===========
 
   //#region  //*=========== Scrollspy ===========
-  const activeSection = useScrollSpy();
+  // const activeSection = useScrollSpy();
 
-  const [toc, setToc] = React.useState<HeadingScrollSpy>();
-  const minLevel =
-    toc?.reduce((min, item) => (item.level < min ? item.level : min), 10) ?? 0;
+  // const [toc, setToc] = React.useState<HeadingScrollSpy>();
+  // const minLevel =
+  //   toc?.reduce((min, item) => (item.level < min ? item.level : min), 10) ?? 0;
 
-  React.useEffect(() => {
-    const headings = document.querySelectorAll('.mdx h1, .mdx h2, .mdx h3');
+  // React.useEffect(() => {
+  //   const headings = document.querySelectorAll('.mdx h1, .mdx h2, .mdx h3');
 
-    const headingArr: HeadingScrollSpy = [];
-    headings.forEach(heading => {
-      const id = heading.id;
-      const level = +heading.tagName.replace('H', '');
-      const text = heading.textContent + '';
+  //   const headingArr: HeadingScrollSpy = [];
+  //   headings.forEach(heading => {
+  //     const id = heading.id;
+  //     const level = +heading.tagName.replace('H', '');
+  //     const text = heading.textContent + '';
 
-      headingArr.push({ id, level, text });
-    });
+  //     headingArr.push({ id, level, text });
+  //   });
 
-    setToc(headingArr);
-  }, [frontmatter.slug]);
+  //   setToc(headingArr);
+  // }, [frontmatter.slug]);
   //#endregion  //*======== Scrollspy ===========
 
   return (
     <main>
-      <div className="layout fade-in-start">
+      <article
+        className={clsx('fade-in-start', `m-auto`)}
+        style={{ maxWidth: ARTICLE_MAX_WIDTH }}
+      >
+        {frontmatter.banner && (
+          <CloudinaryImg
+            publicId={`banner/${frontmatter.banner}`}
+            alt={`Photo from unsplash: ${frontmatter.banner}`}
+            width={1200}
+            height={(1200 * 2) / 5}
+            aspect={{ height: 2, width: 5 }}
+            imgClassName="object-cover w-full h-full"
+            className={clsx(
+              'overflow-hidden -z-1',
+              'max-w-[calc(100vw_+_calc(100vw_-_100%))]',
+              'absolute top-0 -left-[calc(100vw_-_100%)] -right-[calc(100vw_-_100%)]',
+              'pointer-events-none blur transition',
+              'saturate-125 opacity-40 dark:opacity-65',
+              '[mask-image:linear-gradient(to_bottom,rgba(0,0,0,0.9)_0%,rgba(0,0,0,0)_100%)]'
+            )}
+            style={{ height: '85vh', maxHeight: 384, width: '100vw' }}
+          />
+        )}
         <section className="" data-fade="0">
-          <div className="border-b-thin pb-4 dark:border-slate-600">
-            <h1 className="mt-4">{frontmatter.title}</h1>
-            <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
-              {frontmatter.description}
-            </p>
-            <div className="mt-2 flex flex-wrap gap-x-1 gap-y-1 text-sm text-black dark:text-slate-100">
-              {frontmatter.tags.split(',').map(tag => (
-                <Tag
-                  tabIndex={-1}
-                  className="bg-opacity-80 dark:!bg-opacity-60"
-                  key={tag}
-                  techName={tag}
-                >
-                  {tag}
-                </Tag>
-              ))}
-            </div>
-          </div>
-
+          <h1
+            className={clsx(
+              'mt-12',
+              'text-shadow dark:text-[var(--title-color)] dark:saturate-150',
+              'dark:!shadow-background'
+            )}
+            style={
+              {
+                '--tw-shadow-color': shadowColor,
+                '--title-color': readableColor,
+              } as React.CSSProperties
+            }
+          >
+            {frontmatter.title}
+          </h1>
+          <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+            {frontmatter.description}
+          </p>
+          <ArticleMeta articleFrontMatter={frontmatter} showTags />
           <hr className="dark:border-slate-600" />
         </section>
-        <section
-          className="lg:grid lg:grid-cols-[auto,250px] lg:gap-8"
-          data-fade="1"
-        >
+        <section data-fade="1">
           <article className="mdx prose mx-auto mt-4 w-full transition-colors dark:prose-invert">
             <Component
               components={
@@ -94,19 +118,6 @@ export default function SingleSnippetPage({ code, frontmatter }: SnippetType) {
               }
             />
           </article>
-
-          <aside className="py-4">
-            <div className="sticky top-36">
-              <TableOfContents
-                toc={toc}
-                minLevel={minLevel}
-                activeSection={activeSection}
-              />
-              {/* <div className="flex items-center justify-center py-8">
-                    <LikeButton slug={contentSlug} />
-                  </div> */}
-            </div>
-          </aside>
         </section>
         <figure className="mt-12">
           <Discussions
@@ -124,7 +135,7 @@ export default function SingleSnippetPage({ code, frontmatter }: SnippetType) {
           </CustomLink>
           <CustomLink href="/snippets">← Back to Snippets</CustomLink>
         </div>
-      </div>
+      </article>
     </main>
   );
 }

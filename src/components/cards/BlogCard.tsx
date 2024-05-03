@@ -61,7 +61,7 @@ export default function BlogCard({
               {post.tags.split(',').map(tag => (
                 <Tag
                   tabIndex={-1}
-                  className="bg-opacity-80 dark:!bg-opacity-70"
+                  className="bg-opacity-80 dark:!bg-opacity-70 cursor-text"
                   key={tag}
                   techName={tag}
                   isChecked={checkTagged?.(tag)}
@@ -75,7 +75,7 @@ export default function BlogCard({
             {post.title}
           </h2>
 
-          <ArticleMeta articleFrontMatter={post} />
+          <ArticleMeta articleFrontMatter={post} showMetaData />
           <p className="text-sm text-slate-700 dark:text-slate-300">
             {post.description}
           </p>

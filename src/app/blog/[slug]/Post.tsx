@@ -8,11 +8,10 @@
 */
 }
 import clsx from 'clsx';
-import { format } from 'date-fns';
 import { getMDXComponent } from 'mdx-bundler/client';
 import * as React from 'react';
-import { HiCalendar, HiOutlineClock } from 'react-icons/hi';
 
+import cn from '@/lib/cn';
 import { hexToRgb } from '@/lib/color';
 import { getReadableColor } from '@/lib/readableColor';
 import useInjectContentMeta from '@/hooks/useInjectContentMeta';
@@ -29,10 +28,9 @@ import TableOfContents, {
 import Discussions from '@/components/Discussions';
 import CustomLink from '@/components/links/CustomLink';
 import ShareTweetButton from '@/components/links/ShareTweetButton';
-import UnstyledLink from '@/components/links/UnstyledLink';
 import CloudinaryImg from '@/components/media/CloudinaryImg';
 
-import { domain, sourceCodeRepo } from '@/constants';
+import { ARTICLE_MAX_WIDTH, domain, sourceCodeRepo } from '@/constants';
 
 import { BlogFrontmatter, BlogType } from '@/types/frontmatters';
 
@@ -87,10 +85,12 @@ export default function Post({
     setToc(headingArr);
   }, [frontmatter.slug]);
   //#endregion  //*======== Scrollspy ===========
-
   return (
-    <article>
-      <div className="layout fade-in-start">
+    <main>
+      <article
+        className={clsx('fade-in-start', `m-auto`)}
+        style={{ maxWidth: ARTICLE_MAX_WIDTH }}
+      >
         <CloudinaryImg
           publicId={`banner/${frontmatter.banner}`}
           alt={`Photo from unsplash: ${frontmatter.banner}`}
@@ -108,88 +108,39 @@ export default function Post({
           )}
           style={{ height: '85vh', maxHeight: 384, width: '100vw' }}
         />
-
-        <h1
-          className={clsx(
-            'mt-12',
-            'text-shadow dark:text-[var(--title-color)] dark:saturate-150',
-            'dark:!shadow-background'
-          )}
-          style={
-            {
-              '--tw-shadow-color': shadowColor,
-              '--title-color': readableColor,
-            } as React.CSSProperties
-          }
-          data-fade="0"
-        >
-          {frontmatter.title}
-        </h1>
-        <ArticleMeta articleFrontMatter={frontmatter} data-fade="0" />
-        {frontmatter.lastUpdated && (
-          <div
-            className="flex flex-wrap gap-2 mt-2 text-sm text-slate-500 dark:text-slate-400"
-            data-fade="0"
+        <section className="" data-fade="0">
+          <h1
+            className={clsx(
+              'mt-12',
+              'text-shadow dark:text-[var(--title-color)] dark:saturate-150',
+              'dark:!shadow-background'
+            )}
+            style={
+              {
+                '--tw-shadow-color': shadowColor,
+                '--title-color': readableColor,
+              } as React.CSSProperties
+            }
           >
-            <p className="flex flex-wrap gap-2">
-              Updated on <HiCalendar />{' '}
-              {format(new Date(frontmatter.lastUpdated), 'MMMM dd, yyyy')}.
-            </p>
-            <UnstyledLink
-              href={COMMIT_HISTORY_LINK}
-              className={clsx(
-                'inline-flex items-center gap-1 rounded-sm font-medium',
-                'text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-primary-300',
-                'focus-focus'
-              )}
-            >
-              <HiOutlineClock />
-              <span>See changes</span>
-            </UnstyledLink>
-          </div>
-        )}
-        <div className="flex items-center justify-start gap-2 mt-6 text-sm font-medium text-slate-600 dark:text-slate-300">
-          {/* {meta?.devtoViews ? (
-                  <Tooltip
-                    tipChildren={
-                      <>
-                        {meta.devtoViews.toLocaleString()} views on{' '}
-                        <CustomLink href="https://dev.to/jakeerchilakala">
-                          dev.to
-                        </CustomLink>
-                      </>
-                    }
-                    // position="bottom"
-                  >
-                    <div className="flex items-center gap-1">
-                      <HiOutlineEye className="inline-block text-base" />
-                      <Accent>
-                        {meta?.views?.toLocaleString() ?? '–––'} views
-                      </Accent>
-                    </div>
-                  </Tooltip>
-                ) : (
-                  <div className="flex items-center gap-1">
-                    <HiOutlineEye className="inline-block text-base" />
-                    <Accent>
-                      {meta?.views?.toLocaleString() ?? '–––'} views
-                    </Accent>
-                  </div>
-                )} */}
-          {/* <div className="flex items-center gap-1">
-                  <HiOutlineEye className="inline-block text-base" />
-                  <Accent>
-                    {meta?.views?.toLocaleString() ?? '–––'} views
-                  </Accent>
-                </div> */}
-        </div>
+            {frontmatter.title}
+          </h1>
+          <ArticleMeta
+            articleFrontMatter={frontmatter}
+            commitHistoryLink={COMMIT_HISTORY_LINK}
+            showMetaData
+          />
 
-        <hr className="dark:border-slate-600" data-fade="1" />
+          <hr className="dark:border-slate-700" data-fade="1" />
+        </section>
 
-        <section
-          className="lg:grid lg:grid-cols-[auto,250px] lg:gap-8"
-          data-fade="2"
-        >
+        <section data-fade="2" className="my-4">
+          <TableOfContents
+            toc={toc}
+            minLevel={minLevel}
+            activeSection={activeSection}
+          />
+        </section>
+        <section className={cn('relative flex flex-col')} data-fade="2">
           <article className="w-full mx-auto mt-4 prose transition-colors mdx dark:prose-invert">
             <Component
               components={
@@ -200,19 +151,6 @@ export default function Post({
               }
             />
           </article>
-
-          <aside className="py-4">
-            <div className="sticky top-36">
-              <TableOfContents
-                toc={toc}
-                minLevel={minLevel}
-                activeSection={activeSection}
-              />
-              {/* <div className="flex items-center justify-center py-8">
-                    <LikeButton slug={contentSlug} />
-                  </div> */}
-            </div>
-          </aside>
         </section>
 
         <ShareTweetButton
@@ -228,7 +166,8 @@ export default function Post({
             key={frontmatter.slug}
           />
         </figure>
-
+      </article>
+      <section className="layout">
         {populatedRecommendations.length > 0 && (
           <div className="mt-20">
             <h2>
@@ -255,7 +194,7 @@ export default function Post({
           <CustomLink href={GITHUB_EDIT_LINK}>Edit this on GitHub</CustomLink>
           <CustomLink href="/blog">← Back to blog</CustomLink>
         </div>
-      </div>
-    </article>
+      </section>
+    </main>
   );
 }

@@ -93,26 +93,6 @@
   background-image: none;
   transition: none;
 }
-.light {
-  .hash-anchor:hover {
-    background-image: linear-gradient(
-      to right,
-      rgba(9, 123, 255, 1) 0%,
-      rgba(0, 224, 243, 1)
-    );
-
-    background-size: 100% 2px;
-    transition: 0.9s ease;
-    transition-property: background-size, color, background-color, border-color;
-  }
-}
-.dark {
-  .hash-anchor:hover {
-    @apply bg-gradient-to-tr from-yellow-500 to-yellow-100;
-
-    background-size: 100% 2px;
-  }
-}
 
 .hash-anchor:hover:after,
 .hash-anchor:focus:after {
@@ -120,7 +100,7 @@
 }
 
 .hash-anchor:after {
-  @apply invisible absolute -left-5 top-1/2 -translate-y-1/2 text-lg text-primary-300/90 dark:text-yellow-300 md:content-['#'];
+  @apply invisible absolute -left-5 top-1/2 -translate-y-1/2  text-primary-300/90 dark:text-yellow-200 md:content-['#'];
 }
 /* #endregion  /**======== Hash Anchor =========== */
 
