@@ -2,17 +2,16 @@ import clsx from 'clsx';
 import { format } from 'date-fns';
 import * as React from 'react';
 import { HiCalendar, HiOutlineClock, HiOutlineEye } from 'react-icons/hi';
+import { RiFileHistoryLine } from 'react-icons/ri';
+
+import Tag from '@/components/content/Tag';
+import UnstyledLink from '@/components/links/UnstyledLink';
 
 import { BlogFrontmatter, SnippetFrontmatter } from '@/types/frontmatters';
-import { GoDotFill } from 'react-icons/go';
-import { LuDot } from 'react-icons/lu';
-import UnstyledLink from '@/components/links/UnstyledLink';
-import { RiFileHistoryLine } from 'react-icons/ri';
-import Tag from '@/components/content/Tag';
 
 export default function ArticleMeta({
   articleFrontMatter: article,
-  showMetaData = true,
+  showMetaData = false,
   showTags = false,
   views,
   commitHistoryLink,
@@ -26,16 +25,16 @@ export default function ArticleMeta({
 }) {
   const parentClasses = clsx(
     'flex-1 flex flex-wrap items-center justify-start gap-2',
-    'text-sm text-slate-500 dark:text-slate-400 my-2'
+    'text-sm text-slate-500 dark:text-slate-400'
   );
   return (
-    <div {...rest}>
+    <div {...rest} className="flex flex-col gap-2 my-2">
       {showTags && (
         <div className={parentClasses}>
           {article.tags.split(',').map(tag => (
             <Tag
               tabIndex={-1}
-              className="bg-opacity-80 dark:!bg-opacity-60"
+              className="bg-opacity-80 dark:!bg-opacity-60 cursor-text"
               key={tag}
               techName={tag}
             >
