@@ -8,10 +8,8 @@
 */
 }
 import clsx from 'clsx';
-import { format } from 'date-fns';
 import { getMDXComponent } from 'mdx-bundler/client';
 import * as React from 'react';
-import { HiCalendar, HiOutlineClock } from 'react-icons/hi';
 
 import cn from '@/lib/cn';
 import { hexToRgb } from '@/lib/color';
@@ -30,13 +28,11 @@ import TableOfContents, {
 import Discussions from '@/components/Discussions';
 import CustomLink from '@/components/links/CustomLink';
 import ShareTweetButton from '@/components/links/ShareTweetButton';
-import UnstyledLink from '@/components/links/UnstyledLink';
 import CloudinaryImg from '@/components/media/CloudinaryImg';
 
 import { ARTICLE_MAX_WIDTH, domain, sourceCodeRepo } from '@/constants';
 
 import { BlogFrontmatter, BlogType } from '@/types/frontmatters';
-import { RiFileHistoryLine } from 'react-icons/ri';
 
 type SingleBlogPageProps = {
   recommendations: BlogFrontmatter[];
@@ -92,7 +88,8 @@ export default function Post({
   return (
     <main>
       <article
-        className={clsx('fade-in-start', `max-w-[${ARTICLE_MAX_WIDTH}] m-auto`)}
+        className={clsx('fade-in-start', `m-auto`)}
+        style={{ maxWidth: ARTICLE_MAX_WIDTH }}
       >
         <CloudinaryImg
           publicId={`banner/${frontmatter.banner}`}
@@ -130,6 +127,7 @@ export default function Post({
           <ArticleMeta
             articleFrontMatter={frontmatter}
             commitHistoryLink={COMMIT_HISTORY_LINK}
+            showMetaData
           />
 
           <hr className="dark:border-slate-700" data-fade="1" />
