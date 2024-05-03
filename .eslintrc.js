@@ -2,7 +2,6 @@ module.exports = {
   plugins: ['@typescript-eslint', 'simple-import-sort', 'unused-imports'],
   extends: ['eslint:recommended', 'next', 'next/core-web-vitals'],
   rules: {
-    'no-unused-vars': 'off',
     'no-console': 'warn',
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     'react/no-unescaped-entities': 'off',
@@ -15,7 +14,7 @@ module.exports = {
     '@typescript-eslint/no-var-requires': 'off',
 
     //#region  //*=========== Unused Import ===========
-    '@typescript-eslint/no-unused-vars': 'off',
+    // '@typescript-eslint/no-unused-vars': 'off',
     'unused-imports/no-unused-imports': 'warn',
     'unused-imports/no-unused-vars': [
       'warn',
