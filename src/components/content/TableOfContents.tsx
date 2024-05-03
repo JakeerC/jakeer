@@ -1,8 +1,8 @@
+import clsx from 'clsx';
 import * as React from 'react';
 import { TbMenuOrder } from 'react-icons/tb';
 
 import TOCLink from '@/components/links/TOCLink';
-import clsx from 'clsx';
 
 export type HeadingScrollSpy = Array<{
   id: string;
