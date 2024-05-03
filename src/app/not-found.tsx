@@ -1,20 +1,18 @@
-import { RiAlarmWarningFill } from 'react-icons/ri';
-
 import CustomLink from '@/components/links/CustomLink';
 
 export default function NotFoundPage() {
   return (
-    <section className="bg-dark">
-      <div className="layout flex min-h-screen flex-col items-center justify-center text-center text-white">
-        <RiAlarmWarningFill
-          size={60}
-          className="drop-shadow-glow animate-flicker text-yellow-300"
-        />
-        <h1 className="mt-8">Page Not Found</h1>
-        <CustomLink className="mt-4" href="/">
-          Back to Home
-        </CustomLink>
-      </div>
+    <section className="layout flex min-h-[55vh] flex-col items-center justify-center text-center">
+      <p className="text-base font-semibold text-primary-300">404</p>
+      <h1 className="mt-4 text-3xl font-bold tracking-tight  sm:text-5xl text-slate-900 dark:text-slate-300">
+        Page not found
+      </h1>
+      <p className="mt-6 text-base leading-7 text-gray-600">
+        Sorry, we couldn’t find the page you’re looking for.
+      </p>
+      <CustomLink className="mt-4" href="/">
+        Back to Home
+      </CustomLink>
     </section>
   );
 }
