@@ -7,32 +7,29 @@
 * Count views, likes
 */
 }
+import clsx from 'clsx';
 import { getMDXComponent } from 'mdx-bundler/client';
 import * as React from 'react';
 
-// import useContentMeta from '@/hooks/useContentMeta';
-import useScrollSpy from '@/hooks/useScrollspy';
+import { hexToRgb } from '@/lib/color';
+import { getReadableColor } from '@/lib/readableColor';
 
+// import useContentMeta from '@/hooks/useContentMeta';
+import ArticleMeta from '@/components/content/ArticleMeta';
 // import LikeButton from '@/components/content/LikeButton';
 import MDXComponents from '@/components/content/MDXComponents';
-import TableOfContents, {
-  HeadingScrollSpy,
-} from '@/components/content/TableOfContents';
-import Tag from '@/components/content/Tag';
 import Discussions from '@/components/Discussions';
 import CustomLink from '@/components/links/CustomLink';
+import CloudinaryImg from '@/components/media/CloudinaryImg';
+
+import { ARTICLE_MAX_WIDTH } from '@/constants';
 
 import { SnippetType } from '@/types/frontmatters';
-import clsx from 'clsx';
-import { ARTICLE_MAX_WIDTH } from '@/constants';
-import CloudinaryImg from '@/components/media/CloudinaryImg';
-import { getReadableColor } from '@/lib/readableColor';
-import { hexToRgb } from '@/lib/color';
 
 export default function SingleSnippetPage({ code, frontmatter }: SnippetType) {
   const Component = React.useMemo(() => getMDXComponent(code), [code]);
 
-  const readableColor = getReadableColor(frontmatter.color || '#097bff', true);
+  const readableColor = getReadableColor(frontmatter.color, true); // TODO: default color to darker shade of primary color
   const shadowColor = hexToRgb(readableColor, 0.85);
 
   //#region  //*=========== Content Meta ===========
@@ -41,32 +38,33 @@ export default function SingleSnippetPage({ code, frontmatter }: SnippetType) {
   //#endregion  //*======== Content Meta ===========
 
   //#region  //*=========== Scrollspy ===========
-  const activeSection = useScrollSpy();
+  // const activeSection = useScrollSpy();
 
-  const [toc, setToc] = React.useState<HeadingScrollSpy>();
-  const minLevel =
-    toc?.reduce((min, item) => (item.level < min ? item.level : min), 10) ?? 0;
+  // const [toc, setToc] = React.useState<HeadingScrollSpy>();
+  // const minLevel =
+  //   toc?.reduce((min, item) => (item.level < min ? item.level : min), 10) ?? 0;
 
-  React.useEffect(() => {
-    const headings = document.querySelectorAll('.mdx h1, .mdx h2, .mdx h3');
+  // React.useEffect(() => {
+  //   const headings = document.querySelectorAll('.mdx h1, .mdx h2, .mdx h3');
 
-    const headingArr: HeadingScrollSpy = [];
-    headings.forEach(heading => {
-      const id = heading.id;
-      const level = +heading.tagName.replace('H', '');
-      const text = heading.textContent + '';
+  //   const headingArr: HeadingScrollSpy = [];
+  //   headings.forEach(heading => {
+  //     const id = heading.id;
+  //     const level = +heading.tagName.replace('H', '');
+  //     const text = heading.textContent + '';
 
-      headingArr.push({ id, level, text });
-    });
+  //     headingArr.push({ id, level, text });
+  //   });
 
-    setToc(headingArr);
-  }, [frontmatter.slug]);
+  //   setToc(headingArr);
+  // }, [frontmatter.slug]);
   //#endregion  //*======== Scrollspy ===========
 
   return (
     <main>
       <article
-        className={clsx('fade-in-start', `max-w-[${ARTICLE_MAX_WIDTH}] m-auto`)}
+        className={clsx('fade-in-start', `m-auto`)}
+        style={{ maxWidth: ARTICLE_MAX_WIDTH }}
       >
         {frontmatter.banner && (
           <CloudinaryImg
@@ -88,39 +86,25 @@ export default function SingleSnippetPage({ code, frontmatter }: SnippetType) {
           />
         )}
         <section className="" data-fade="0">
-          <div className="border-b-thin pb-4 dark:border-slate-600">
-            <h1
-              className={clsx(
-                'mt-12',
-                'text-shadow dark:text-[var(--title-color)] dark:saturate-150',
-                'dark:!shadow-background'
-              )}
-              style={
-                {
-                  '--tw-shadow-color': shadowColor,
-                  '--title-color': readableColor,
-                } as React.CSSProperties
-              }
-            >
-              {frontmatter.title}
-            </h1>
-            <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
-              {frontmatter.description}
-            </p>
-            <div className="mt-2 flex flex-wrap gap-x-1 gap-y-1 text-sm text-black dark:text-slate-100">
-              {frontmatter.tags.split(',').map(tag => (
-                <Tag
-                  tabIndex={-1}
-                  className="bg-opacity-80 dark:!bg-opacity-60"
-                  key={tag}
-                  techName={tag}
-                >
-                  {tag}
-                </Tag>
-              ))}
-            </div>
-          </div>
-
+          <h1
+            className={clsx(
+              'mt-12',
+              'text-shadow dark:text-[var(--title-color)] dark:saturate-150',
+              'dark:!shadow-background'
+            )}
+            style={
+              {
+                '--tw-shadow-color': shadowColor,
+                '--title-color': readableColor,
+              } as React.CSSProperties
+            }
+          >
+            {frontmatter.title}
+          </h1>
+          <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+            {frontmatter.description}
+          </p>
+          <ArticleMeta articleFrontMatter={frontmatter} showTags />
           <hr className="dark:border-slate-600" />
         </section>
         <section data-fade="1">
