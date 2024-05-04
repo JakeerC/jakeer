@@ -22,7 +22,7 @@
 }
 
 .prose blockquote p {
-  @apply dark:text-white/50 text-dark/50 py-4 px-8 md:max-w-[80%];
+  @apply dark:text-light/50 text-dark/50 py-4 px-8 md:max-w-[80%];
   position: relative;
 
   line-height: 1.4rem;
@@ -49,16 +49,16 @@
 
 /* ================================================================ */
 .prose hr {
+  @apply bg-gradient-to-r from-primary-500/80 to-primary-300/80;
   border-style: solid;
   border-width: 0 0 1px;
-  border-image: linear-gradient(to right, #097bff80, #00e0f380) 1;
 }
 
 .mdx.prose :where(h2) {
-  @apply text-primary-300/90 dark:text-yellow-300;
+  @apply text-primary-500/90 dark:text-yellow-300;
 }
 .mdx.prose :where(h3) {
-  @apply text-primary-300/70 dark:text-yellow-300/90;
+  @apply text-primary-500/70 dark:text-yellow-300/90;
 }
 
 .mdx.prose :where(h1, h2, h3, h4) {
@@ -100,7 +100,7 @@
 }
 
 .hash-anchor:after {
-  @apply invisible absolute -left-5 top-1/2 -translate-y-1/2  text-primary-300/90 dark:text-yellow-200 md:content-['#'];
+  @apply invisible absolute -left-5 top-1/2 -translate-y-1/2  text-primary-500/90 dark:text-yellow-200 md:content-['#'];
 }
 /* #endregion  /**======== Hash Anchor =========== */
 
@@ -125,7 +125,7 @@ html.light pre {
   @apply border-l-2 border-l-transparent px-6;
 }
 [data-highlighted-line] {
-  @apply border-l-primary-300 bg-primary-300/10;
+  @apply border-l-primary-500 bg-primary-500/10;
 }
 [data-highlighted-chars] {
   box-shadow: 0 0 0 4px var(--tw-shadow-color);
@@ -172,7 +172,7 @@ code[data-line-numbers] > [data-line]::before {
   width: 1rem;
   padding-right: 2rem;
   text-align: right;
-  color: gray;
+  color: slategray;
 }
 
 html.light .prose [data-theme='dark'] {

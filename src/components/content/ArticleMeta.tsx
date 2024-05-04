@@ -80,7 +80,7 @@ export default function ArticleMeta({
             href={commitHistoryLink}
             className={clsx(
               'inline-flex items-center gap-1 rounded-sm font-medium',
-              'text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-primary-300',
+              'text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-primary-500',
               'focus-focus'
             )}
           >

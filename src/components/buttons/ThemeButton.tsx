@@ -16,7 +16,7 @@ export default function ThemeButton({ className, ...rest }: ThemeButtonProps) {
     <button
       className={clsx(
         'rounded-md p-2 md:p-2.5',
-        'hover:text-primary-300 dark:hover:text-primary-300',
+        'hover:text-primary-500 dark:hover:text-primary-500',
         'focus-focus',
         'text-lg md:text-xl',
         className

@@ -22,7 +22,7 @@ export function Pre({
 
   return (
     // word-break: break-word;
-    // @apply nx-whitespace-pre-wrap md:nx-whitespace-pre;
+    // @apply nx-lightspace-pre-wrap md:nx-lightspace-pre;
     <pre
       {...rest}
       ref={preRef}
@@ -30,7 +30,7 @@ export function Pre({
         'group relative',
         'pt-12',
         'rounded-sm',
-        // 'whitespace-pre-wrap break-words',
+        // 'lightspace-pre-wrap break-words',
         className,
       ])}
       data-word-wrap={shouldWrap}
@@ -38,7 +38,7 @@ export function Pre({
       {children}
       {language && (
         <div className="absolute top-0 left-6 rounded-b-md border border-t-0 border-slate-600 px-3 py-1">
-          <span className="select-none bg-gradient-to-tr from-primary-300 to-primary-400 bg-clip-text font-medium text-transparent">
+          <span className="select-none bg-gradient-to-tr from-primary-500 to-primary-300 bg-clip-text font-medium text-transparent">
             {language}
           </span>
         </div>

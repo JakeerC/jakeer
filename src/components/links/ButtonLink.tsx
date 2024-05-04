@@ -28,7 +28,7 @@ export default function ButtonLink({
         'transition duration-100',
         'animate-shadow',
         {
-          'bg-white text-slate-800 disabled:bg-slate-200 dark:bg-dark dark:text-slate-100 dark:disabled:bg-slate-700':
+          'bg-light text-slate-800 disabled:bg-slate-200 dark:bg-dark dark:text-slate-100 dark:disabled:bg-slate-700':
             variant === 'default',
         },
         className

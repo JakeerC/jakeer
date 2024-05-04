@@ -42,7 +42,7 @@ export default function Header({ large = false }: HeaderProps) {
       className={clsx(
         'sticky top-0 z-50 transition-shadow',
         'max-h-20 w-[100%] overflow-x-hidden',
-        'bg-gradient-to-b from-white to-white/10',
+        'bg-gradient-to-b from-light to-light/10',
         'dark:from-dark dark:to-dark/10',
         'backdrop-blur',
         'duration-300',
@@ -54,9 +54,9 @@ export default function Header({ large = false }: HeaderProps) {
         href="#skip-nav"
         className={clsx(
           'rounded-sm p-2 transition',
-          'font-medium text-black dark:text-white',
-          'bg-white dark:bg-dark',
-          'group dark:hover:text-primary-300',
+          'font-medium text-black dark:text-light',
+          'bg-light dark:bg-dark',
+          'group dark:hover:text-primary-500',
           'absolute left-4 top-4',
           '-translate-y-16 focus-focus focus:translate-y-0'
         )}
@@ -80,15 +80,15 @@ export default function Header({ large = false }: HeaderProps) {
                 href={href}
                 className={clsx(
                   'rounded-sm py-2 transition-colors',
-                  'font-medium text-black dark:text-white',
-                  'group dark:hover:text-primary-300',
+                  'font-medium text-black dark:text-light',
+                  'group dark:hover:text-primary-500',
                   'focus-focus'
                 )}
               >
                 <span
                   className={clsx(
                     'transition-colors',
-                    'bg-primary-300/0 group-hover:bg-primary-300/20 dark:group-hover:bg-primary-300/0',
+                    'bg-primary-500/0 group-hover:bg-primary-500/20 dark:group-hover:bg-primary-500/0',
                     href === baseRoute && 'text-accent'
                   )}
                 >

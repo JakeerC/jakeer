@@ -97,7 +97,7 @@ export default async function IndexPage() {
                 href={`${domain}/files/resume.pdf`}
                 className={clsx(
                   'inline-flex items-center gap-1 text-sm font-medium md:text-base',
-                  'text-slate-600 hover:text-black dark:text-slate-400 dark:hover:text-white',
+                  'text-slate-600 hover:text-black dark:text-slate-400 dark:hover:text-light',
                   'focus-focus',
                   'transition-colors'
                 )}
@@ -109,7 +109,7 @@ export default async function IndexPage() {
                 href={twitterURL}
                 className={clsx(
                   'inline-flex items-center gap-1 text-sm font-medium md:text-base',
-                  'group text-slate-600 hover:text-black dark:text-slate-400 dark:hover:text-white',
+                  'group text-slate-600 hover:text-black dark:text-slate-400 dark:hover:text-light',
                   'focus-focus',
                   'transition-colors'
                 )}
@@ -121,7 +121,7 @@ export default async function IndexPage() {
                 href={githubURL}
                 className={clsx(
                   'inline-flex items-center gap-1 text-sm font-medium md:text-base',
-                  'text-slate-600 hover:text-black dark:text-slate-400 dark:hover:text-white',
+                  'text-slate-600 hover:text-black dark:text-slate-400 dark:hover:text-light',
                   'focus-focus',
                   'transition-colors'
                 )}
@@ -136,7 +136,7 @@ export default async function IndexPage() {
             className={clsx(
               'absolute bottom-2 left-1/2 -translate-x-1/2 md:bottom-10',
               'cursor-pointer rounded-md transition-colors',
-              'hover:text-primary-300 focus-visible:text-primary-300'
+              'hover:text-primary-500 focus-visible:text-primary-500'
             )}
             data-fade="7"
           >

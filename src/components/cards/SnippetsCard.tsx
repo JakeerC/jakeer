@@ -22,7 +22,7 @@ export default function SnippetsCard({
   return (
     <li
       className={clsx([
-        'ring-vis-0 h-full rounded-md bg-white dark:bg-dark',
+        'ring-vis-0 h-full rounded-md bg-light dark:bg-dark',
         'border dark:border-slate-600',
         'scale-100 hover:scale-[1.04] active:scale-[0.97] motion-safe:transform-gpu',
         'transition duration-100',

@@ -17,7 +17,7 @@ export default function ProjectCard({ project, className }: ProjectCardProps) {
     <li
       className={clsx(
         'project-card rounded-md md:w-full',
-        'border dark:border-slate-600  bg-white dark:bg-dark',
+        'border dark:border-slate-600  bg-light dark:bg-dark',
         'scale-100 hover:scale-[1.02] active:scale-[0.97] motion-safe:transform-gpu',
         'transition duration-100',
         'motion-reduce:hover:scale-100',
