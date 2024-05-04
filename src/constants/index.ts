@@ -21,11 +21,7 @@ export {
 } from './seoMetaData';
 export { socialLinks } from './socialLinks';
 export { techList } from './techList';
-export {
-  ARTICLE_MAX_WIDTH,
-  THEME_COLOR_DARK,
-  THEME_COLOR_LIGHT,
-} from './theme';
+export { THEME_COLOR_DARK, THEME_COLOR_LIGHT } from './theme';
 export {
   defaultOGLogo,
   domain,
