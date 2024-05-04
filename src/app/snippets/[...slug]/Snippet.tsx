@@ -22,8 +22,6 @@ import Discussions from '@/components/Discussions';
 import CustomLink from '@/components/links/CustomLink';
 import CloudinaryImg from '@/components/media/CloudinaryImg';
 
-import { ARTICLE_MAX_WIDTH } from '@/constants';
-
 import { SnippetType } from '@/types/frontmatters';
 
 export default function SingleSnippetPage({ code, frontmatter }: SnippetType) {
@@ -62,10 +60,7 @@ export default function SingleSnippetPage({ code, frontmatter }: SnippetType) {
 
   return (
     <main>
-      <article
-        className={clsx('fade-in-start', `m-auto`)}
-        style={{ maxWidth: ARTICLE_MAX_WIDTH }}
-      >
+      <article className={clsx('fade-in-start', 'max-w-article mx-auto')}>
         {frontmatter.banner && (
           <CloudinaryImg
             publicId={`banner/${frontmatter.banner}`}

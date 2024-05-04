@@ -30,7 +30,7 @@ import CustomLink from '@/components/links/CustomLink';
 import ShareTweetButton from '@/components/links/ShareTweetButton';
 import CloudinaryImg from '@/components/media/CloudinaryImg';
 
-import { ARTICLE_MAX_WIDTH, domain, sourceCodeRepo } from '@/constants';
+import { domain, sourceCodeRepo } from '@/constants';
 
 import { BlogFrontmatter, BlogType } from '@/types/frontmatters';
 
@@ -87,10 +87,7 @@ export default function Post({
   //#endregion  //*======== Scrollspy ===========
   return (
     <main>
-      <article
-        className={clsx('fade-in-start', `m-auto`)}
-        style={{ maxWidth: ARTICLE_MAX_WIDTH }}
-      >
+      <article className={clsx('fade-in-start', `max-w-article m-auto`)}>
         <CloudinaryImg
           publicId={`banner/${frontmatter.banner}`}
           alt={`Photo from unsplash: ${frontmatter.banner}`}
