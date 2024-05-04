@@ -34,7 +34,7 @@ export default function Button({
         'transition duration-100',
         'animate-shadow',
         {
-          'bg-white text-slate-600 disabled:bg-slate-200 dark:bg-dark dark:text-slate-300 dark:disabled:bg-slate-700':
+          'bg-light text-slate-600 disabled:bg-slate-200 dark:bg-dark dark:text-slate-300 dark:disabled:bg-slate-700':
             variant === 'default',
         },
         'disabled:transform-none disabled:cursor-not-allowed',
@@ -47,7 +47,7 @@ export default function Button({
         <div
           className={clsx(
             'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2',
-            'text-black dark:text-white'
+            'text-black dark:text-light'
           )}
         >
           <ImSpinner2 className="animate-spin" />

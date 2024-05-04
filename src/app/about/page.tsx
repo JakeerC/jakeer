@@ -81,7 +81,7 @@ export default function AboutPage() {
               <div
                 className={clsx(
                   'absolute -inset-0.5 animate-tilt rounded blur',
-                  'bg-gradient-to-r from-primary-300 to-primary-400',
+                  'bg-gradient-to-r from-primary-500 to-primary-300',
                   'opacity-75 transition duration-1000 group-hover:opacity-100 group-hover:duration-200'
                 )}
               />

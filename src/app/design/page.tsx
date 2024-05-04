@@ -144,7 +144,7 @@ const THEME_COLORS = [
   {
     title: 'White Background',
     subTitle: '#ffffff',
-    colorClassName: 'bg-white',
+    colorClassName: 'bg-light',
   },
   {
     title: 'Dark Background',
@@ -152,28 +152,14 @@ const THEME_COLORS = [
     colorClassName: 'bg-dark',
   },
   {
-    title: 'Primary 200',
-    subTitle: '#dbff00',
-    colorClassName: 'bg-primary-200',
-  },
-  {
     title: 'Primary 300',
     subTitle: '#097bff',
-    colorClassName: 'bg-primary-300',
-  },
-  {
-    title: 'Primary 400',
-    subTitle: '#00e0f3',
-    colorClassName: 'bg-primary-400',
-  },
-  {
-    title: 'Primary 500',
-    subTitle: '#00bfff',
     colorClassName: 'bg-primary-500',
   },
+
   {
     title: 'Gradient',
     subTitle: '#00e0f3 to #00bfff',
-    colorClassName: 'bg-gradient-to-tr from-primary-300 to-primary-500',
+    colorClassName: 'bg-gradient-to-tr from-primary-500 to-primary-500',
   },
 ];

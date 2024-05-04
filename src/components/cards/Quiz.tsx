@@ -51,9 +51,9 @@ export default function Quiz(props: QuizType) {
             >
               <>{answer.option}</>
               {selectedOption && optionStatus === 'correct' ? (
-                <HiOutlineCheckCircle className="absolute right-4 top-1/2 block -translate-y-1/2 text-xl text-white" />
+                <HiOutlineCheckCircle className="absolute right-4 top-1/2 block -translate-y-1/2 text-xl text-light" />
               ) : selectedOption === answerIndex ? (
-                <HiOutlineXCircle className="absolute right-4 top-1/2 block -translate-y-1/2 text-xl text-white" />
+                <HiOutlineXCircle className="absolute right-4 top-1/2 block -translate-y-1/2 text-xl text-light" />
               ) : null}
             </button>
           );

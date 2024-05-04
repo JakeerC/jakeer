@@ -76,7 +76,7 @@ function SocialLinks() {
                 href={social.href}
                 aria-label={social.ariaLabel}
               >
-                <social.icon className="w-4 h-4 text-slate-600 transition-colors hover:text-primary-300 dark:text-slate-300 dark:hover:text-primary-300" />
+                <social.icon className="w-4 h-4 text-slate-600 transition-colors hover:text-primary-500 dark:text-slate-300 dark:hover:text-primary-500" />
               </UnstyledLink>
             </li>
           )

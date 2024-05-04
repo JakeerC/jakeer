@@ -17,7 +17,7 @@ export default function CustomLink({
         className
       )}
     >
-      <span className="dark:text-gradient-primary-300-to-400">{children}</span>
+      <span className="dark:text-gradient-primary-500-to-400">{children}</span>
     </UnstyledLink>
   );
 }

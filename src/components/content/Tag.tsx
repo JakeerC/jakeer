@@ -23,7 +23,7 @@ export default function Tag({
         className,
         'rounded-md px-1.5 py-0.5 font-medium transition-colors',
         'bg-slate-100 text-slate-700 hover:text-black disabled:bg-slate-200 disabled:text-slate-300',
-        'dark:bg-slate-700 dark:text-slate-200 dark:hover:text-white dark:disabled:bg-slate-600 dark:disabled:text-slate-500',
+        'dark:bg-slate-700 dark:text-slate-200 dark:hover:text-light dark:disabled:bg-slate-600 dark:disabled:text-slate-500',
         'focus-focus disabled:cursor-not-allowed',
         'flex flex-wrap items-center justify-start gap-2',
         {
@@ -49,7 +49,7 @@ export function SkipNavTag({
         className={clsx(
           'inline-block rounded-md px-1.5 py-0.5 font-medium transition',
           'bg-slate-100 text-slate-700 hover:text-black disabled:bg-slate-200 disabled:text-slate-300',
-          'dark:bg-slate-700 dark:text-slate-200 dark:hover:text-white dark:disabled:bg-slate-600 dark:disabled:text-slate-500',
+          'dark:bg-slate-700 dark:text-slate-200 dark:hover:text-light dark:disabled:bg-slate-600 dark:disabled:text-slate-500',
           'focus-focus disabled:cursor-not-allowed',
           'pointer-events-none absolute opacity-0 focus:inline-block focus:translate-y-[1.4rem] focus:opacity-100'
         )}

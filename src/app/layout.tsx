@@ -69,7 +69,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={clsx(rubik.className, 'bg-white dark:bg-dark')}>
+      <body className={clsx(rubik.className, 'bg-light dark:bg-dark')}>
         <Providers>
           <Header />
           <div id="skip-nav">{children}</div>
