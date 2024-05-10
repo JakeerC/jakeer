@@ -49,8 +49,9 @@
     max-width: 68rem;
     @apply w-11/12 mx-auto;
   }
-  max-w-article {
+  .max-w-article {
     max-width: 68ch;
+    padding: 2ch;
   }
 
   .bg-dark a.custom-link {
