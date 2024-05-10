@@ -20,7 +20,7 @@ export default function ButtonGroup({
   options,
 }: ButtonGroupProps) {
   return (
-    <div className="inline-flex -space-x-px overflow-hidden bg-light border rounded-md shadow-sm  focus-focus">
+    <div className="inline-flex -space-x-px overflow-hidden bg-light border dark:border-slate-600 rounded-md shadow-sm focus-focus">
       {options.map(opt => (
         <button
           className={clsx(
